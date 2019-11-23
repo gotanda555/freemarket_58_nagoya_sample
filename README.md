@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+### Association(後ほど)
+- has_many :groups_users,  through:  :groups_users
+- has_many :groups
+- has_many :messages
