@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 # DB設計
-## usersテーブル
+## usersテーブル_ok
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -32,6 +32,6 @@ Things you may want to cover:
 |password|string|null: false|
 
 ### Association(後ほど)
-- has_many :groups_users,  through:  :groups_users
-- has_many :groups
-- has_many :messages
+- belongs_to :identification
+- belongs_to :credit_card
+- has_many :products
