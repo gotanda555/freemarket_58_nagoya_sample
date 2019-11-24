@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# DB設計
+## usersテーブル_ok
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+### Association(後ほど)
+- belongs_to :identification
+- belongs_to :credit_card
+- has_many :products
