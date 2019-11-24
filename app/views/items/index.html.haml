@@ -1,4 +1,10 @@
 .main
-  = render "top_box"
-  = render "middle_box"
-  = render "bottom_box"
+  .header  ヘッダー
+  = render "header"
+  .body_main
+    .slideshow スライドショー 
+    .itemlist アイテムリスト
+    = render "itemlist"
+  .bottom ボトム
+  .footer フッター
+  = render "footer"
