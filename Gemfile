@@ -73,3 +73,4 @@ group :production do
 end
 
 gem "font-awesome-sass"
+gem 'jquery-rails'
