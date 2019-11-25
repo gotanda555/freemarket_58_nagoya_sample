@@ -44,6 +44,11 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  # テストで使うGem
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -71,3 +76,7 @@ gem 'haml-rails'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem "font-awesome-sass"
+gem 'jquery-rails'
+gem 'devise'
