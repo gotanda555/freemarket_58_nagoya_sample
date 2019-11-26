@@ -30,8 +30,28 @@
   color:gray;
 }
 
-&__contents__about__title__class__name__tag{
+&__contents__about__title__class__name__tag,&__contents__guide__title__class__name__tag,&__contents__privace__title__box__class__name__tag,&__contents__privace__title__box__place__name__tag,&__contents__country__title__class__name__tag{
   color:gray;
+  text-decoration: none;
+}
+
+&__contents__about__title__class__name__icon__twitter{
+  text-decoration: none;
+}
+
+&__contents__about__title__class__name__icon__twitter__box{
+  font-size:30px;
+  color:white;
+  margin-top:30px;
+  padding-right:10px;
+  text-decoration: none;
+}
+
+&__contents__about__title__class__name__icon__facebook__box{
+  font-size:30px;
+  color:white;
+  padding-left:10px;
+  text-decoration: none;
 }
 
 &__contents__privace__title__box__class{
