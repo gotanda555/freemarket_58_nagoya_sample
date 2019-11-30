@@ -9,16 +9,18 @@
       .headerBox__main__bottom__select
         .headerBox__main__bottom__select__category
           %a.headerBox__main__bottom__select__category__categorySearch
-            .headerBox__main__bottom__select__category__categorySearch__image--a
-            .headerBox__main__bottom__select__category__categorySearch__list--a カテゴリーから探す
-            %ul.headerBox__main__bottom__select__category__categorySearch__list__main--a
-              %li.headerBox__main__bottom__select__category__categorySearch__list__item--a
+            .headerBox__main__bottom__select__category__categorySearch__image__a
+            = image_tag('category.png',width:'30',height:'25')
+            .headerBox__main__bottom__select__category__categorySearch__list__a カテゴリーから探す
+            %ul.headerBox__main__bottom__select__category__categorySearch__list__main__a
+              %li.headerBox__main__bottom__select__category__categorySearch__list__item__a
         .headerBox__main__bottom__select__brand 
-          %a.brand-search
-            .headerBox__main__bottom__select__category__image--b
-            .headerBox__main__bottom__select__category__list--b  ブランドから探す
-            %ul.headerBox__main__bottom__select__category__list__main--b
-              %li.headerBox__main__bottom__select__category__list__item--b
+          %a.headerBox__main__bottom__select__brand__brandSearch
+            .headerBox__main__bottom__select__brand__brandSearch__image__b
+            = image_tag('brand.png',width:'30',height:'25')
+            .headerBox__main__bottom__select__brand__brandSearch__list__b  ブランドから探す
+            %ul.headerBox__main__bottom__select__brand__brandSearch__list__main__b
+              %li.headerBox__main__bottom__select__brand__brandSearch__list__itemb
       .headerBox__main__bottom__member
         .headerBox__main__bottom__member__new
           %a.headerBox__main__bottom__member__new__letter 新規会員登録

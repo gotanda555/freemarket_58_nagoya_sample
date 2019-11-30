@@ -23,14 +23,45 @@
   float:left;
   &__category{
     display: flex;
+    padding:0px 10px;
+    &__categorySearch,&__image{
+      display:flex;
+    }
+    &__categorySearch__list{
+      display:flex;
+      &__a{
+        color:black;
+      }
+    }
   }
   &__brand{
     display: flex;
+    padding:0px 10px;
+    &__brandSearch,&__image{
+      display:flex;
+    }
+    &__brandSearch,&__list{
+      display:flex;
+    }
   }
 }
 .headerBox__main__bottom__member{
   display:flex;
   float:right;
-  
+  &__new{
+    background-color:red;
+    color:white;
+    font-size: 0.9em;
+    width:100px;
+    height:30px;
+  }
+  &__login{
+    background-color:white;
+    color:blue;
+
+    font-size: 0.9em;
+    width:100px;
+    height:30px;
+  }
 }
 
