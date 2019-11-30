@@ -10,15 +10,13 @@ $(function(){
         indicatorHTML = '',
         currentIndex = 0,
         duration = 500,
-        interval = 5000,
-
+        interval = 10000,
 
         $slides.each(function(i){
           $(this).css({ left: 100 * i + '%'}); 
-          indicatorHTML += '<a id="fas fa-circle" href="#">' + (i + 1) + '</a>';
+          indicatorHTML += '<a href="#"><i class="fas fa-circle dot"></i></a>';
         });
         $indicator.html(indicatorHTML);
-
         function goToSlide(index){
           $slideGroup.animate({ left: -100 * index + '%'},
           duration);
@@ -40,7 +38,7 @@ $(function(){
             $navNext.removeClass('disabled')
           }
           $indicator.find('a').removeClass('active')
-          .eq(currentIndex).addClass('active');
+          .eq(currentIndex).addClass(' active');
         }
         
         function startTimer(){
