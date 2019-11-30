@@ -7,15 +7,49 @@
 }
 .headerBox__main{
   min-width:1020px;
-  padding:8px,0px,0px;
   height:100%;
   margin-right:200px;
   margin-left:200px;
 }
 
-.headerBox__main__search__logo{
+.headerBox__main__search{
+  padding-top:8px;
+  display:flex;
+}
+
+.headerBox__main__search__logo__link__box{
+  height:36px;
+  width:134px;
+}
+
+.headerBox__main__search__input{
+  display:flex;
+}
+
+.headerBox__main__search__input__box{
   height:40px;
-  width:50px;
+  width:810px;
+  padding-left:50px;
+}
+
+#headerBox__main__search__input__box__text{
+  height:35px;
+  width:841px;
+  background-color:rgb(245,245,245);
+  border-radius: 15px;
+  border: solid 1px gray;
+}
+
+input{
+  border-radius: 15px;
+}
+
+.headerBox__main__search__input__icon{
+  padding-top:8px;
+}
+
+.headerBox__main__bottom{
+  margin-top:10px;
 }
 
 .headerBox__main__bottom__select{
@@ -23,7 +57,7 @@
   float:left;
   &__category{
     display: flex;
-    padding:0px 10px;
+    padding:0px 10px 0 0;
     &__categorySearch,&__image{
       display:flex;
     }
@@ -48,20 +82,28 @@
 .headerBox__main__bottom__member{
   display:flex;
   float:right;
-  &__new{
+  &__new__letter{
     background-color:red;
     color:white;
     font-size: 0.9em;
-    width:100px;
-    height:30px;
+    width:106px;
+    height:32px;
+    padding:8px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right:10px;
   }
-  &__login{
+  &__login__moji{
     background-color:white;
-    color:blue;
-
+    color:rgb(0, 149, 238);
+    text-decoration: none;
     font-size: 0.9em;
-    width:100px;
-    height:30px;
+    width:106px;
+    height:32px;
+    padding:8px 10px;
+    border: solid 1px rgb(0, 149, 238);
+    border-radius: 5px;
+    margin-right:10px;
   }
 }
 
