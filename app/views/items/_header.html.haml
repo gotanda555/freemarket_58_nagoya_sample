@@ -1,4 +1,28 @@
 .headerBox
   .headerBox__main
     .headerBox__main__search
-    .headerBox__main__login
+      .headerBox__main__search__logo
+        %a.headerBox__main__search__logo__link
+          = image_tag  "fmarket_logo_red.svg"
+      .headerBox__main__search__input
+    .headerBox__main__bottom
+      .headerBox__main__bottom__select
+        .headerBox__main__bottom__select__category
+          %a.headerBox__main__bottom__select__category__categorySearch
+            .headerBox__main__bottom__select__category__categorySearch__image--a
+            .headerBox__main__bottom__select__category__categorySearch__list--a カテゴリーから探す
+            %ul.headerBox__main__bottom__select__category__categorySearch__list__main--a
+              %li.headerBox__main__bottom__select__category__categorySearch__list__item--a
+        .headerBox__main__bottom__select__brand 
+          %a.brand-search
+            .headerBox__main__bottom__select__category__image--b
+            .headerBox__main__bottom__select__category__list--b  ブランドから探す
+            %ul.headerBox__main__bottom__select__category__list__main--b
+              %li.headerBox__main__bottom__select__category__list__item--b
+      .headerBox__main__bottom__member
+        .headerBox__main__bottom__member__new
+          %a.headerBox__main__bottom__member__new__letter 新規会員登録
+        .headerBox__main__bottom__member__login
+          %a.headerBox__main__bottom__member__login__moji ログイン
+
+
