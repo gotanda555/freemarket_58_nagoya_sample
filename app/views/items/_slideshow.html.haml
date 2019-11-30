@@ -3,6 +3,9 @@
   = link_to image_tag('camping.png',width:'1600', height:'290'),'./', class:'slide'
   = link_to image_tag('apri.png',width:'1600', height:'290'),'./', class:'slide'
 .slideshow-nav
-  = link_to 'Prev', './', class: 'prev'
-  = link_to 'Next', './', class: 'next'
+  = link_to './', class: 'prev' do
+    %li.fa.fa-chevron-left.fa-3x
+  = link_to './', class: 'next' do
+    %li.fa.fa-chevron-right.fa-3x
 .slideshow-indicator
+  = link_to 

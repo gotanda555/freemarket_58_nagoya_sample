@@ -1,11 +1,12 @@
 .main
-  .header  ヘッダー
-  = render "header"
+  .header
+    = render "header"
   .body_main
     .slideshow
       = render "slideshow"
-    .itemlist アイテムリスト
+  .main__item
     = render "itemlist"
-  .bottom ボトム
+  .main__bottom
+    =render "bottom"
   .main__footer
     = render "footer"

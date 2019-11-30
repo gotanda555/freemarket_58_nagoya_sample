@@ -1,21 +1,36 @@
 .header{
   width: 100%;
   height:100px;
-  background-color:blue;
-  color:white;
 }
-
 .headerBox{
   background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  &__main{
-    min-width:1060px;
-    &__search{
-      width:100px;
-    }
-    &__login{
-      width:100px
-    }
+}
+.headerBox__main{
+  min-width:1020px;
+  padding:8px,0px,0px;
+  height:100%;
+  margin-right:200px;
+  margin-left:200px;
+}
 
+.headerBox__main__search__logo{
+  height:40px;
+  width:50px;
+}
+
+.headerBox__main__bottom__select{
+  display:flex;
+  float:left;
+  &__category{
+    display: flex;
+  }
+  &__brand{
+    display: flex;
   }
 }
+.headerBox__main__bottom__member{
+  display:flex;
+  float:right;
+  
+}
+

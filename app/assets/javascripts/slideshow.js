@@ -10,12 +10,12 @@ $(function(){
         indicatorHTML = '',
         currentIndex = 0,
         duration = 500,
-        interval = 3000,
+        interval = 5000,
 
 
         $slides.each(function(i){
           $(this).css({ left: 100 * i + '%'}); 
-          indicatorHTML += '<a href="#">' + (i + 1) + '</a>';
+          indicatorHTML += '<a id="fas fa-circle" href="#">' + (i + 1) + '</a>';
         });
         $indicator.html(indicatorHTML);
 
@@ -37,7 +37,7 @@ $(function(){
           if(currentIndex === slideCount - 1){
             $navNext.addClass('disabled');
           }else{
-            $navNext.addClass('disabled')
+            $navNext.removeClass('disabled')
           }
           $indicator.find('a').removeClass('active')
           .eq(currentIndex).addClass('active');
@@ -49,6 +49,31 @@ $(function(){
             goToSlide(nextIndex);
           },interval);
         }
+
+        function stopTimer(){
+          clearInterval(timer);
+        }
+
+        $nav.on('click', 'a', function(event){
+          event.preventDefault();
+          if($(this).hasClass('prev')){
+            goToSlide(currentIndex -1);
+          }else{
+            goToSlide(currentIndex +1);
+          }
+        });
+
+        $indicator.on('click', 'a', function(event){
+          event.preventDefault();
+          if (!$(this).hasClass('active')){
+            goToSlide($(this).index());
+          }
+        });
+
+        $container.on({
+          mouseenter: stopTimer,
+          mouseleave: startTimer
+        });
 
         goToSlide(currentIndex);
 
