@@ -2,29 +2,32 @@
   .headerBox__main
     .headerBox__main__search
       .headerBox__main__search__logo
-        %a.headerBox__main__search__logo__link
-          = image_tag  "fmarket_logo_red.svg"
+        =link_to "#",class:"headerBox__main__search__logo__link" do
+          = image_tag  "fmarket_logo_red.svg",class:"headerBox__main__search__logo__link__box"
       .headerBox__main__search__input
+        .headerBox__main__search__input__box
+          = text_field_tag "headerBox__main__search__input__box__text"
+        .headerBox__main__search__input__icon
+          = icon('fas', 'search')
+
     .headerBox__main__bottom
       .headerBox__main__bottom__select
         .headerBox__main__bottom__select__category
-          %a.headerBox__main__bottom__select__category__categorySearch
-            .headerBox__main__bottom__select__category__categorySearch__image__a
+          .headerBox__main__bottom__select__category__categorySearch
             = image_tag('category.png',width:'30',height:'25')
-            .headerBox__main__bottom__select__category__categorySearch__list__a カテゴリーから探す
-            %ul.headerBox__main__bottom__select__category__categorySearch__list__main__a
-              %li.headerBox__main__bottom__select__category__categorySearch__list__item__a
+          .headerBox__main__bottom__select__category__categorySearch__list__a カテゴリーから探す
         .headerBox__main__bottom__select__brand 
-          %a.headerBox__main__bottom__select__brand__brandSearch
-            .headerBox__main__bottom__select__brand__brandSearch__image__b
+          .headerBox__main__bottom__select__brand__brandSearch
             = image_tag('brand.png',width:'30',height:'25')
-            .headerBox__main__bottom__select__brand__brandSearch__list__b  ブランドから探す
-            %ul.headerBox__main__bottom__select__brand__brandSearch__list__main__b
-              %li.headerBox__main__bottom__select__brand__brandSearch__list__itemb
+          .headerBox__main__bottom__select__brand__brandSearch__list__b  ブランドから探す
+      
+      
       .headerBox__main__bottom__member
         .headerBox__main__bottom__member__new
-          %a.headerBox__main__bottom__member__new__letter 新規会員登録
+          =link_to"#",class:"headerBox__main__bottom__member__new__letter" do
+            新規会員登録
         .headerBox__main__bottom__member__login
-          %a.headerBox__main__bottom__member__login__moji ログイン
+          =link_to"#",class:"headerBox__main__bottom__member__login__moji" do
+            ログイン
 
 
