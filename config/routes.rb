@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: "items#index"
 
   get   'users/:id'   =>  'users#show'
-
+  get   'items/new'   =>  'items#new'
   resources :signup do
     collection do
       get 'step1'
