@@ -1,2 +1,89 @@
 .header
   = render "header"
+.main__item__box
+  .detail__main
+    .detail__main__box
+      .detail__main__box__flame
+        %h3.detail__main__box__flame__title カーディガンピンクカーデ
+        .detail__main__box__flame__content
+          .detail__main__box__flame__content__sub
+            .detail__main__box__flame__content__sub__itemphoto
+              .detail__main__box__flame__content__sub__itemphoto__mainphoto
+                = link_to image_tag('jeans.jpg',width:'180', height:'300')     
+              .detail__main__box__flame__content__sub__itemphoto__subphoto
+                .detail__main__box__flame__content__sub__itemphoto__subphoto__no1
+                  = link_to image_tag('jeans.jpg',width:'60', height:'60')
+                .detail__main__box__flame__content__sub__itemphoto__subphoto__no2
+                  = link_to image_tag('jeans_back.jpg',width:'60', height:'60')
+                .detail__main__box__flame__content__sub__itemphoto__subphoto__no3 
+                  = link_to image_tag('jeans_tag.jpg',width:'60', height:'60')              
+            .detail__main__box__flame__content__sub__table
+              %table.tbody{border:"1"}
+                %tr
+                  %th 出品者
+                  %td
+                    = link_to 'daissh04♡初心者', '#'
+                    .item-user-rating
+                      .item-user-rating__1
+                        %i.fas.fa-laugh.laugh
+                        %span 160
+                      .item-user-rating__2
+                        %i.far.fa-meh.normal
+                        %span 10
+                      .item-user-rating__3
+                        %i.far.fa-frown.bad
+                        %span 2
+                %tr
+                  %th カテゴリー
+                  %td
+                    = link_to 'レディース', '#' 
+                    %br
+                    = link_to '＞ パンツ', '#'
+                    %br
+                    = link_to '＞ デニム/ジーンズ', '#'
+                %tr
+                  %th ブランド
+                  %td 
+                    = link_to 'サムシング', '#'
+                %tr
+                  %th 商品のサイズ
+                  %td XS(SS)
+                %tr
+                  %th 商品の状態
+                  %td 目立った傷や汚れなし
+                %tr
+                  %th 配送料の負担
+                  %td 送料込み(出品者負担)
+                %tr
+                  %th 配送の方法
+                  %td ゆうゆうメルカリ便
+                %tr
+                  %th 配送元地域
+                  %td 兵庫県
+                %tr
+                  %th 配送日の目安
+                  %td 1〜2日で発送
+          .detail__main__box__flame__content__itemprice
+            %span.detail__main__box__flame__content__itemprice__price
+            %span.detail__main__box__flame__content__itemprice__tax
+            %span.detail__main__box__flame__content__itemprice__shipfree
+          %a.detail__main__box__flame__content__item-buy-btn
+          .detail__main__box__flame__content__itemdescription
+            %p.detail__main__box__flame__content__itemdescription__inner 商品の説明はありません
+          .detail__main__box__flame__content__item-btn-container
+            .detail__main__box__flame__content__item-btn-left
+              %button.detail__main__box__flame__content__item-btn-left__good
+              %a.detail__main__box__flame__content__item-btn-left__nogood
+            .detail__main__box__flame__content__item-btn-right
+              %a.detail__main__box__flame__content__item-btn-right__safety あんしん・あんぜんへの取り組み
+              
+
+            
+
+
+          
+
+.main__bottom
+  = render "bottom"
+.main__footer
+  = render "footer"
