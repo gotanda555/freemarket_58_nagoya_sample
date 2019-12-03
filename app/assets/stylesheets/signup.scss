@@ -381,4 +381,167 @@
 .first-main__image__box__left__flex__google__size:hover{
   opacity:0.7;
 }
+
+//signupのtop
+
+&__box__main__form__top__mail{
+  height:50px;
+  background:#ea352d;
+  display:flex;
+  border-radius: 4px;
+}
+
+&__box__main__form__top__mail__flex{
+  display:flex;
+  width:343px;
+}
+
+&__box__main__form__top__mail__flex{
+  padding-top:15px;
+}
+
+&__box__main__form__top__mail__flex__icon{
+  padding-left:20px;
+  color:#fff;
+}
+
+&__box__main__form__top__mail__flex__text{
+  padding-left:60px;
+  font-size:14px;
+  color:#fff;
+}
+a {
+  text-decoration: none;
+  }
+
+&__box__main__form__top__facebook{
+  margin-top:16px;
+  cursor: pointer;
+}
+
+.facebook-box{
+  background: #385185;
+  color: #fff;
+  height:50px;
+  width:343px;
+  border-radius: 4px;
+  display:flex;
+}
+
+.facebook-icon{
+  font-size:30px;
+  padding-left:10px;
+}
+
+&__box__main__form__top__facebook__text{
+  font-size:14px;
+  padding:5px 0 0 60px;
+}
+
+&__box__main__form__top__google{
+  margin-top:16px;
+  cursor: pointer;
+}
+
+.google-box{
+  color: #333;
+  height:50px;
+  width:343px;
+  border-radius: 4px;
+  display:flex;
+  border: 1px solid #ccc;
+}
+
+.google-icon{
+  font-size:30px;
+  padding-left:10px;
+}
+
+&__box__main__form__top__google__text{
+  font-size:14px;
+  padding:5px 0 0 70px;
+}
+
+&__empty{
+  height:90px;
+}
+
+&__header__imgage__margin{
+  margin-left:280px;
+}
+
+//signinのtop
+&__middle__box{
+  height:100%;
+  width:456px;
+  margin:0 auto;
+  background:white;
+}
+
+&__middle__box__account{
+  height:64px;
+  padding:40px 64px;
+  border-bottom: solid 1px rgb(239, 239, 239);
+  text-align: center;
+}
+
+&__middle__box__account__text{
+  text-align: center;
+  font-size:14px;
+  color: rgb(51, 51, 51);
+}
+
+&__middle__box__account__button{
+  width:340px;
+  line-height: 35px;
+  border: 1px solid #0099e8;
+  background: #0099e8;
+  margin-top:8px;
+  font-size:15px;
+}
+
+.account-color{
+  color:#fff;
+}
+
+&__middle__box__account__button__margin{
+  width:328px;
+  height:35px;
+}
+
+&__login__box{
+  background:white;
+  height:117px;
+  width:328px;
+  margin:0 auto;
+  padding:32px 64px;
+}
+
+&__form__box{
+  padding:24px 64px 32px;
+}
+
+.input-boxx{
+  height:30px;
+  width:310px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+&__form__box__pass{
+  margin-top:20px;
+}
+
+.pass-box{
+  color:#0099e8;
+  font-size:14px;
+}
+
+&__form__box__info{
+  margin-top:32px;
+}
 }
