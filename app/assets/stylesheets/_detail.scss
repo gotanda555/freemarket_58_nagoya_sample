@@ -1,0 +1,102 @@
+.detail__main{
+  color:#333;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  width:1440px;
+  height:1322px;
+  background-color:rgb(239, 239, 239);
+  padding-top:40px;
+
+  &__box{
+  margin:0 auto;
+  background-color:white;
+  width: 600px;
+  height:500px;
+  text-align: center;
+  padding:24px 40px 40px;
+
+    &__flame__title{
+      font-size:24px;
+      word-wrap:break-word;
+      line-height:1.4;
+      font-weight:normal;
+    }
+
+}
+}
+
+.detail__main__box__flame__content{
+  height:620;
+  width:420;
+  margin:16px 0 0;
+
+}
+.detail__main__box__flame__content__sub{
+  display:flex;
+  &__table{
+    float:right;
+    padding-left:30px;
+  }
+  &__itemphoto{
+  float:left;
+  height:375px;
+  width:300px;
+  background-color:rgb(239, 239, 239);
+    &__subphoto{
+      display:flex;
+      margin:0 auto;
+    }
+}
+
+}
+.tbody{
+  display: table-row-group;
+  vertical-align:middle;
+  border-color:inherit;
+  font-size:0.85em;
+}
+.tbody th{
+width: 41%;
+text-align:left;
+font-weight:400;
+background:#fafafa;
+}
+.tbody td{
+  width:180px;
+  text-align:left;
+  padding:8px;
+  border:1px solid #fafafa;
+}
+
+.item-user-rating{
+  margin-top:3px;
+  display:flex;
+  &__1{
+    display:flex;
+    padding-right:10px;
+  }
+  &__2{
+    display:flex;
+    padding-right:10px;
+  }
+  &__3{
+    display:flex;
+    padding-right:10px;
+  }
+}
+
+.laugh{
+  margin-right:3px;
+  color:red;
+  font-size:1.2em;
+}
+
+.normal{
+  margin-right:3px;
+  color:#fba933;
+  font-size:1.2em;
+}
+.bad{
+  margin-right:3px;
+  color:#6ab5b8;
+  font-size:1.2em;
+}
