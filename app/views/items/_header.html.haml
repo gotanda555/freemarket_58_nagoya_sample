@@ -23,10 +23,10 @@
       
       .headerBox__main__bottom__member
         .headerBox__main__bottom__member__new
-          =link_to "/users/sign_up" ,class:"headerBox__main__bottom__member__new__letter" do
+          =link_to new_user_registration_path ,class:"headerBox__main__bottom__member__new__letter" do
             新規会員登録
         .headerBox__main__bottom__member__login
-          =link_to"/users/sign_in",class:"headerBox__main__bottom__member__login__moji" do
+          =link_to new_user_session_path ,class:"headerBox__main__bottom__member__login__moji" do
             ログイン
 
 
