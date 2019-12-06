@@ -1,0 +1,74 @@
+.head
+.main
+  .main__contets
+    .main__contents__header
+      .main__contents__header__logo
+        =link_to "#" do
+          = image_tag  "fmarket_logo_red.svg",class:"logo"
+    .main__contents__item
+      .main__contents__item__bottom
+        .main__contents__item__bottom__box
+          .main__contents__item__bottom__box__head 商品の情報を入力
+          .main__contents__item__bottom__box__head__form
+            .main__contents__item__bottom__box__head__form__box
+              .main__contents__item__bottom__box__head__form__box__text
+                .main__contents__item__bottom__box__head__form__box__text__cover 商品画像
+                .main__contents__item__bottom__box__head__form__box__text__logo 必須
+              .main__contents__item__bottom__box__head__form__box__text__texts 最大10枚までアップロードできます
+              .main__contents__item__bottom__box__head__form__upload
+                .main__contents__item__bottom__box__head__form__upload__box
+                  .main__contents__item__bottom__box__head__form__upload__box__item
+                .main__contents__item__bottom__box__head__form__upload__drop
+                  .label-box__inner
+                    %label
+                      %input.input-default{:type => "file"}/
+                      .boxFileSelect 
+                        ドラッグアンドドロップ
+                        またはファイルをドラッグしてアップロード
+            .main__contents__item__bottom__box__head__form__goods
+              .main__contents__item__bottom__box__head__form__goods__name
+                .main__contents__item__bottom__box__head__form__goods__name__label 商品名
+                .main__contents__item__bottom__box__head__form__goods__name__label__logo 必須
+              .main__contents__item__bottom__box__head__form__goods__name__box
+                %label
+                  %input{placeholder: "商品名（必須40文字まで）", type: "text", class: "name-box"}
+              .main__contents__item__bottom__box__head__form__goods__explain
+                .main__contents__item__bottom__box__head__form__goods__explain__label 商品の説明
+                .main__contents__item__bottom__box__head__form__goods__explain__label__logo 必須
+              .main__contents__item__bottom__box__head__form__goods__explain__box
+                %label
+                  %input{placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）&#13;&#10;2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわ&#13;&#10;せやすいのでおすすめです。'.html_safe, type: "text", class: "explain-box"}
+            .main__contents__item__bottom__box__head__form__goods__detail
+              .main__contents__item__bottom__box__head__form__goods__detail__label 商品の詳細
+              .main__contents__item__bottom__box__head__form__goods__detail__group
+                .main__contents__item__bottom__box__head__form__goods__detail__group__category
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover カテゴリー
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__detail__group__select
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__select__box
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__select__box__bottom
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__select__box__container
+                .main__contents__item__bottom__box__head__form__goods__detail__group__condition
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover 商品の状態
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__detail__group__selects
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__container
+
+
+    -#             .main__contents__item__bottom__box__head__form__goods__title
+    -#               商品名
+    -#               .main__contents__item__bottom__box__head__form__goods__title__a
+    -#                 必須
+    -#             .main__contents__item__bottom__box__head__form__goods
+    -#           .main__contents__item__bottom__box__head__form
+    -#           .main__contents__item__bottom__box__head__form
+    -#           .main__contents__item__bottom__box__head__form
+    -#           .main__contents__item__bottom__box__head__form
+    -#           .main__contents__item__bottom__box__head__form
+    -#           .main__contents__item__bottom__box__head__form
+            
+    
+
+
