@@ -1,0 +1,48 @@
+.check
+  .check__header
+    %h1.check__header__logo
+      = link_to '#' do
+        =image_tag "fmarket_logo_red.svg", class:'check__header__logo__img'
+  .check__main
+    .check__main__flame
+      %h2.check__main__flame__theme 購入内容の確認
+      .check__main__flame__buy-item
+        .check__main__flame__buy-item__inner
+          %h3.check__main__flame__buy-item__inner__image
+            =image_tag "jeans.jpg", class:'check__main__flame__buy-item__inner__image__img'
+          %p.check__main__flame__buy-item__inner__name 138 pacorabanne ジーンズ レディース 備品
+          .check__main__flame__buy-item__inner__form
+            %p.check__main__flame__buy-item__inner__form__price ¥780
+            %span.check__main__flame__buy-item__inner__form__ship-cost 送料込み
+          %ul.check__main__flame__buy-item__inner__point
+            %li.check__main__flame__buy-item__inner__point__text ポイントはありません
+          %ul.check__main__flame__buy-item__inner__pay
+            %li.check__main__flame__buy-item__inner__pay__box
+              .check__main__flame__buy-item__inner__pay__box__amount 支払い金額
+              .check__main__flame__buy-item__inner__pay__box__price ¥780
+          = link_to '#' do
+            %button.check__main__flame__buy-item__inner__button 購入する
+          .check__main__flame__buy-item__inner__buy-user-info__pay
+            .check__main__flame__buy-item__inner__buy-user-info__pay__inner
+              .check__main__flame__buy-item__inner__buy-user-info__pay__inner__text 支払い方法
+              =link_to '#' do
+                %span.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__link 変更する
+              %p.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__card
+                クレジットカード
+                %br
+                ************5509
+                %br
+                有効期限09/23
+                =image_tag "jcb-logomark-img-01.gif", class:'check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__card__log'
+          .check__main__flame__buy-item__inner__buy-user-info__address
+            .check__main__flame__buy-item__inner__buy-user-info__pay__inner
+              .check__main__flame__buy-item__inner__buy-user-info__pay__inner__text 配送先
+              =link_to '#' do
+                %span.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__link 変更する
+              %p.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__card
+                〒451-0061
+                愛知県 名古屋市中村区那古野町
+                %br
+                山田 太郎
+
+  = render "signup/footer"
