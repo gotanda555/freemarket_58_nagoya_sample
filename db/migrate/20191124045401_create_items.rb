@@ -8,10 +8,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string      :size
       t.references  :brand, foreign_key: true
       t.string      :condition, null: false
-      
-
-      t.integer     :status, null: false
-
+      t.string      :burden, null: false
+      t.string      :region, null: false
+      t.string      :sending_days, null: false
+      t.integer     :price, null: false
       t.timestamps
     end
   end
