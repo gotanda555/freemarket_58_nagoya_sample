@@ -6,6 +6,16 @@ Rails.application.routes.draw do
   get   'users/:id'   =>  'users#show'
   get   'items/new'   =>  'items#new'
   get 'items/1/detail' => 'items#detail'
+
+  resources :mypages do
+    collection do
+      get 'card'
+      get 'identification'
+      get 'logout'
+      get 'profile'
+    end
+  end
+
   resources :signup do
     collection do
       get 'step1'
