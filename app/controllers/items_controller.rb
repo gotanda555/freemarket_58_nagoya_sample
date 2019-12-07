@@ -6,4 +6,7 @@ end
 def new
 end
 
+def check
+end
+
 end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get   'users/:id'   =>  'users#show'
   get   'items/new'   =>  'items#new'
   get 'items/1/detail' => 'items#detail'
+  get 'items/1/check' => 'items#check'
+
   resources :signup do
     collection do
       get 'step1'
