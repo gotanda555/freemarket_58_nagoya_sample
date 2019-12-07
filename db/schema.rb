@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_11_30_045744) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "status"
+    t.integer "status", null: false
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,8 +48,23 @@ ActiveRecord::Schema.define(version: 2019_11_30_045744) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.string "email", default: "", null: false
-    t.string "password", default: "", null: false
+    t.string "email", null: false
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_month", null: false
+    t.integer "birthdate_day", null: false
+    t.integer "phone_number", null: false
+    t.string "address_number", null: false
+    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_name", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_number"
+    t.text "introduce"
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

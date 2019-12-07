@@ -30,7 +30,7 @@
     .first-main__box__main
       .first-main__box__main__title
         支払い方法
-      = form_for @user, url: new_user_registration_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
+      = form_for @user, url: signup_index_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
         .first-main__box__main__form__top
           .first-main__box__main__form__top__group
             .first-main__box__main__form__top__group__title
