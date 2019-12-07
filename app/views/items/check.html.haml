@@ -20,7 +20,8 @@
             %li.check__main__flame__buy-item__inner__pay__box
               .check__main__flame__buy-item__inner__pay__box__amount 支払い金額
               .check__main__flame__buy-item__inner__pay__box__price ¥780
-          %button.check__main__flame__buy-item__inner__button 購入する
+          = link_to '#' do
+            %button.check__main__flame__buy-item__inner__button 購入する
           .check__main__flame__buy-item__inner__buy-user-info__pay
             .check__main__flame__buy-item__inner__buy-user-info__pay__inner
               .check__main__flame__buy-item__inner__buy-user-info__pay__inner__text 支払い方法
@@ -44,4 +45,4 @@
                 %br
                 山田 太郎
 
-  .check__footer
+  = render "signup/footer"
