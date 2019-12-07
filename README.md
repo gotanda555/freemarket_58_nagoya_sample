@@ -64,18 +64,6 @@ Things you may want to cover:
 - belongs_to :users
 
 
-## creditcardsテーブル_実装済
-|Column|Type|Options|
-|------|----|-------|
-|number|integer|null: false|
-|month|integer|null: false|
-|year|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association_ok
-- belongs_to :users
-
-
 ## evaluationsテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|

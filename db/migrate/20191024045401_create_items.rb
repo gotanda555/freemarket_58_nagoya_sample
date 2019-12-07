@@ -12,6 +12,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string      :region, null: false
       t.string      :sending_days, null: false
       t.integer     :price, null: false
+      t.references  :saler, foreign_key: true
+      t.references  :buyer, foreign_key: true
       t.timestamps
     end
   end
