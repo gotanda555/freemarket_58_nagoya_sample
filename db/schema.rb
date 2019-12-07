@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_065323) do
+ActiveRecord::Schema.define(version: 2019_11_24_050356) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "inital"
+    t.string "brandname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,6 +63,10 @@ ActiveRecord::Schema.define(version: 2019_12_07_065323) do
     t.string "name", null: false
     t.integer "status", null: false
     t.text "body"
+<<<<<<< HEAD
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+=======
     t.bigint "category_id"
     t.string "size"
     t.bigint "brand_id"
@@ -69,10 +75,15 @@ ActiveRecord::Schema.define(version: 2019_12_07_065323) do
     t.string "region", null: false
     t.string "sending_days", null: false
     t.integer "price", null: false
+    t.bigint "saler_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["saler_id"], name: "index_items_on_saler_id"
+>>>>>>> f5639b101cbd28221dac63173c5a8d0fa62ee191
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -122,8 +133,13 @@ ActiveRecord::Schema.define(version: 2019_12_07_065323) do
   add_foreign_key "comments", "users"
   add_foreign_key "evaluations", "users"
   add_foreign_key "images", "items"
+<<<<<<< HEAD
+=======
   add_foreign_key "items", "brands"
+  add_foreign_key "items", "buyers"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "salers"
+>>>>>>> f5639b101cbd28221dac63173c5a8d0fa62ee191
   add_foreign_key "profiles", "users"
   add_foreign_key "salers", "users"
 end
