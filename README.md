@@ -24,7 +24,7 @@ Things you may want to cover:
 * ...
 
 # DB設計
-## usersテーブル_ok
+## usersテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -42,7 +42,7 @@ Things you may want to cover:
 - has_many :groups
 
 
-## identificationsテーブル_ok
+## identificationsテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false|
@@ -64,7 +64,7 @@ Things you may want to cover:
 - belongs_to :users
 
 
-## creditcardsテーブル_ok
+## creditcardsテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|
 |number|integer|null: false|
@@ -76,7 +76,7 @@ Things you may want to cover:
 - belongs_to :users
 
 
-## evaluationsテーブル_ok
+## evaluationsテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|
 |good|integer|null: false|
@@ -88,7 +88,7 @@ Things you may want to cover:
 - belongs_to :users
 
 
-## profilesテーブル_ok
+## profilesテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
@@ -100,38 +100,33 @@ Things you may want to cover:
 
 
 
-## itemsテーブル
+## itemsテーブル_ok
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |status|integer|null: false|
-|image_id|integer||
+|body|text|
 
-
-|exhibitor_id|integer|null: false, foreign_key: true|
-|customer_id|integer|null: false, foreign_key: true|
+↓まだ
+|saler_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :users
 
 
-## imagesテーブル
+## imagesテーブル_実装済
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|status|integer|null: false|
-|image|integer||
-
-
-|exhibitor_id|integer|null: false, foreign_key: true|
-|customer_id|integer|null: false, foreign_key: true|
+|image|text||
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :users
 
 
 
-
+ーーーーーーーーーーーーーーーーーーーー
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
