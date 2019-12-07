@@ -24,10 +24,14 @@
           .main__item__box__list__women__item__box__in
             =link_to "/items/1/detail" ,class:"main__item__box__list__women__item__box__tag" do
               .main__item__box__list__women__item__box__image
+                = @images
                 .main__item__box__list__women__item__box__image__place
-                  .main__item__box__list__women__item__box__image__place__language ¥3,000
+                  .main__item__box__list__women__item__box__image__place__language
+                    = @item.price
               .main__item__box__list__women__item__box__text
-                .main__item__box__list__women__item__box__text__language ああああああ
+                .main__item__box__list__women__item__box__text__language
+                  = @item.name
+                
 
     .main__item__box__list__women
       .main__item__box__list__women__header
