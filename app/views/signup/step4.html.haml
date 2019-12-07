@@ -30,14 +30,14 @@
     .first-main__box__main
       .first-main__box__main__title
         支払い方法
-      .first-main__box__main__form
+      = form_for @user, url: new_user_registration_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
         .first-main__box__main__form__top
           .first-main__box__main__form__top__group
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name カード番号
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "半角数字のみ", type: "text", class: "input-box"}
+              -# %input{placeholder: "半角数字のみ", type: "text", class: "input-box"}
             .first-main__box__main__form__top__group__ame
               = image_tag "amex-logomark-img-04.gif",class:"first-main__box__main__form__top__group__ame__bland"
               = image_tag "diners-logomark-img-01.gif",class:"first-main__box__main__form__top__group__ame__bland"
@@ -50,46 +50,47 @@
               .first-main__box__main__form__top__group__title__name 有効期限
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %select{name:"year",class:"year-box"}
-                %option{value:""}--
-                %option{value:"01"}01
-                %option{value:"02"}02
-                %option{value:"03"}03
-                %option{value:"04"}04
-                %option{value:"05"}05
-                %option{value:"06"}06
-                %option{value:"07"}07
-                %option{value:"08"}08
-                %option{value:"09"}09
-                %option{value:"10"}10
-                %option{value:"11"}11
-                %option{value:"12"}12
-              .first-main__box__main__form__top__group__input__year 月
-              %select{name:"month",class:"year-box"}
-                %option{value:""}--
-                %option{value:"19"}19
-                %option{value:"20"}20
-                %option{value:"21"}21
-                %option{value:"22"}22
-                %option{value:"23"}23
-                %option{value:"24"}24
+              -# %select{name:"year",class:"year-box"}
+              -#   %option{value:""}--
+              -#   %option{value:"01"}01
+              -#   %option{value:"02"}02
+              -#   %option{value:"03"}03
+              -#   %option{value:"04"}04
+              -#   %option{value:"05"}05
+              -#   %option{value:"06"}06
+              -#   %option{value:"07"}07
+              -#   %option{value:"08"}08
+              -#   %option{value:"09"}09
+              -#   %option{value:"10"}10
+              -#   %option{value:"11"}11
+              -#   %option{value:"12"}12
+          -#     .first-main__box__main__form__top__group__input__year 月
+          -#     %select{name:"month",class:"year-box"}
+          -#       %option{value:""}--
+          -#       %option{value:"19"}19
+          -#       %option{value:"20"}20
+          -#       %option{value:"21"}21
+          -#       %option{value:"22"}22
+          -#       %option{value:"23"}23
+          -#       %option{value:"24"}24
 
-              .first-main__box__main__form__top__group__input__year 年
+          -#     .first-main__box__main__form__top__group__input__year 年
 
-          .first-main__box__main__form__top__group
-          #margin
-            .first-main__box__main__form__top__group__title
-              .first-main__box__main__form__top__group__title__name セキュリティコード
-              .first-main__box__main__form__top__group__title__box 必須
-            .first-main__box__main__form__top__group__input
-              %input{placeholder: "カード背面4桁もしくは3桁の番号", type: "email", class: "input-box"}
-          .first-main__box__main__form__under__log__xx
-            = icon('fas', 'question-circle', class: "icon-color")
-            = link_to "#",class:"infox" do
-              カード裏面の番号とは？
+          -# .first-main__box__main__form__top__group
+          -# #margin
+          -#   .first-main__box__main__form__top__group__title
+          -#     .first-main__box__main__form__top__group__title__name セキュリティコード
+          -#     .first-main__box__main__form__top__group__title__box 必須
+          -#   .first-main__box__main__form__top__group__input
+          -#     %input{placeholder: "カード背面4桁もしくは3桁の番号", type: "email", class: "input-box"}
+          -# .first-main__box__main__form__under__log__xx
+          -#   = icon('fas', 'question-circle', class: "icon-color")
+          -#   = link_to "#",class:"infox" do
+          -#     カード裏面の番号とは？
 
           .first-main__box__main__form__top__button
-            %button{type:"submit",class:"first-main__box__main__form__under__link"}
-              次へ進む
+            = f.submit "次へ進む",class:"first-main__box__main__form__under__link"
+            -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
+            -#   次へ進む
 
   = render "footer"
