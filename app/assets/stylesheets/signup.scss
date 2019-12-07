@@ -8,14 +8,15 @@
   background-color:rgb(239, 239, 239);
 
 &__header{
-  display:flex;
+
   text-align: center;
-  margin-left:350px;
+  width:300px;
+  margin:0 auto;
   height:128px;
 }
 
 &__header__imgage{
-  margin-top:40px;
+  padding-top:40px;
 }
 
 &__header__imgage__size{
@@ -463,9 +464,7 @@ a {
   height:90px;
 }
 
-&__header__imgage__margin{
-  margin-left:280px;
-}
+
 
 //signinのtop
 &__middle__box{
