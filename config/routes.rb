@@ -7,14 +7,12 @@ Rails.application.routes.draw do
   get   'items/new'   =>  'items#new'
   get 'items/1/detail' => 'items#detail'
 
-
-  resources :signup do
+  resources :mypages do
     collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4'
-      get 'done'
+      get 'card'
+      get 'identification'
+      get 'logout'
+      get 'profile'
     end
   end
 
