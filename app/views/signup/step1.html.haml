@@ -30,33 +30,36 @@
     .first-main__box__main
       .first-main__box__main__title
         会員情報入力
-      .first-main__box__main__form
+      = form_for @user, url: step2_signup_index_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
         .first-main__box__main__form__top
           .first-main__box__main__form__top__group
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name ニックネーム
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）メルカリ太郎", type: "text", class: "input-box"}
+              = f.text_field :nickname,placeholder: "例）メルカリ太郎",class: "input-box"
+              //%input{placeholder: "例）メルカリ太郎", type: "text", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name メールアドレス
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "PC・携帯どちらでも可", type: "email", class: "input-box"}
+              = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-box"
+              //%input{placeholder: "PC・携帯どちらでも可", type: "email", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name パスワード
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "7文字以上の半角英数字", type: "password", class: "input-box"}
+              = f.password_field :password,placeholder: "7文字以上の半角英数字",class: "input-box"
+              //%input{placeholder: "7文字以上の半角英数字", type: "password", class: "input-box"}
             .first-main__box__main__form__top__group__info ※ 英字と数字の両方を含めて設定してください
-            .first-main__box__main__form__top__group__check
-              .first-main__box__main__form__top__group__check__box
-                %input{type:"checkbox", class:"check-box"}
-              .first-main__box__main__form__top__group__check__name パスワードを表示する
+            -# .first-main__box__main__form__top__group__check
+            -#   .first-main__box__main__form__top__group__check__box
+            -#     %input{type:"checkbox", class:"check-box"}
+            -#   .first-main__box__main__form__top__group__check__name パスワードを表示する
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__hedding
@@ -69,23 +72,27 @@
               .first-main__box__main__form__top__group__title__name お名前（全角）
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）山田", type: "text", class: "input-box__flex"}
-              %input{placeholder: "例）彩", type: "text", class: "input-box__flex",id:"minute"}
+              = f.text_field :last_name,placeholder: "例）山田",class: "input-box__flex"
+              //%input{placeholder: "例）山田", type: "text", class: "input-box__flex"}
+              = f.text_field :first_name, placeholder: '例) 彩', class: "input-box__flex",id:"minute"
+              //%input{placeholder: "例）彩", type: "text", class: "input-box__flex",id:"minute"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name お名前カナ（全角）
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）ヤマダ", type: "text", class: "input-box__flex"}
-              %input{placeholder: "例）アヤ", type: "text", class: "input-box__flex",id:"minute"}
+              = f.text_field :last_name_kana,placeholder: "例）ヤマダ",class: "input-box__flex"
+              //%input{placeholder: "例）ヤマダ", type: "text", class: "input-box__flex"}
+              = f.text_field :first_name_kana, placeholder: '例) アヤ',class: "input-box__flex",id:"minute"
+              //%input{placeholder: "例）アヤ", type: "text", class: "input-box__flex",id:"minute"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name 生年月日
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %select{name:"year",class:"year-box"}
+              = f.select :birthdate_year, nil, {},{class: "year-box", id: "year"} do
                 %option{value:""}--
                 %option{value:"2019"}2019
                 %option{value:"2018"}2018
@@ -118,7 +125,7 @@
                 %option{value:"1991"}1991
                 %option{value:"1990"}1990
               .first-main__box__main__form__top__group__input__year 年
-              %select{name:"month",class:"year-box"}
+              = f.select :birthdate_month, nil, {},{class: "year-box", id: "month"} do
                 %option{value:""}--
                 %option{value:"1"}1
                 %option{value:"2"}2
@@ -133,7 +140,7 @@
                 %option{value:"11"}11
                 %option{value:"12"}12
               .first-main__box__main__form__top__group__input__year 月
-              %select{name:"day",class:"year-box"}
+              = f.select :birthdate_day, nil, {},{class: "year-box", id: "day"} do
                 %option{value:""}--
                 %option{value:"1"}1
                 %option{value:"2"}2
@@ -177,8 +184,9 @@
             = link_to "#",class:"info" do
               利用規約
             に同意したものとみなします。
-          %button{type:"submit",class:"first-main__box__main__form__under__link"}
-            次へ進む
+          = f.submit "次へ進む",class:"first-main__box__main__form__under__link"
+          -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
+          -#   次へ進む
           .first-main__box__main__form__under__log
             = link_to "#",class:"infox" do
               本人情報の登録について＞
