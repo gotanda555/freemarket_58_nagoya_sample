@@ -19,19 +19,20 @@
         .main__item__box__list__women__header__details 
           =link_to "#", class:"main__item__box__list__women__header__details__tag" do
             もっとみる ＞
-      .main__item__box__list__women__item
-        .main__item__box__list__women__item__box
-          .main__item__box__list__women__item__box__in
-            =link_to "/items/1/detail" ,class:"main__item__box__list__women__item__box__tag" do
-              .main__item__box__list__women__item__box__image
-                = @images
-                .main__item__box__list__women__item__box__image__place
-                  .main__item__box__list__women__item__box__image__place__language
-                    = @item.price
-              .main__item__box__list__women__item__box__text
-                .main__item__box__list__women__item__box__text__language
-                  = @item.name
-                
+      %ul.main__item__box__list__women__item
+        - @item.each do |item|
+          - if item.category_id == 1
+            %li.main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image,size: "184x198"
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
 
     .main__item__box__list__women
       .main__item__box__list__women__header
@@ -41,15 +42,20 @@
         .main__item__box__list__women__header__details
           =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
             もっとみる ＞
-      .main__item__box__list__women__item
-        .main__item__box__list__women__item__box
-          .main__item__box__list__women__item__box__in
-            =link_to "#" ,class:"main__item__box__list__women__item__box__tag" do
-              .main__item__box__list__women__item__box__image
-                .main__item__box__list__women__item__box__image__place
-                  .main__item__box__list__women__item__box__image__place__language ¥3,000
-              .main__item__box__list__women__item__box__text
-                .main__item__box__list__women__item__box__text__language ああああああ
+      %ul.main__item__box__list__women__item
+        - @item.each do |item|
+          - if item.category_id == 2
+            %li.main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image,size: "184x198"
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
 
 
 .main__item__header
@@ -73,15 +79,20 @@
         .main__item__box__list__women__header__details 
           =link_to "#" , class:"main__item__box__list__women__header__details__tag" do
             もっとみる ＞
-      .main__item__box__list__women__item
-        .main__item__box__list__women__item__box
-          .main__item__box__list__women__item__box__in
-            =link_to "#" ,class:"main__item__box__list__women__item__box__tag" do
-              .main__item__box__list__women__item__box__image
-                .main__item__box__list__women__item__box__image__place
-                  .main__item__box__list__women__item__box__image__place__language ¥3,000
-              .main__item__box__list__women__item__box__text
-                .main__item__box__list__women__item__box__text__language ああああああ
+      %ul.main__item__box__list__women__item
+        - @item.each do |item|
+          - if item.category_id == 3
+            %li.main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image,size: "184x198"
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
 
     .main__item__box__list__women
       .main__item__box__list__women__header
@@ -91,13 +102,18 @@
         .main__item__box__list__women__header__details
           =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
             もっとみる ＞
-      .main__item__box__list__women__item
-        .main__item__box__list__women__item__box
-          .main__item__box__list__women__item__box__in
-            =link_to "#" ,class:"main__item__box__list__women__item__box__tag" do
-              .main__item__box__list__women__item__box__image
-                .main__item__box__list__women__item__box__image__place
-                  .main__item__box__list__women__item__box__image__place__language ¥3,000
-              .main__item__box__list__women__item__box__text
-                .main__item__box__list__women__item__box__text__language ああああああ
+      %ul.main__item__box__list__women__item
+        - @item.each do |item|
+          - if item.category_id == 4
+            %li.main__item__box__list__women__item__box
+              .main__item__box__list__women__item__box__in
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                  .main__item__box__list__women__item__box__image
+                    = image_tag item.images[0].image,size: "184x198"
+                    .main__item__box__list__women__item__box__image__place            
+                      .main__item__box__list__women__item__box__image__place__language
+                        ¥#{item.price.to_s(:delimited)}
+                  .main__item__box__list__women__item__box__text
+                    .main__item__box__list__women__item__box__text__language
+                      = item.name
 
