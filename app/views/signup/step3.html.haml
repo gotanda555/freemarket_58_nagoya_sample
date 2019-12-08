@@ -30,21 +30,22 @@
     .first-main__box__main
       .first-main__box__main__title
         住所入力
-      .first-main__box__main__form
+      = form_for @user, url: step4_signup_index_path, method: :get, html: {class: "first-main__box__main__form"} do |f|
         .first-main__box__main__form__top
           .first-main__box__main__form__top__group
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name 郵便番号
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）123-4567", type: "text", class: "input-box"}
+              = f.text_field :address_number,placeholder: "例）123-4567",class: "input-box"
+              -# %input{placeholder: "例）123-4567", type: "text", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name 都道府県
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %select{name:"year",class:"pre-box"}
+              = f.select :address_prefecture,{class:"pre-box"} do
                 %option{value:"北海道"}北海道
                 %option{value:"青森"}青森
                 %option{value:"岩手"}岩手
@@ -98,30 +99,35 @@
               .first-main__box__main__form__top__group__title__name 市区町村
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）横浜市緑区", type: "email", class: "input-box"}
+              = f.text_field :address_name,placeholder: "例）横浜市緑区",class: "input-box"
+              -# %input{placeholder: "例）横浜市緑区", type: "email", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name 番地
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）青山1-1-1", type: "email", class: "input-box"}
+              = f.text_field :address_block,placeholder: "例）青山1-1-1",class: "input-box"
+              -# %input{placeholder: "例）青山1-1-1", type: "email", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name 建物名
               .first-main__box__main__form__top__group__title__box__nin 任意
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）柳ビル103", type: "email", class: "input-box"}
+              = f.text_field :address_building,placeholder: "例）柳ビル103",class: "input-box"
+              -# %input{placeholder: "例）柳ビル103", type: "email", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name 電話
               .first-main__box__main__form__top__group__title__box__nin 任意
             .first-main__box__main__form__top__group__input
-              %input{placeholder: "例）09012345678", type: "email", class: "input-box"}
+              = f.phone_field :address_phone_number,placeholder: "例）09012345678",class: "input-box"
+              -# %input{placeholder: "例）09012345678", type: "email", class: "input-box"}
           .first-main__box__main__form__top__button
-            %button{type:"submit",class:"first-main__box__main__form__under__link"}
-              次へ進む
+            = f.submit "次へ進む",class:"first-main__box__main__form__under__link"
+            -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
+            -#   次へ進む
 
   = render "footer"

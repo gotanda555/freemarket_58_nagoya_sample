@@ -10,9 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_065323) do
+ActiveRecord::Schema.define(version: 2019_11_24_050356) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "inital"
+    t.string "brandname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -69,10 +71,14 @@ ActiveRecord::Schema.define(version: 2019_12_07_065323) do
     t.string "region", null: false
     t.string "sending_days", null: false
     t.integer "price", null: false
+    t.bigint "saler_id"
+    t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["saler_id"], name: "index_items_on_saler_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,8 +98,23 @@ ActiveRecord::Schema.define(version: 2019_12_07_065323) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.string "email", default: "", null: false
-    t.string "password", default: "", null: false
+    t.string "email", null: false
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "birthdate_year", null: false
+    t.integer "birthdate_month", null: false
+    t.integer "birthdate_day", null: false
+    t.integer "phone_number", null: false
+    t.string "address_number", null: false
+    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_name", null: false
+    t.string "address_block", null: false
+    t.string "address_building"
+    t.integer "address_phone_number"
+    t.text "introduce"
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -108,7 +129,9 @@ ActiveRecord::Schema.define(version: 2019_12_07_065323) do
   add_foreign_key "evaluations", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
+  add_foreign_key "items", "buyers"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "salers"
   add_foreign_key "profiles", "users"
   add_foreign_key "salers", "users"
 end
