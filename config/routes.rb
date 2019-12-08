@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   
   get 'items/1/check' => 'items#check'
 
+  resources :users, only: [:edit, :update]
+
   resources :mypages do
     collection do
       get 'card'
