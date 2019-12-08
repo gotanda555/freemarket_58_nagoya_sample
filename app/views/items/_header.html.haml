@@ -22,11 +22,30 @@
       
       
       .headerBox__main__bottom__member
-        .headerBox__main__bottom__member__new
-          =link_to signup_index_path ,class:"headerBox__main__bottom__member__new__letter" do
-            新規会員登録
-        .headerBox__main__bottom__member__login
-          =link_to new_user_session_path ,class:"headerBox__main__bottom__member__login__moji" do
-            ログイン
+        -if user_signed_in?
+          .headerBox__main__bottom__member__check
+            =link_to "#" ,class:"header-linkto" do
+              = icon('far', 'heart', class: "header-check-size")
+              いいね！一覧
+          .headerBox__main__bottom__member__check
+            =link_to "#" ,class:"header-linkto" do
+              = icon('far', 'bell', class: "header-check-size")
+              お知らせ
+          .headerBox__main__bottom__member__check
+            =link_to "#" ,class:"header-linkto" do
+              = icon('fas', 'check', class: "header-check-size")
+              やることリスト
+          .headerBox__main__bottom__member__mypage
+            =link_to "/mypages" ,class:"header-linkto" do
+              = icon('fas', 'user-circle', class: "header-icon-size")
+              マイページ
+  
+        -else
+          .headerBox__main__bottom__member__new
+            =link_to signup_index_path ,class:"headerBox__main__bottom__member__new__letter" do
+              新規会員登録
+          .headerBox__main__bottom__member__login
+            =link_to new_user_session_path ,class:"headerBox__main__bottom__member__login__moji" do
+              ログイン
 
 
