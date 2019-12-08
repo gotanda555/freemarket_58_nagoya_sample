@@ -8,14 +8,19 @@
   background-color:rgb(239, 239, 239);
 
 &__header{
-  display:flex;
   text-align: center;
-  margin-left:350px;
+  width:300px;
+  margin:0 auto;
   height:128px;
 }
 
+.width-size{
+  width:750px;
+  display:flex;
+}
+
 &__header__imgage{
-  margin-top:40px;
+  padding-top:40px;
 }
 
 &__header__imgage__size{
@@ -37,9 +42,6 @@
   color:#888;
 }
 
-&__box{
-  width:1440px;
-}
 
 &__box__main{
   width:700px;
@@ -193,8 +195,7 @@
   color:#0099EB;
 }
 
-&__box__main__form__under__link{
-  margin-top:32px;
+.submit-scss{
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
@@ -205,7 +206,9 @@
   transition: all ease-out .3s;
   cursor: pointer;
   text-align: center;
+  border-radius: 4px;
 }
+
 
 .infox{
   text-decoration: none;
@@ -250,6 +253,10 @@
   font-size:12px;
   text-align:center;
   margin-top:10px;
+}
+
+.first-main__box__main__form__top__mail:hover{
+  opacity:0.7;
 }
 
 //Step2
@@ -466,9 +473,7 @@ a {
   height:90px;
 }
 
-&__header__imgage__margin{
-  margin-left:280px;
-}
+
 
 //signinのtop
 &__middle__box{

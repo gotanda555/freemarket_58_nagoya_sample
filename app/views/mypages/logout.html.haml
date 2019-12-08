@@ -77,7 +77,7 @@
         %h3.mypage__main__margin__left__head 設定
         %ul.mypage__main__margin__left__ul
           %li.mypage__main__margin__left__ul__text.a
-            = link_to "/mypages/profile" ,class:"mypage-text" do
+            = link_to edit_user_path(current_user) ,class:"mypage-text" do
               プロフィール
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
@@ -109,8 +109,7 @@
       .mypage__main__margin__right
         .mypage__main__margin__right__logout
           .mypage__main__margin__right__logout__content
-            %button{type:"submit",class:"card-button"}
-              ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button"
 
   .main__bottom
     = render "/items/bottom"
