@@ -116,5 +116,36 @@ input{
     border-radius: 5px;
     margin-right:10px;
   }
+
+.header-linkto{
+  text-decoration: none;
+  color:#434a54;
+  font-size:14px;
+}
+
+.header-icon-size{
+  font-size:2.5em;
+  vertical-align: middle;
+}
+
+.header-check-size{
+  font-size:1em;
+  padding-right:10px;
+}
+
+.headerBox__main__bottom__member__check{
+  margin:0 30px 0 0;
+  padding-top:5px;
+}
+
+.header-linkto:hover{
+  color:rgb(0, 149, 238);
+}
+
+.headerBox__main__bottom__member__login__moji:hover{
+  color:white;
+  background:rgb(0, 149, 238);
+}
+
 }
 

@@ -45,7 +45,7 @@
               .first-main__box__main__form__top__group__title__name 都道府県
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              = f.select :address_prefecture,{class:"pre-box"} do
+              = f.select :address_prefecture,nil, {},{class: "pre-box", id: "prefecture"} do
                 %option{value:"北海道"}北海道
                 %option{value:"青森"}青森
                 %option{value:"岩手"}岩手
@@ -126,7 +126,7 @@
               = f.phone_field :address_phone_number,placeholder: "例）09012345678",class: "input-box"
               -# %input{placeholder: "例）09012345678", type: "email", class: "input-box"}
           .first-main__box__main__form__top__button
-            = f.submit "次へ進む",class:"first-main__box__main__form__under__link"
+            = f.submit "次へ進む",class:"submit-scss"
             -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
             -#   次へ進む
 

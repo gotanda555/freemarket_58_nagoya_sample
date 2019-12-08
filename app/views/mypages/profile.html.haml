@@ -107,18 +107,21 @@
 
 
       .mypage__main__margin__right
-        .mypage__main__margin__right__profile
+        = form_for @user, url: mypage_path(current_user) , method: :patch, html:{class: "mypage__main__margin__right__profile"} do |f|
           .mypage__main__margin__right__profile__top プロフィール
           .mypage__main__margin__right__profile__form
             .mypage__main__margin__right__profile__form__backimage
               = icon('fas', 'user-circle', class: "pro-icon")
-              %input{type: "text", class: "pro-input"}
+              = f.text_field :nickname, value: "#{@user.nickname}" ,class: "pro-input"
+              //%input{type: "text", class: "pro-input"}
           .mypage__main__margin__right__profile__field
             .mypage__main__margin__right__profile__field__box
-              %textarea{placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。", type: "text", class: "pro-textarea"}
+              = f.text_area :introduce, value: "#{@user.introduce}",placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。",class: "pro-textarea"
+              -# %textarea{placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。", type: "text", class: "pro-textarea"}
             .mypage__main__margin__right__profile__field__button
-              %button{type:"submit",class:"iden-button"}
-                登録する
+              = f.submit "変更する", class:"iden-button"
+              -# %button{type:"submit",class:"iden-button"}
+                -# 登録する
 
   .main__bottom
     = render "/items/bottom"

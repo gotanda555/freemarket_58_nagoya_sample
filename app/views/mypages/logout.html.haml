@@ -109,8 +109,7 @@
       .mypage__main__margin__right
         .mypage__main__margin__right__logout
           .mypage__main__margin__right__logout__content
-            %button{type:"submit",class:"card-button"}
-              ログアウト
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button"
 
   .main__bottom
     = render "/items/bottom"

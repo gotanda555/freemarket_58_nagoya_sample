@@ -111,7 +111,8 @@
           .mypage__main__margin__right__header__image
             = link_to "#" , class:"mypage-header" do
               = icon('fas', 'user-circle', class: "human-icon")
-              .mypage__main__margin__right__header__image__user xxxxxxx
+              .mypage__main__margin__right__header__image__user
+                = current_user.nickname
               .mypage__main__margin__right__header__image__text
                 .mypage__main__margin__right__header__image__text__eva 評価 xx
                 .mypage__main__margin__right__header__image__text__ex 出品数 xx

@@ -38,7 +38,6 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.text_field :nickname,placeholder: "例）メルカリ太郎",class: "input-box"
-              //%input{placeholder: "例）メルカリ太郎", type: "text", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -46,7 +45,6 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-box"
-              //%input{placeholder: "PC・携帯どちらでも可", type: "email", class: "input-box"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -54,7 +52,6 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.password_field :password,placeholder: "7文字以上の半角英数字",class: "input-box"
-              //%input{placeholder: "7文字以上の半角英数字", type: "password", class: "input-box"}
             .first-main__box__main__form__top__group__info ※ 英字と数字の両方を含めて設定してください
             -# .first-main__box__main__form__top__group__check
             -#   .first-main__box__main__form__top__group__check__box
@@ -184,9 +181,8 @@
             = link_to "#",class:"info" do
               利用規約
             に同意したものとみなします。
-          = f.submit "次へ進む",class:"first-main__box__main__form__under__link"
-          -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
-          -#   次へ進む
+          .first-main__box__main__form__top__button
+            = f.submit "次へ進む",class:"submit-scss"
           .first-main__box__main__form__under__log
             = link_to "#",class:"infox" do
               本人情報の登録について＞
