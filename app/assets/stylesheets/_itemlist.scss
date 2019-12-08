@@ -102,13 +102,16 @@
 
 &__box__list__women__item{
   margin-top:10px;
-  display:flex;
+  word-break: break-all;
+  width:1020px;
+  overflow:hidden;
 }
 
 &__box__list__women__item__box{
   width: 184px;
   height:247px;
   padding:10px;
+  float:left;
 }
 
 &__box__list__women__item__box__in{
@@ -127,10 +130,14 @@
 &__box__list__women__item__box__image{
   background:gray;
   height:188px;
+  position: relative;
 }
 
 &__box__list__women__item__box__image__place{
-  padding-top:150px;
+  //padding-top:150px;
+  width:100%;
+  position:absolute;
+  bottom:10px;
 }
 
 &__box__list__women__item__box__image__place__language{
@@ -139,6 +146,8 @@
   color:white;
   text-align:center;
   width:88px;
+  opacity:0.5;
+
 }
 
 &__box__list__women__item__box__text{
@@ -148,7 +157,7 @@
 }
 
 &__box__list__women__item__box__text__language{
-  padding:10px 10px 10px;
+  padding:15px 10px 10px;
 }
 
 }
