@@ -37,7 +37,8 @@
                   %tr
                     %th カテゴリー
                     %td
-                      = link_to 'レディース', '#' 
+                      = link_to '#' do
+                        = @item.category.name
                       %br
                       = link_to '＞ パンツ', '#'
                       %br
@@ -45,25 +46,31 @@
                   %tr
                     %th ブランド
                     %td 
-                      = link_to 'サムシング', '#'
+                      = link_to '#' do
+                        = @item.brand_id
                   %tr
                     %th 商品のサイズ
-                    %td XS(SS)
+                    %td 
+                      = @item.size
                   %tr
                     %th 商品の状態
-                    %td 目立った傷や汚れなし
+                    %td
+                      = @item.condition
                   %tr
                     %th 配送料の負担
-                    %td 送料込み(出品者負担)
+                    %td
+                      = @item.burden
                   %tr
                     %th 配送の方法
                     %td ゆうゆうメルカリ便
                   %tr
                     %th 配送元地域
-                    %td 兵庫県
+                    %td
+                      = @item.region
                   %tr
                     %th 配送日の目安
-                    %td 1〜2日で発送
+                    %td
+                      = @item.sending_days
             .detail__main__box__flame__content__itemprice
               %span.detail__main__box__flame__content__itemprice__price ¥7,000
               %span.detail__main__box__flame__content__itemprice__tax (税込)
