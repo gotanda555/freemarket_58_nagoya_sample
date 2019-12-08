@@ -5,19 +5,25 @@
     .detail__main
       .detail__main__box
         .detail__main__box__flame
-          %h3.detail__main__box__flame__title カーディガンピンクカーデ
+          %h3.detail__main__box__flame__title 
+            =@item.name
           .detail__main__box__flame__content
             .detail__main__box__flame__content__sub
               .detail__main__box__flame__content__sub__itemphoto
                 .detail__main__box__flame__content__sub__itemphoto__mainphoto
-                  = link_to image_tag('jeans.jpg',width:'180', height:'300')     
+                  = image_tag @item.images[0].image, class:'detail__main__box__flame__content__sub__itemphoto__mainphoto__size'
+                  //= image_tag @item.images[0].image,size: "180x300"
+                  //= link_to image_tag('jeans.jpg',width:'180', height:'300')     
                 .detail__main__box__flame__content__sub__itemphoto__subphoto
-                  .detail__main__box__flame__content__sub__itemphoto__subphoto__no1
-                    = link_to image_tag('jeans.jpg',width:'60', height:'60')
-                  .detail__main__box__flame__content__sub__itemphoto__subphoto__no2
-                    = link_to image_tag('jeans_back.jpg',width:'60', height:'60')
-                  .detail__main__box__flame__content__sub__itemphoto__subphoto__no3 
-                    = link_to image_tag('jeans_tag.jpg',width:'60', height:'60')              
+                  - if @item.images[1].present?
+                    .detail__main__box__flame__content__sub__itemphoto__subphoto__box
+                      = image_tag @item.images[1].image, class:'detail__main__box__flame__content__sub__itemphoto__subphoto__box__size'
+                  - if @item.images[2].present?
+                    .detail__main__box__flame__content__sub__itemphoto__subphoto__box
+                      = image_tag @item.images[2].image, class:'detail__main__box__flame__content__sub__itemphoto__subphoto__box__size'
+                  - if @item.images[3].present?
+                    .detail__main__box__flame__content__sub__itemphoto__subphoto__box
+                      = image_tag @item.images[3].image, class:'detail__main__box__flame__content__sub__itemphoto__subphoto__box__size'             
               .detail__main__box__flame__content__sub__table
                 %table.tbody{border:"1"}
                   %tr
@@ -65,7 +71,7 @@
                     %th 配送日の目安
                     %td 1〜2日で発送
             .detail__main__box__flame__content__itemprice
-              %span.detail__main__box__flame__content__itemprice__price ¥7,000
+              %span.detail__main__box__flame__content__itemprice__price ¥#{@item.price.to_s(:delimited)}
               %span.detail__main__box__flame__content__itemprice__tax (税込)
               %span.detail__main__box__flame__content__itemprice__shipfree 送料込み
             = link_to "/items/1/check", class:'detail__main__box__flame__content__item-buy-btn' do
@@ -73,27 +79,8 @@
             .detail__main__box__flame__content__itemdescription
               %p.detail__main__box__flame__content__itemdescription__inner 商品の説明はありません
             .detail__main__box__flame__content__mainitemdescription
-              %p.detail__main__box__flame__content__mainitemdescription__inner
-              ご覧下さりありがとうございます。
-              %br
-              こちらはクニオコレクション
-              パンツ
-              ブラック
-              日本製
-              たけ102センチ
-              %br
-              日本製で上質です。
-              サイドがリブ編み異素材仕様で
-              脚が長く細く見えます(^^)
-              ステッチめ可愛いです。
-              ウエストはゴムで楽です。
-              68〜76対応
-              %br
-              目立った傷や傷みは見当たりませんが、
-              ブラックのお色なので
-              やや傷や汚れありとさせていただきました。
-              %br
-              ご検討お願いします。
+              %p.detail__main__box__flame__content__mainitemdescription__inner 
+              =@item.body
             .detail__main__box__flame__content__item-btn-container
               .detail__main__box__flame__content__item-btn-container__item-btn-left 
                 %button.detail__main__box__flame__content__item-btn-container__item-btn-left__good

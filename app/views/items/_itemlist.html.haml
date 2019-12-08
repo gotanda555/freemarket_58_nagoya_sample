@@ -20,7 +20,7 @@
           =link_to "#", class:"main__item__box__list__women__header__details__tag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @item.each do |item|
+        - @items.each do |item|
           - if item.category_id == 1
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
@@ -43,7 +43,7 @@
           =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @item.each do |item|
+        - @items.each do |item|
           - if item.category_id == 2
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
@@ -80,7 +80,7 @@
           =link_to "#" , class:"main__item__box__list__women__header__details__tag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @item.each do |item|
+        - @items.each do |item|
           - if item.category_id == 3
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
@@ -103,7 +103,7 @@
           =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @item.each do |item|
+        - @items.each do |item|
           - if item.category_id == 4
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
