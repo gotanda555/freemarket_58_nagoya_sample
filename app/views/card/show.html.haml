@@ -107,21 +107,17 @@
 
 
       .mypage__main__margin__right
-        .mypage__main__margin__right__card
-          .mypage__main__margin__right__card__top 支払い方法
-          .mypage__main__margin__right__card__form
-            .mypage__main__margin__right__card__form__top
-              .mypage__main__margin__right__card__form__top__text クレジットカード一覧
-            .mypage__main__margin__right__card__form__bottom
-              = link_to "/card/new" ,class:"card-flex" do
-                .mypage__main__margin__right__card__form__bottom__icon
-                  = icon('far', 'credit-card',  class: "")
-                .mypage__main__margin__right__card__form__bottom__text
-                  クレジットカードを追加する
-            .mypage__main__margin__right__card__form__under
-              = link_to "#",class:"card-icon" do
-                支払い方法について
-                = icon('fas', 'chevron-right',  class: "")
+        %label 登録クレジットカード情報
+        %br
+        = "**** **** **** " + @default_card_information.last4
+        %br
+        - exp_month = @default_card_information.exp_month.to_s
+        - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+        = exp_month + " / " + exp_year
+        = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+          %input{ type: "hidden", name: "card_id", value: "" }
+          %button 削除する
+
 
   .main__bottom
     = render "/items/bottom"
