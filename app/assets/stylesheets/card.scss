@@ -1,3 +1,214 @@
-// Place all the styles related to the card controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage{
+  height:100%;
+
+&__main__margin__right__credit{
+  background:#fff;
+}
+
+&__main__margin__right__credit__header{
+  font-size:24px;
+  padding:8px 24px;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+&__main__margin__right__credit__regi{
+  padding:40px 40px 64px;
+}
+
+&__main__margin__right__credit__regi__card{
+  max-width: 343px;
+  margin:0 auto;
+}
+
+&__main__margin__right__credit__regi__card__number__text{
+  display:flex;
+}
+
+&__main__margin__right__credit__regi__card__number__text__text1{
+  font-size:14px;
+  font-weight:bold;
+}
+
+&__main__margin__right__credit__regi__card__number__text__text2{
+  background: #ea352d;
+  margin: 0 0 5px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.number{
+  height:30px;
+  width:309px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+&__main__margin__right__credit__regi__card__day{
+  margin-top:32px;
+}
+
+&__main__margin__right__credit__regi__card__day__text{
+  display:flex;
+}
+
+&__main__margin__right__credit__regi__card__day__text1{
+  font-size:14px;
+  font-weight:bold;
+}
+
+&__main__margin__right__credit__regi__card__day__text2{
+  background: #ea352d;
+  margin: 0 0 5px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+&__main__margin__right__credit__regi__card__day__form{
+  display:flex;
+}
+
+
+
+&__main__margin__right__credit__regi__card__security{
+  margin-top:32px;
+}
+
+&__main__margin__right__credit__regi__card__security__text{
+  display:flex;
+}
+
+&__main__margin__right__credit__regi__card__security__text__text1{
+  font-size:14px;
+  font-weight:bold;
+}
+
+&__main__margin__right__credit__regi__card__security__text__text2{
+  background: #ea352d;
+  margin: 0 0 5px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.cvc{
+  height:30px;
+  width:309px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.question-size{
+  text-decoration: none;
+  color:#0099EB;
+  font-size:14px;
+  float:right;
+  margin-top:5px;
+}
+
+
+#exp_month,#exp_year{
+  height:50px;
+  width:100px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+&__main__margin__right__credit__regi__card__day__form__monthtext{
+  padding:15px;
+}
+
+&__main__margin__right__credit__regi__card__day__form__yeartext{
+  padding:15px;
+}
+
+
+
+
+&__main__margin__right__credit__regi__card__submit{
+  margin-top:42px;
+}
+
+#token_submit{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+
+
+
+//show
+&__main__margin__right__credit__number{
+  padding:64px;
+}
+
+.visa-size{
+  width:50px;
+  height:30px;
+}
+
+&__main__margin__right__credit__number__form__header{
+  max-width: 320px;
+  margin: 0 auto;
+  font-weight:bold;
+}
+
+&__main__margin__right__credit__number__form__info{
+  max-width: 320px;
+  margin: 0 auto;
+  border-bottom: 1px solid #eee;
+}
+
+.padding-credit{
+  padding:24px 0;
+}
+
+button{
+  padding: 4px 6px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #ea352d;
+  color: #ea352d;
+  font-size:14px;
+  float:right;
+}
+
+&__main__margin__right__credit__link{
+  text-align: right;
+  padding-top:32px;
+}
+
+.credit-link{
+  text-decoration: none;
+  color:#0099EB;
+  font-size:14px;
+  cursor: pointer;
+}
+
+
+}

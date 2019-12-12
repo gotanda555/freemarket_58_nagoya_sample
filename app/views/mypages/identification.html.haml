@@ -85,7 +85,7 @@
               発生元・お届け先住所変更
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
-            = link_to "/mypages/card" ,class:"mypage-text" do
+            = link_to "/card/show" ,class:"mypage-text" do
               支払い方法
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
@@ -215,14 +215,15 @@
               .mypage__main__margin__right__identification__form__group__input
                 %input{placeholder: "例）柳ビル103", type: "text", class: "iden-size"}
 
-            .mypage__main__margin__right__identification__form__group
-              %button{type:"submit",class:"iden-button"}
-                登録する
+            
+            %button{type:"submit",class:"iden-button"}
+              登録する
 
             .mypage__main__margin__right__identification__form__group
-              = link_to "#",class:"upload-color" do
-                本人情報の登録について
-                = icon('fas', 'chevron-right')
+              .mypage__main__margin__right__identification__form__group__upload
+                = link_to "#",class:"upload-color" do
+                  本人情報の登録について
+                  = icon('fas', 'chevron-right')
 
   .main__bottom
     = render "/items/bottom"

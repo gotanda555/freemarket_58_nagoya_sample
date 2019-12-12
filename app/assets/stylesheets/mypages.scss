@@ -300,10 +300,14 @@
   margin-top:8px;
 }
 
+&__main__margin__right__identification__form__group__upload{
+  text-align:right;
+  margin-top:140px;
+}
+
 .upload-color{
   text-decoration: none;
   color:#0099EB;
-  float:right;
   font-size:14px;
 }
 
@@ -371,6 +375,7 @@
   width:100%;
   line-height: 48px;
   cursor: pointer;
+  margin-top:40px;
 }
 
 .right{
