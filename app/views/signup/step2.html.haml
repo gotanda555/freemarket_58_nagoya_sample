@@ -37,13 +37,10 @@
               .first-main__box__main__form__top__group__title__name 携帯電話の番号
             .first-main__box__main__form__top__group__input
               = f.phone_field :phone_number,placeholder: "携帯電話の番号を入力",class: "input-box"
-              //%input{placeholder: "携帯電話の番号を入力", type: "tel", class: "input-box"}
           .first-main__box__main__form__top__sns
             本人確認のため、携帯電話のSNS（ショートメッセージサービス）を利用して認証を行います。
           .first-main__box__main__form__top__button
             = f.submit "次へ進む",class:"submit-scss"
-            -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
-            -#   SNSを送信する
           .first-main__box__main__form__top__sns
             ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
 
