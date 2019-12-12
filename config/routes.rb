@@ -17,7 +17,6 @@ end
       get 'card'
       get 'identification'
       get 'logout'
-      get 'profile'
     end
   end
 
