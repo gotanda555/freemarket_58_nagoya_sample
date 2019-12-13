@@ -36,7 +36,6 @@ class SignupController < ApplicationController
     session[:address_building] = user_params[:address_building]
     session[:address_phone_number] = user_params[:address_phone_number]
     @user = User.new # 新規インスタンス作成
-    # @user.build_card
   end
 
   def create
@@ -59,9 +58,6 @@ class SignupController < ApplicationController
       address_building: session[:address_building],
       address_phone_number: session[:address_phone_number],
     )
-
-
-    # @user.build_card(user_params[:card_attributes])
 
     if @user.save
       # ログインするための情報を保管
@@ -107,7 +103,6 @@ class SignupController < ApplicationController
       :address_block,
       :address_building,
       :address_phone_number,
-      # card_attributes: [:id, :user_id, :customer_id, :card_id]
   )
   end
 

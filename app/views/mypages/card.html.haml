@@ -85,7 +85,7 @@
               発生元・お届け先住所変更
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.bold-color
-            = link_to "/card/show" ,class:"mypage-text" do
+            = link_to card_index_path ,class:"mypage-text" do
               支払い方法
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
@@ -113,7 +113,7 @@
             .mypage__main__margin__right__card__form__top
               .mypage__main__margin__right__card__form__top__text クレジットカード一覧
             .mypage__main__margin__right__card__form__bottom
-              = link_to "/card/new" ,class:"card-flex" do
+              = link_to new_card_path ,class:"card-flex" do
                 .mypage__main__margin__right__card__form__bottom__icon
                   = icon('far', 'credit-card',  class: "")
                 .mypage__main__margin__right__card__form__bottom__text

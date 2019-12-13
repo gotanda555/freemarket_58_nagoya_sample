@@ -8,5 +8,4 @@ class User < ApplicationRecord
   has_one :card
 
   validates :nickname, presence: true
-  # accepts_nested_attributes_for :card
 end
