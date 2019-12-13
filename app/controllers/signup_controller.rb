@@ -1,5 +1,6 @@
 class SignupController < ApplicationController
 
+
   def index
   end
 
@@ -61,6 +62,15 @@ class SignupController < ApplicationController
     if @user.save
       # ログインするための情報を保管
       session[:id] = @user.id
+      
+      require "payjp"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      customer = Payjp::Customer.create(
+        card: params['payjp-token'],
+      )
+      @card = Card.new(user_id: session[:id], customer_id: customer.id, card_id: customer.default_card)
+      @card.save
+      
       redirect_to done_signup_index_path
     else
       render '/signup/step1'
