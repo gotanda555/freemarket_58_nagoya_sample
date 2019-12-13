@@ -121,15 +121,24 @@
 
             .mypage__main__margin__right__identification__form__group
               .mypage__main__margin__right__identification__form__group__top お名前
-              .mypage__main__margin__right__identification__form__group__under メルカリ 太郎
+              .mypage__main__margin__right__identification__form__group__under 
+                = current_user.last_name
+                = current_user.first_name 
 
             .mypage__main__margin__right__identification__form__group
               .mypage__main__margin__right__identification__form__group__top お名前カナ
-              .mypage__main__margin__right__identification__form__group__under メルカリ タロウ
+              .mypage__main__margin__right__identification__form__group__under
+                = current_user.last_name_kana
+                = current_user.first_name_kana
 
             .mypage__main__margin__right__identification__form__group
               .mypage__main__margin__right__identification__form__group__top 生年月日
-              .mypage__main__margin__right__identification__form__group__under 2000/02/22
+              .mypage__main__margin__right__identification__form__group__under.display
+                = current_user.birthdate_year
+                .slash /
+                = current_user.birthdate_month
+                .slash /
+                = current_user.birthdate_day
 
             .mypage__main__margin__right__identification__form__group
               .mypage__main__margin__right__identification__form__group__flex
