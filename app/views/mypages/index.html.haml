@@ -77,7 +77,7 @@
         %h3.mypage__main__margin__left__head 設定
         %ul.mypage__main__margin__left__ul
           %li.mypage__main__margin__left__ul__text.a
-            = link_to "/mypages/profile" ,class:"mypage-text" do
+            = link_to edit_user_path(current_user) ,class:"mypage-text" do
               プロフィール
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
@@ -85,7 +85,7 @@
               発生元・お届け先住所変更
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
-            = link_to "/mypages/card" ,class:"mypage-text" do
+            = link_to card_index_path ,class:"mypage-text" do
               支払い方法
               = icon('fas', 'chevron-right',  class: "right")
           %li.mypage__main__margin__left__ul__text.a
@@ -111,7 +111,8 @@
           .mypage__main__margin__right__header__image
             = link_to "#" , class:"mypage-header" do
               = icon('fas', 'user-circle', class: "human-icon")
-              .mypage__main__margin__right__header__image__user xxxxxxx
+              .mypage__main__margin__right__header__image__user
+                = current_user.nickname
               .mypage__main__margin__right__header__image__text
                 .mypage__main__margin__right__header__image__text__eva 評価 xx
                 .mypage__main__margin__right__header__image__text__ex 出品数 xx

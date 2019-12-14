@@ -13,7 +13,7 @@
 
 &__main{
   background:rgb(239, 239, 239);
-  width:1440px;
+  width:100%;
   box-shadow: 0 0 3px 3px rgba(0,0,0,0.16);
 }
 
@@ -300,10 +300,14 @@
   margin-top:8px;
 }
 
+&__main__margin__right__identification__form__group__upload{
+  text-align:right;
+  margin-top:140px;
+}
+
 .upload-color{
   text-decoration: none;
   color:#0099EB;
-  float:right;
   font-size:14px;
 }
 
@@ -371,10 +375,15 @@
   width:100%;
   line-height: 48px;
   cursor: pointer;
+  margin-top:40px;
 }
 
 .right{
   float:right;
+}
+
+.display{
+  display:flex;
 }
 
 //プロフィール
@@ -496,18 +505,25 @@
   border-top: 1px solid #f5f5f5;
 }
 
-.card-button{
+
+&__main__margin__right__logout__content{
   background:#ea352d;
   border: 1px solid #ea352d;
   color: #fff;
   font-size: 14px;
   cursor: pointer;
   line-height: 48px;
+  text-align: center;
   width:320px;
-  margin-left:130px;
+  margin:0 auto;
 }
 
-.card-button:hover{
+.button{
+  text-decoration: none;
+  color: #fff;
+}
+
+&__main__margin__right__logout__content:hover{
   opacity:0.7;
 }
 }

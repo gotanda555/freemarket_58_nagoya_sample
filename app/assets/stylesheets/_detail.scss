@@ -1,10 +1,13 @@
+.main_flame{
+  min-height:100vh;
+}
 .main__item__boxs{
   min-height:2800px;
 }
 .detail__main{
   color:#333;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  width:1440px;
+  width:100%;
   background-color:rgb(239, 239, 239);
   padding-top:40px;
 
@@ -184,7 +187,6 @@
 
 &__user-profile{
   width:680px;
-  height:1500px;
   margin:10px auto 0;
   &__box{
     width:100%;
@@ -260,9 +262,34 @@
   height:375px;
   width:300px;
   background-color:rgb(239, 239, 239);
-    &__subphoto{
-      display:flex;
+    &__mainphoto{
+      width:300px;
+      height:300px;
       margin:0 auto;
+      overflow:hidden;
+      &__size{      
+        width:100%;
+      }
+    }
+    &__subphoto{    
+      display:flex;
+      //display: table;
+      
+      &__box{
+        background-color:#efefef;
+        width:60px;
+        height:60px;
+        overflow:hidden; 
+        //display: table-cell;
+        vertical-align: middle;
+        text-align:center;
+        
+        &__size{
+          max-width: 100%;
+          //display:inline-block;
+
+        }
+      }
     }
 }
 
