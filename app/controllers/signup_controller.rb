@@ -64,7 +64,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       
       require "payjp"
-      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
       customer = Payjp::Customer.create(
         card: params['payjp-token'],
       )
