@@ -24,27 +24,12 @@ Things you may want to cover:
 * ...
 
 # DB設計
-## usersテーブル_実装済
+## usersテーブル_五反田さん担当
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-
-### Association(後ほど)
-- belongs_to :identification
-- belongs_to :credit_card
-- has_many :products
-
-
-
-- has_many :groups_users,  through:  :groups_users
-- has_many :groups
-
-
-## identificationsテーブル_実装済
-|Column|Type|Options|
-|------|----|-------|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_ruby|string|null: false|
@@ -58,93 +43,94 @@ Things you may want to cover:
 |house_number|string|null: false|
 |building|string||
 |tel|integer||
-|user_id|integer|null: false, foreign_key: true|
+
+### Association_五反田さん担当
+- has_many :items
+- has_many :comments
+- belongs_to :evaluation
+- belongs_to :profile
+
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brandname|string|null: false|
+
+### Association
+- belongs_to :item
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|user_id|integer|foreign_key: true|
 
 ### Association_ok
-- belongs_to :users
+- belongs_to :user
 
 
-## evaluationsテーブル_実装済
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|path|integer|null: false|
+|name|string|null: false|
+
+### Association
+- belongs_to :item
+
+
+## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |good|integer|null: false|
 |normal|integer|null: false|
 |bad|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|foreign_key: true|
 
-### Association_ok
-- belongs_to :users
+### Association
+- belongs_to :user
 
 
-## profilesテーブル_実装済
+## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|foreign_key: true|
 
-### Association_ok
-- belongs_to :users
-
-
+### Association
+- belongs_to :user
 
 
-## itemsテーブル_ok
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |status|integer|null: false|
-|body|text|
-
-↓まだ
-|saler_id|integer|null: false, foreign_key: true|
-|buyer_id|integer|null: false, foreign_key: true|
+|body|text||
+|category_id|integer|foreign_key: true|
+|size|string||
+|brand_id|integer|foreign_key: true|
+|condition|string|null: false|
+|burden|string|null: false|
+|region|string|null: false|
+|sending_days|string|null: false|
+|price|integer|null: false|
+|saler|integer|null: false|
+|buyer|integer||
 
 ### Association
-- belongs_to :users
+- belongs_to :category
+- belongs_to :brand
+- belongs_to :user
+- has_many :images
 
 
-## imagesテーブル_実装済
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
-|item_id|integer|null: false, foreign_key: true|
+|item_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to :users
-
-
-
-ーーーーーーーーーーーーーーーーーーーー
-## messagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|body|text|null: false|
-|image|text||
-
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :group
-
-## groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|groupname|text|null: false|
-
-### Association
-- has_many :groups_users,  through:  :groups_users
-- has_many :user
-- has_many :messages
-
-# groups_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
-
+- belongs_to :item
