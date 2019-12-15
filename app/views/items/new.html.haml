@@ -47,28 +47,92 @@
                 .main__contents__item__bottom__box__head__form__goods__detail__group__select
                   .main__contents__item__bottom__box__head__form__goods__detail__group__select__box
                     .main__contents__item__bottom__box__head__form__goods__detail__group__select__box__bottom
-                    %select{name: "category" ,class:"main__contents__item__bottom__box__head__form__goods__detail__group__select__box__container"}
+                    %select{name: "category"}
+                      %option{value:"---"}---
                 .main__contents__item__bottom__box__head__form__goods__detail__group__condition
                   .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover 商品の状態
                   .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo 必須
                 .main__contents__item__bottom__box__head__form__goods__detail__group__selects
                   .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box
                     .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom
-                    .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__container
+                    %select{name: "category"}
+                      %option{value:"---"}---
+            .main__contents__item__bottom__box__head__form__goods__delivery
+              .main__contents__item__bottom__box__head__form__goods__delivery__label 配送について
+              =link_to "#",class:"main__contents__item__bottom__box__head__form__goods__delivery__question"do
+                ?
+              .main__contents__item__bottom__box__head__form__goods__delivery__group
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__category
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__category__cover 配送料の負担
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__category__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__select
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box
+                    .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box__bottom
+                    %select{name: "category"}
+                      %option{value:"---"}---
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover 発送元の地域
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
+                    .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
+                    %select{name: "category"}
+                      %option{value:"---"}---
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover 発送までの日数
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover__logo 必須
+                .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
+                  .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
+                    .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
+                    %select{name: "category"}
+                      %option{value:"---"}---
+            .main__contents__item__bottom__box__head__form__goods__price
+              .main__contents__item__bottom__box__head__form__goods__price__label 販売価格(300〜9,999,999)
+              =link_to "#",class:"main__contents__item__bottom__box__head__form__goods__price__question"do
+                ?
+              .main__contents__item__bottom__box__head__form__goods__price__group
+                .main__contents__item__bottom__box__head__form__goods__price__group__category
+                  %li.main__contents__item__bottom__box__head__form__goods__price__group__category__box
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom
+                      .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom__cover
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom__cover__text 価格
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__bottom__cover__logo 必須
+                      .main__contents__item__bottom__box__head__form__goods__price__group__category__box__en 
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__en__left ¥
+                        .main__contents__item__bottom__box__head__form__goods__price__group__category__box__en__input
+                          %input{placeholder: "例）300", type: "text", class: "price-box"}
+                  %li.main__contents__item__bottom__box__head__form__goods__price__group__category__commission
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__commission__left
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__commission__left__text 販売手数料 (10%)
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__commission__right -
+                  %li.main__contents__item__bottom__box__head__form__goods__price__group__category__profit
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__profit__left 販売利益
+                    .main__contents__item__bottom__box__head__form__goods__price__group__category__profit__right -
+            .main__contents__item__bottom__box__head__form__goods__precaution
+              .main__contents__item__bottom__box__head__form__goods__precaution__box
+                .main__contents__item__bottom__box__head__form__goods__precaution__box__line
+                  =link_to '禁止されている商品',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  、
+                  =link_to '行為',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  を必ずご確認ください。
+                .main__contents__item__bottom__box__head__form__goods__precaution__box__line
+                  またブランド品でシリアルナンバー等がある場合はご記載ください
+                  =link_to '偽ブランドの販売',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  は犯罪であり処罰される可能性があります。
+                .main__contents__item__bottom__box__head__form__goods__precaution__box__line
+                  また、出品をもちまして
+                  =link_to '加盟店規約',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
+                  に同意したことになります。
+              %button.btn__default.btn--red{type: "submit"}
+                出品する
+              = link_to root_path, class: "btn--gray"do
+                もどる
 
 
-    -#             .main__contents__item__bottom__box__head__form__goods__title
-    -#               商品名
-    -#               .main__contents__item__bottom__box__head__form__goods__title__a
-    -#                 必須
-    -#             .main__contents__item__bottom__box__head__form__goods
-    -#           .main__contents__item__bottom__box__head__form
-    -#           .main__contents__item__bottom__box__head__form
-    -#           .main__contents__item__bottom__box__head__form
-    -#           .main__contents__item__bottom__box__head__form
-    -#           .main__contents__item__bottom__box__head__form
-    -#           .main__contents__item__bottom__box__head__form
-            
+
+
+
+
     
 
 
