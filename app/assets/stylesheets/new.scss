@@ -470,7 +470,9 @@
     border: 1px solid #aaa;
     color: #fff;
   }
+  
   }
+
 .price-box{
   margin: 0;
   text-align: right;
@@ -507,4 +509,18 @@ a{
   color: #0099e8;
   text-decoration: none;
   touch-action: manipulation;
+}
+.first-main__footer{
+  padding: 40px 0;
+}
+
+.logo_gray{
+  vertical-align: middle;
+}
+
+.first-main__footer__image{
+  margin: 40px auto 0;
+}
+.first-main__footer__under{
+  margin: 8px 0 0;
 }
