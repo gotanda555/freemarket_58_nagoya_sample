@@ -85,3 +85,5 @@ gem 'payjp'
 gem 'dotenv-rails'
 
 gem 'ancestry'
+
+
