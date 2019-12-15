@@ -24,31 +24,28 @@ Things you may want to cover:
 * ...
 
 # DB設計
-## usersテーブル_五反田さん担当
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
+|email|string|null: false, unique: true|
+|last_name|string|null: false|
 |family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_ruby|string|null: false|
-|first_name_ruby|string|null: false|
-|year|integer|null: false|
-|month|integer|null: false|
-|day|integer|null: false|
-|postal_code|integer|null: false|
-|prefectures|string|null: false|
-|city|string|null: false|
-|house_number|string|null: false|
-|building|string||
-|tel|integer||
+|last_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|birthdate_year|integer|null: false|
+|birthdate_month|integer|null: false|
+|birthdate_day|integer|null: false|
+|phone_number|integer|null: false, unique: true|  ⇦SMS用
+|introduce|text||
+|encrypted_password|string|null: false, default: ""|
 
-### Association_五反田さん担当
+### Association
 - has_many :items
 - has_many :comments
-- belongs_to :evaluation
-- belongs_to :profile
+- has_one :evaluation
+- has_one :profile
+- has_one :address
 
 
 ## brandsテーブル
@@ -78,6 +75,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
+- has_ancestry
 
 
 ## evaluationsテーブル
@@ -120,10 +118,15 @@ Things you may want to cover:
 |buyer|integer||
 
 ### Association
-- belongs_to :category
-- belongs_to :brand
+- has_one :category
+- has_one :brand
 - belongs_to :user
 - has_many :images
+- has_many :images, dependent: :destroy
+- accepts_nested_attributes_for :images, allow_destroy: true
+
+### Validation
+- validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
 
 
 ## imagesテーブル
@@ -134,3 +137,18 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
+
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|address_number|string|null: false|
+|address_prefecture|integer|null: false, default: 0|
+|address_name|string|null: false|
+|address_block|string|null: false|
+|address_building|string||
+|address_phone_number|integer||
+|user_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :user
