@@ -24,139 +24,131 @@ Things you may want to cover:
 * ...
 
 # DB設計
-## usersテーブル_実装済
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
-
-### Association(後ほど)
-- belongs_to :identification
-- belongs_to :credit_card
-- has_many :products
-
-
-
-- has_many :groups_users,  through:  :groups_users
-- has_many :groups
-
-
-## identificationsテーブル_実装済
-|Column|Type|Options|
-|------|----|-------|
+|email|string|null: false, unique: true|
+|last_name|string|null: false|
 |family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_ruby|string|null: false|
-|first_name_ruby|string|null: false|
-|year|integer|null: false|
-|month|integer|null: false|
-|day|integer|null: false|
-|postal_code|integer|null: false|
-|prefectures|string|null: false|
-|city|string|null: false|
-|house_number|string|null: false|
-|building|string||
-|tel|integer||
-|user_id|integer|null: false, foreign_key: true|
+|last_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|birthdate_year|integer|null: false|
+|birthdate_month|integer|null: false|
+|birthdate_day|integer|null: false|
+|phone_number|integer|null: false, unique: true|  ⇦SMS用
+|introduce|text||
+|encrypted_password|string|null: false, default: ""|
 
-### Association_ok
-- belongs_to :users
+### Association
+- has_many :items
+- has_many :comments
+- has_one :evaluation
+- has_one :profile
+- has_one :address
 
 
-## creditcardsテーブル_実装済
+## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|number|integer|null: false|
-|month|integer|null: false|
-|year|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|brandname|string|null: false|
+
+### Association
+- belongs_to :item
+
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: false|
+|user_id|integer|foreign_key: true|
 
 ### Association_ok
-- belongs_to :users
+- belongs_to :user
 
 
-## evaluationsテーブル_実装済
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|path|integer|null: false|
+|name|string|null: false|
+
+### Association
+- belongs_to :item
+- has_ancestry
+
+
+## evaluationsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |good|integer|null: false|
 |normal|integer|null: false|
 |bad|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|foreign_key: true|
 
-### Association_ok
-- belongs_to :users
+### Association
+- belongs_to :user
 
 
-## profilesテーブル_実装済
+## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|foreign_key: true|
 
-### Association_ok
-- belongs_to :users
-
-
+### Association
+- belongs_to :user
 
 
-## itemsテーブル_ok
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |status|integer|null: false|
-|body|text|
-
-↓まだ
-|saler_id|integer|null: false, foreign_key: true|
-|buyer_id|integer|null: false, foreign_key: true|
+|body|text||
+|category_id|integer|foreign_key: true|
+|size|string||
+|brand_id|integer|foreign_key: true|
+|condition|string|null: false|
+|burden|string|null: false|
+|region|string|null: false|
+|sending_days|string|null: false|
+|price|integer|null: false|
+|saler|integer|null: false|
+|buyer|integer||
 
 ### Association
-- belongs_to :users
+- has_one :category
+- has_one :brand
+- belongs_to :user
+- has_many :images
+- has_many :images, dependent: :destroy
+- accepts_nested_attributes_for :images, allow_destroy: true
+
+### Validation
+- validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
 
 
-## imagesテーブル_実装済
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
-|item_id|integer|null: false, foreign_key: true|
+|item_id|integer|foreign_key: true|
 
 ### Association
-- belongs_to :users
+- belongs_to :item
 
 
-
-ーーーーーーーーーーーーーーーーーーーー
-## messagesテーブル
+## addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|text||
-
-|group_id|integer|null: false, foreign_key: true|
+|address_number|string|null: false|
+|address_prefecture|integer|null: false, default: 0|
+|address_name|string|null: false|
+|address_block|string|null: false|
+|address_building|string||
+|address_phone_number|integer||
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :group
-
-## groupsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|groupname|text|null: false|
-
-### Association
-- has_many :groups_users,  through:  :groups_users
-- has_many :user
-- has_many :messages
-
-# groups_usersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
-

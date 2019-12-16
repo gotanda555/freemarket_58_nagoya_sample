@@ -11,7 +11,7 @@
         .first-main__middle__box__account__text
           アカウントをお持ちでない方はこちら
         .first-main__middle__box__account__button
-          = link_to "/signup/step1" ,class:"account-color" do
+          = link_to signup_index_path ,class:"account-color" do
             .first-main__middle__box__account__button__margin
               新規会員登録
 
@@ -31,17 +31,21 @@
                   Googleで登録する
   
       .first-main__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .first-main__form__box
           .first-main__form__box__input
-            %input{placeholder: "メールアドレス", type: "email", class: "input-boxx"}
+            = f.email_field :email,placeholder: "メールアドレス",class: "input-boxx"
+            //%input{placeholder: "メールアドレス", type: "email", class: "input-boxx"}
           .first-main__form__box__pass
-            %input{placeholder: "パスワード", type: "password", class: "input-boxx"}
+            = f.password_field :password,placeholder: "パスワード",class: "input-boxx"
+            //%input{placeholder: "パスワード", type: "password", class: "input-boxx"}
 
           .first-main__box__main__form__under__contents
 
           .first-main__box__main__form__top__button
-            %button{type:"submit",class:"first-main__box__main__form__under__link"}
-              ログイン
+            = f.submit "ログイン",class:"submit-scss"
+            -# %button{type:"submit",class:"first-main__box__main__form__under__link"}
+              -# ログイン
 
           .first-main__form__box__info
             = link_to "#" , class:"pass-box" do
