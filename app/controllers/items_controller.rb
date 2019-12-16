@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   def detail
     @items = Item.all
     @item = Item.find(params[:id])
+    #@category = Category.find(1)
   end
   
   def new
