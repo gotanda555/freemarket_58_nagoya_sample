@@ -36,7 +36,13 @@ Things you may want to cover:
 |birthdate_year|integer|null: false|
 |birthdate_month|integer|null: false|
 |birthdate_day|integer|null: false|
-|phone_number|integer|null: false, unique: true|  ⇦SMS用
+|phone_number|integer|null: false, unique: true|
+|address_number|string|null: false|
+|address_prefecture|integer|null: false, default: 0|
+|address_name|string|null: false|
+|address_block|string|null: false|
+|address_building|string||
+|address_phone_number|integer||
 |introduce|text||
 |encrypted_password|string|null: false, default: ""|
 
@@ -44,8 +50,6 @@ Things you may want to cover:
 - has_many :items
 - has_many :comments
 - has_one :evaluation
-- has_one :profile
-- has_one :address
 
 
 ## brandsテーブル
@@ -90,16 +94,6 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|body|text||
-|user_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :user
-
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -137,18 +131,3 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
-
-
-## addressesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|address_number|string|null: false|
-|address_prefecture|integer|null: false, default: 0|
-|address_name|string|null: false|
-|address_block|string|null: false|
-|address_building|string||
-|address_phone_number|integer||
-|user_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :user

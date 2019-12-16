@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
 
   has_one :card
+  has_many :items
+  has_many :comments
+  has_one :evaluation
 
   validates :nickname, presence: true
 end
