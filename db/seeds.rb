@@ -17,6 +17,14 @@ lady_child_array.each_with_index do |child, i|
  end
 end
 
+men = Category.create(:name=>"メンズ")
+
+men_tops = men.children.create(:name=>"トップス")
+men_jacket = men.children.create(:name=>"ジャケット/アウター")
+
+men_tops.children.create([{:name=>"Tシャツ/カットソー(半袖/袖なし)"}, {:name=>"Tシャツ/カットソー(七分/長袖)"},{:name=>"その他"}])
+men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"ノーカラージャケット"}, {:name=>"Gジャン/デニムジャケット"},{:name=>"その他"}])
+
 
 [
   ['daissh05', 'buy0@test.com', '山田', '太郎', 'ヤマダ', 'タロウ', '2012', '1', '1','2222', '1234567', '0', '名古屋市', '2', '', '', '','hoge1233','hoge1233','hoge1233','',],
@@ -63,14 +71,14 @@ end
   ['Century21 ジャケット', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
   ['カシミア ジャケット', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '6800', '1', '1',],
   ['Forever21 アウター', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-  ['ZARA アウター', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '7000', '1', '1',],
-  ['冬アウター', '0', '良品です！', '1', 'M', '1', '美品', '出品者負担', '岩手','3年', '1300', '1', '1',],
-  ['お気に入りジャケット', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '秋田','1.5年', '4200', '1', '1',],
-  ['ユニクロ あったかジャケット', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '栃木','1日', '1400', '1', '1',],
-  ['Century21 ジャケット', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-  ['カシミア ジャケット', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '6800', '1', '1',],
-  ['Forever21 アウター', '0', '良品です！', '1', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-  ['おすすめレディースジャケット', '0', '良品です！', '1', 'M', '1', '美品', '出品者負担', '北海道','2-3日', '5600', '1', '1',],
+  ['ZARA アウター', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '東京','5日', '7000', '1', '1',],
+  ['冬アウター', '0', '良品です！', '219', 'M', '1', '美品', '出品者負担', '岩手','3年', '1300', '1', '1',],
+  ['お気に入りジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '秋田','1.5年', '4200', '1', '1',],
+  ['ユニクロ あったかジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '栃木','1日', '1400', '1', '1',],
+  ['Century21 ジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
+  ['カシミア ジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '東京','5日', '6800', '1', '1',],
+  ['Forever21 アウター', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
+  ['おすすめレディースジャケット', '0', '良品です！', '219', 'M', '1', '美品', '出品者負担', '北海道','2-3日', '5600', '1', '1',],
 ].each do |name, status, body, category_id, size, brand_id, condition, burden, region, sending_days, price, saler_id, buyer_id|
   Item.create!(
     { name: name,
@@ -102,11 +110,9 @@ end
   ['https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcToeydj75R_xSyERt7YmE4Z-TuGNaaGHuDUcF8JPtBrs3t81fCEd6_2bKX_d2tzN8tK2Gsgtx8-4aMFpDyV4sNHy3KDGSwxoSRIbp10i0k1FfCYNLBTKlgf&usqp=CAc', '5'],
   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_kTkLP9jvIMmcwU97gxjhFuhBVWbK2cmPlf1DpVt-2_Z3WZAl&s', '6'],
   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4G1lkBeJAugRKRYGiloTsinbLCsEzuyVjI8y_2sI07QxZuf7Amg&s', '7'],
-  ['https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTAx1PZOKDwLOoC1nm6bT7FEhinTW6Qi2e8EZwrN2aAjOyBKtBZADDZ-mh9bOHDt_WRw6z9lJ-r4KKVy88m1WL9_ULdW_G5mNMl1BlAmk8FKrLguayVpGv9&usqp=CAc', '8'],
-  ['https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSV_K-sU_MPMHrARG0iaWyg89jh0sKqXeJAamOHbvBsDlFPlNoaOg9X1vxyTymlkw2TYor-ac-o11ugkJaCIGcj5YNUutDgXWQNccTGs1Po-6qhrSagE-o0&usqp=CAc', '8'],
-  ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0va96Ia-IeShdF-fZdcTO0V1bAUwAHfhsIFTWRjNufrq1b1_&s', '8'],
-  ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9jqDEbKlk-qZ2VvhqKqllvghHusCCrWSeQqOsyg94TkXxZLX&s', '9'],
-  ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfpOPxRiBYKcId0UQBZCRwzDTiTI5k8Y1-d4OvNaF2i8By4nG_&s', '10'],
+  ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZQpD9_kJSHpFpGqVpsyoQ5k5FQS-2Eivt2-47dnX3hsM24t6r5Q&s', '8'],
+  ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8HBD67pbUX_rmM_8L6HfUYLFfj2rtBESVK0YcJObS1bM4DXP&s', '9'],
+  ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIs6XbatXLysbguFKw6UXPnHJLHDyDJhHmynHx2saCyJM2MtcY&s', '10'],
   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBC6g3H6YwwFdc6U9UgvMrUrLYWOV1JQ9_ehlYEL2qUG3T9f8e&s', '11'],
   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJ_xEVfaDp0PcKi_1mNAOJlUzjMaiLIpKQVmk6lldP2fpncXvDw&s', '12'],
   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Sn1-ASnRAx0tHuM0-S0HJRey-tSqFNg77PTqIourQCv4i2q9RQ&s', '13'],
