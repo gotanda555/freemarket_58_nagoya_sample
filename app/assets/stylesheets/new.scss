@@ -7,13 +7,20 @@
   box-sizing: border-box;
 }
 
+$white:#fff;
+$gray:#ccc;
+$l_gray:#eee;
+$d_gray:#aaa;
+$red:#ea352e;
+$l_blue:#0099e8;
+
 .main{
   min-height: 100%;
   min-width: 768px;
   font-size: 14px;
   color:black;
   line-height: 1;
-  background-color:#ccc;
+  background-color: $gray;
   box-sizing: border-box;
   font:66.6% sans-serif;
   cursor: auto;
@@ -40,7 +47,7 @@
   &__bottom{
     width: 700px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color:$white;
   &__box{
     margin: 0;
     padding: 0;
@@ -50,7 +57,7 @@
       text-align: center;
       font-weight: 600;
       &__form{
-        border-top: 1px solid #eeeeee;
+        border-top: 1px solid $l_gray;
         &__box{
           width: 620px;
           padding: 40px;
@@ -59,11 +66,11 @@
             font-weight: 600;
             display: flex;
             &__logo{
-            background-color: #ea352e;
+            background-color: $red;
             margin:0 0 0 8px;
             padding: 2px 4px;
             border-radius: 2px;
-            color: #fff;
+            color: $white;
             font-size: 12px;
             }
             &__texts{
@@ -90,8 +97,8 @@
           margin-left: 0;
           position: relative;
           min-height: 162px;
-          background: #f5f5f5;
-          border: 1px dashed #ccc;
+          background: $white;
+          border: 1px dashed $gray;
           font-size: 0;
           text-align: center;
         }
@@ -126,7 +133,7 @@
 
 &__contents__item__bottom__box__head__form__goods{
   padding: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $l_gray;
   &__name{
     margin: 0;
     display: flex;
@@ -135,11 +142,11 @@
       font-size: 14px;
       display: inline-block;
       &__logo{
-        background-color: #ea352e;
+        background-color: $red;
         margin:0 0 0 8px;
         padding: 2px 4px;
         border-radius: 2px;
-        color: #fff;
+        color: $white;
         font-size: 12px;
         vertical-align: top;
         box-sizing: inherit;
@@ -153,8 +160,8 @@
   height: 48px;
   padding: 10px 16px 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid $gray;
+  background: $white;
   line-height: 1.5;
   font-size: 16px;
 }
@@ -170,7 +177,7 @@
     display: inline-block;
     font-weight: 600;
     &__logo{
-      background-color: #ea352e;
+      background-color:$red;
       margin:0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
@@ -188,8 +195,8 @@
   max-width: 100%;
   min-height: 104px;
   padding: 10px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid $gray;
+  background: $white;
   font-size: 16px;
   line-height: 1.5;
   border-radius: 0;
@@ -199,11 +206,11 @@
 
 &__contents__item__bottom__box__head__form__goods__detail{
   padding: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $l_gray;
   overflow: auto;
 &__label{
   float: left;
-  color: #888;
+  color: $d_gray;
   font-size: 14px;
   font-weight: 600;
 }
@@ -228,25 +235,25 @@
   font-weight: 600;
 }
 &__group__category__cover__logo,&__group__condition__cover__logo{
-  background-color: #ea352e;
+  background-color: $red;
   margin:0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
-  color: #fff;
+  color: $white;
   font-size: 12px;
   vertical-align: top;
 }
 &__group__select__box,&__group__selects__box{
   margin: 8px 0 0;
   position: relative;
-  background: #fff;
+  background: $white;
 }
 &__group__select__box__bottom,&__group__selects__box__bottom{
   position: absolute;
   right: 16px;
   top: 50%;
   z-index: 2;
-  color: #888;
+  color: $gray;
   font-size: 8px;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
@@ -254,11 +261,11 @@
 }
 &__contents__item__bottom__box__head__form__goods__delivery{
   padding: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $l_gray;
   overflow: auto;
 &__label{
   float: left;
-  color: #888;
+  color: $d_gray;
   font-size: 14px;
   font-weight: 600;
 }
@@ -267,8 +274,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #0099e8;
-  color: #fff;
+  background: $l_blue;
+  color: $white;
   line-height: 14px;
   font-size: 12px;
   text-align: center;
@@ -295,25 +302,25 @@
   font-weight: 600;
 }
 &__group__category__cover__logo,&__group__condition__cover__logo{
-  background-color: #ea352e;
+  background-color: $red;
   margin:0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
-  color: #fff;
+  color:$white;
   font-size: 12px;
   vertical-align: top;
 }
 &__group__select__box,&__group__selects__box{
   margin: 8px 0 0;
   position: relative;
-  background: #fff;
+  background: $white;
 }
 &__group__select__box__bottom,&__group__selects__box__bottom{
   position: absolute;
   right: 16px;
   top: 50%;
   z-index: 2;
-  color: #888;
+  color: $gray;
   font-size: 8px;
   -webkit-transform: translate(0, -50%);
   transform: tran
@@ -321,11 +328,11 @@
 }
 &__contents__item__bottom__box__head__form__goods__price{
   padding: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $l_gray;
   overflow: auto;
   &__label{
     float: left;
-    color: #888;
+    color: $d_gray;
     font-size: 14px;
     font-weight: 600;
   }
@@ -334,8 +341,8 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #0099e8;
-    color: #fff;
+    background:$l_blue;
+    color: $white;
     line-height: 14px;
     font-size: 12px;
     text-align: center;
@@ -373,11 +380,11 @@
     padding-top: 17px;
   }
   &__group__category__box__bottom__cover__logo{
-    background: #ea352d;
+    background: $red;
     margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
-  color: #fff;
+  color:$white;
   font-size: 12px;
   vertical-align: top;
   height: 18px;
@@ -400,11 +407,11 @@
   }
   &__group__category__commission,&__group__category__profit{
     padding: 24px 0 40px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $gray;
   }
   &__group__category__profit{
     padding: 24px 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $gray;
   }
   &__group__category__commission__left{
     float: left;
@@ -420,7 +427,7 @@
   }
   &__group__category__profit{
     padding: 24px 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $gray;
   }
   &__group__category__profit__left{
     font-size: 16px;
@@ -436,7 +443,7 @@
   }
   &__contents__item__bottom__box__head__form__goods__precaution{
     padding: 40px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $l_gray;
   }
   &__contents__item__bottom__box__head__form__goods__precaution__box__line{
     font-size: 14px;
@@ -452,9 +459,9 @@
   }
   .btn--red{
     margin: 40px 0 0;
-    background: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
+    background: $red;
+    border: 1px solid $red;
+    color: $white;
   }
   .btn--gray{
     display: block;
@@ -466,9 +473,9 @@
     text-align: center;
     width: 45%;
     margin: 24px auto 0;
-    background: #aaa;
-    border: 1px solid #aaa;
-    color: #fff;
+    background: $gray;
+    border: 1px solid $gray;
+    color: $white;
   }
   
   }
@@ -480,8 +487,8 @@
   height: 48px;
   padding: 10px 16px 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid $gray;
+  background: $white;
   line-height: 1.5;
   font-size: 16px;
 }
@@ -491,7 +498,7 @@ select{
   height: 48px;
   padding: 0 16px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid $gray;
   background: 0;
   font-size: 16px;
   line-height: 1.5;
@@ -506,7 +513,7 @@ p{
   font-size: 14px;
 }
 a{
-  color: #0099e8;
+  color: $l_blue;
   text-decoration: none;
   touch-action: manipulation;
 }
