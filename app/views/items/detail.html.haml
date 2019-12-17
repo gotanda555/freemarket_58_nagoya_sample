@@ -44,7 +44,7 @@
                     %th カテゴリー
                     %td
                       = link_to '#' do
-                        //= @item.category.name
+                        = @item.category.name
                       %br
                       = link_to '＞ パンツ', '#'
                       %br
@@ -152,23 +152,22 @@
       .detail__main__user-profile
         .detail__main__user-profile__box
           = link_to "#" , class:'detail__main__user-profile__box__link' do
-            %p.detail__main__user-profile__box__link__title 
-            //{@item.category.name}のその他の出品
+            %p.detail__main__user-profile__box__link__title #{@item.category.name}のその他の出品
             .detail__main__user-profile__box__itembox
               .detail__main__user-profile__box__itembox__goods
                 - @items.each do |item|
-                  - unless item.id === @item.brand_id
-                    //- if item.category_id === @item.category_id
-                    .detail__main__user-profile__box__itembox__goods__ind
-                      =link_to "#", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
-                        .detail__main__user-profile__box__itembox__goods__ind__link__imagebox
-                          =image_tag item.images[0].image, class:'detail__main__user-profile__box__itembox__goods__ind__link__imagebox__image'
-                        %p.detail__main__user-profile__box__itembox__goods__ind__link__description
-                          = item.name
-                        .detail__main__user-profile__box__itembox__goods__ind__link__price ¥#{item.price.to_s(:delimited)}
-                        .detail__main__uer-profile__box__itembox__goods__ind__link__rating{style:"text-align:right"}
-                          %i.far.fa-heart.heart2
-                          %span.detail__main__user-profile__box__itembox__goods__ind__link__rating__value 2
+                  - unless item.id === @item.id
+                    - if item.category_id === @item.category_id
+                      .detail__main__user-profile__box__itembox__goods__ind
+                        =link_to "#", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
+                          .detail__main__user-profile__box__itembox__goods__ind__link__imagebox
+                            =image_tag item.images[0].image, class:'detail__main__user-profile__box__itembox__goods__ind__link__imagebox__image'
+                          %p.detail__main__user-profile__box__itembox__goods__ind__link__description
+                            = item.name
+                          .detail__main__user-profile__box__itembox__goods__ind__link__price ¥#{item.price.to_s(:delimited)}
+                          .detail__main__uer-profile__box__itembox__goods__ind__link__rating{style:"text-align:right"}
+                            %i.far.fa-heart.heart2
+                            %span.detail__main__user-profile__box__itembox__goods__ind__link__rating__value 2
       .detail__main__bread-crumbs
         %ul.detail__main__bread-crumbs__list
           %li.detail__main__bread-crumbs__list__catogry1 メルカリ >
