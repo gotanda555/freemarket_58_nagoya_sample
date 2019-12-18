@@ -9,17 +9,20 @@
       .check__main__flame__buy-item
         .check__main__flame__buy-item__inner
           %h3.check__main__flame__buy-item__inner__image
-            =image_tag "jeans.jpg", class:'check__main__flame__buy-item__inner__image__img'
-          %p.check__main__flame__buy-item__inner__name 138 pacorabanne ジーンズ レディース 備品
+            = image_tag @item.images[0].image, class:'check__main__flame__buy-item__inner__image__img'
+          %p.check__main__flame__buy-item__inner__name
+            = @item.name
           .check__main__flame__buy-item__inner__form
-            %p.check__main__flame__buy-item__inner__form__price ¥780
+            %p.check__main__flame__buy-item__inner__form__price
+              ¥#{@item.price.to_s(:delimited)}
             %span.check__main__flame__buy-item__inner__form__ship-cost 送料込み
           %ul.check__main__flame__buy-item__inner__point
             %li.check__main__flame__buy-item__inner__point__text ポイントはありません
           %ul.check__main__flame__buy-item__inner__pay
             %li.check__main__flame__buy-item__inner__pay__box
               .check__main__flame__buy-item__inner__pay__box__amount 支払い金額
-              .check__main__flame__buy-item__inner__pay__box__price ¥780
+              .check__main__flame__buy-item__inner__pay__box__price
+                ¥#{@item.price.to_s(:delimited)}
           = link_to '#' do
             %button.check__main__flame__buy-item__inner__button 購入する
           .check__main__flame__buy-item__inner__buy-user-info__pay
@@ -40,9 +43,13 @@
               =link_to '#' do
                 %span.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__link 変更する
               %p.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__card
-                〒451-0061
-                愛知県 名古屋市中村区那古野町
+                〒#{current_user.address_number[0, 3]} - #{current_user.address_number[3, 7]}
                 %br
-                山田 太郎
+                = current_user.address_name
+                = current_user.address_block
+                = current_user.address_building
+                %br
+                =current_user.last_name
+                =current_user.first_name
 
   = render "signup/footer"
