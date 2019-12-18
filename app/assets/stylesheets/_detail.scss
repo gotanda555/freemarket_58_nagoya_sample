@@ -195,6 +195,9 @@
     &__link{
       text-decoration:none;
       font-size:24px;
+      &__title{
+        font-size:24px;
+      }
     }
     &__itembox{
       padding-top:5px;
