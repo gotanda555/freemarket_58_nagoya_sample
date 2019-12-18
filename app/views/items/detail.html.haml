@@ -134,13 +134,13 @@
         .detail__main__user-profile__box
           = link_to "#" , class:'detail__main__user-profile__box__link' do
             %p.detail__main__user-profile__box__link__title daissh04さんのその他の出品
-            .detail__main__user-profile__box__itembox
-              .detail__main__user-profile__box__itembox__goods
-                - @items.each do |item|
-                  - unless item.id === @item.brand_id
-                    - if item.saler_id === @item.saler_id
+            %ul.detail__main__user-profile__box__itembox
+              - @items.each do |item|
+                - unless item.id === @item.brand_id
+                  - if item.saler_id === @item.saler_id
+                    %li.detail__main__user-profile__box__itembox__goods
                       .detail__main__user-profile__box__itembox__goods__ind
-                        =link_to "#", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
+                        =link_to "/items/#{item.id}", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
                           .detail__main__user-profile__box__itembox__goods__ind__link__imagebox
                             =image_tag item.images[0].image, class:'detail__main__user-profile__box__itembox__goods__ind__link__imagebox__image'
                           %p.detail__main__user-profile__box__itembox__goods__ind__link__description
@@ -154,12 +154,12 @@
           = link_to "#" , class:'detail__main__user-profile__box__link' do
             %p.detail__main__user-profile__box__link__title #{@item.category.name}のその他の出品
             .detail__main__user-profile__box__itembox
-              .detail__main__user-profile__box__itembox__goods
-                - @items.each do |item|
-                  - unless item.id === @item.id
-                    - if item.category_id === @item.category_id
+              - @items.each do |item|
+                - unless item.id === @item.id
+                  - if item.category_id === @item.category_id
+                    .detail__main__user-profile__box__itembox__goods
                       .detail__main__user-profile__box__itembox__goods__ind
-                        =link_to "#", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
+                        =link_to "/items/#{item.id}", class:'detail__main__user-profile__box__itembox__goods__ind__link' do
                           .detail__main__user-profile__box__itembox__goods__ind__link__imagebox
                             =image_tag item.images[0].image, class:'detail__main__user-profile__box__itembox__goods__ind__link__imagebox__image'
                           %p.detail__main__user-profile__box__itembox__goods__ind__link__description
