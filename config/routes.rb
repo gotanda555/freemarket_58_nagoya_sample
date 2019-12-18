@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get   'users/:id'   =>  'users#show'
   get   'items/new'   =>  'items#new'
   get 'items/:id'=> 'items#detail'
-  get 'items/1/check'=> 'items#check'
+  get 'items/:id/check'=> 'items#check'
 
   resource :items do
 end

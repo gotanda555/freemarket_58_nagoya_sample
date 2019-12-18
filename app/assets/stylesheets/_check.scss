@@ -32,19 +32,21 @@
       padding-bottom:30px;
       margin:0 auto 0;
       &__image{
+        padding-top:15px;
         float:left;
         &__img{
-        width:64px;
+        width:80px;
+        height:80px;
       }
     }
       &__name{
+        padding-top:43px;
         margin:0 0 0 16px;
-        width:calc(100% - 80px);
+        width:220px;
         float:right;
         line-height:1.5;
         text-align:left;
         font-size:16px;
-        font-weight:600;
       }
     &__form{
       clear: both;
