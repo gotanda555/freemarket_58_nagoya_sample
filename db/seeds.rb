@@ -132,4 +132,17 @@ end
 end
 
 
+
+
+[
+  ['ナイキ']
+].each do |brandname|
+  Brand.create!(
+    { nickname: brandname,
+
+        }
+  )
+end
+
+
 #Brand.create!([{brandname: 'アーカー'},{brandname: 'アーキ'},{brandname: 'イーエム'},{brandname: 'イージースピリット'},{brandname: 'ヴァーガス'},{brandname: 'ヴァージニア'},{brandname: '179ダブリュジー'},{brandname: '1975トーキョー'},{brandname: '三愛水着学園'}])
