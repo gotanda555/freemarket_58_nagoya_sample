@@ -26,38 +26,38 @@ men_tops.children.create([{:name=>"Tシャツ/カットソー(半袖/袖なし)"
 men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"ノーカラージャケット"}, {:name=>"Gジャン/デニムジャケット"},{:name=>"その他"}])
 
 
-# [
-  # ['daissh05', 'buy0@test.com', '山田', '太郎', 'ヤマダ', 'タロウ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1233','hoge1233','hoge1233','',],
-  # ['daissh06', 'buy1@test.com', '山田', '花子', 'ヤマダ', 'ハナコ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1235','hoge1235','hoge1235','',],
-  # ['daissh07', 'buy2@test.com', '伊藤', '花子', 'イトウ', 'ハナコ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1236','hoge1236','hoge1236','',],
-  # ['daissh08', 'buy3@test.com', '加藤', '太郎', 'カトウ', 'タロウ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1237','hoge1237','hoge1237','',],
-# ].each do |nickname, email, last_name, first_name, last_name_kana, first_name_kana, birthdate_year, birthdate_month, birthdate_day, phone_number, address_number, address_prefecture, address_name, address_block, address_building, address_phone_number, introduce, password, reset_password_token, reset_password_sent_at, remember_created_at|
-  # User.create!(
-    # { nickname: nickname,
-      # email: email,
-      # last_name: last_name,
-      # first_name: first_name,
-      # last_name_kana: last_name_kana,
-      # first_name_kana: first_name_kana,
-      # birthdate_year: birthdate_year,
-      # birthdate_month: birthdate_month,
-      # birthdate_day: birthdate_day,
-      # phone_number: phone_number,
-      # address_number: address_number,
-      # address_prefecture: address_prefecture,
-      # address_name: address_name,
-      # address_block: address_block,
-      # address_building: address_building,
-      # address_phone_number: address_phone_number,
-      # introduce:introduce,
-      # password: password,
-      # reset_password_token: reset_password_token,
-      # reset_password_sent_at: reset_password_sent_at,
-      # remember_created_at: remember_created_at,
-# 
-        # }
-  # )
-# end
+[
+  ['daissh05', 'buy0@test.com', '山田', '太郎', 'ヤマダ', 'タロウ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1233','hoge1233','hoge1233','',],
+  ['daissh06', 'buy1@test.com', '山田', '花子', 'ヤマダ', 'ハナコ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1235','hoge1235','hoge1235','',],
+  ['daissh07', 'buy2@test.com', '伊藤', '花子', 'イトウ', 'ハナコ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1236','hoge1236','hoge1236','',],
+  ['daissh08', 'buy3@test.com', '加藤', '太郎', 'カトウ', 'タロウ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1237','hoge1237','hoge1237','',],
+].each do |nickname, email, last_name, first_name, last_name_kana, first_name_kana, birthdate_year, birthdate_month, birthdate_day, phone_number, address_number, address_prefecture, address_name, address_block, address_building, address_phone_number, introduce, password, reset_password_token, reset_password_sent_at, remember_created_at|
+  User.create!(
+    { nickname: nickname,
+      email: email,
+      last_name: last_name,
+      first_name: first_name,
+      last_name_kana: last_name_kana,
+      first_name_kana: first_name_kana,
+      birthdate_year: birthdate_year,
+      birthdate_month: birthdate_month,
+      birthdate_day: birthdate_day,
+      phone_number: phone_number,
+      address_number: address_number,
+      address_prefecture: address_prefecture,
+      address_name: address_name,
+      address_block: address_block,
+      address_building: address_building,
+      address_phone_number: address_phone_number,
+      introduce:introduce,
+      password: password,
+      reset_password_token: reset_password_token,
+      reset_password_sent_at: reset_password_sent_at,
+      remember_created_at: remember_created_at,
+
+        }
+  )
+end
 
 
 [
