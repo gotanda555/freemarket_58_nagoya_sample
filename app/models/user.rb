@@ -22,7 +22,7 @@ class User < ApplicationRecord
     validates :birthdate_month,         numericality: true
     validates :birthdate_day,           numericality: true
     validates :phone_number,            presence: true
-    validates :address_number,          presence: true, format: { with: /\A\d{3}[-]\d{4}\z/ }
+    # validates :address_number,          presence: true, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :address_prefecture,      presence: true
     validates :address_name,            presence: true
 end
