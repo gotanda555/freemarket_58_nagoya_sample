@@ -50,6 +50,7 @@ Things you may want to cover:
 - has_many :items
 - has_many :comments
 - has_one :evaluation
+- has_one :card
 
 
 ## brandsテーブル
@@ -67,7 +68,7 @@ Things you may want to cover:
 |body|text|null: false|
 |user_id|integer|foreign_key: true|
 
-### Association_ok
+### Association
 - belongs_to :user
 
 
@@ -131,3 +132,14 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
+
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null:false|
+
+### Association
+- belongs_to :user
