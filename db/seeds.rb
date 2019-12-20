@@ -11,10 +11,10 @@ lady_grandchild_array = [['すべて','Tシャツ/カットソー(半袖/袖な�
 
 parent = Category.create(name: 'レディース')
 lady_child_array.each_with_index do |child, i|
- child = parent.children.create(name: child)
- lady_grandchild_array[i].each do |grandchild|
-   child.children.create(name: grandchild)
- end
+child = parent.children.create(name: child)
+lady_grandchild_array[i].each do |grandchild|
+    child.children.create(name: grandchild)
+  end
 end
 
 men = Category.create(:name=>"メンズ")
