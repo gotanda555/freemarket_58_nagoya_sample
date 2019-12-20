@@ -30,9 +30,9 @@ Things you may want to cover:
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 |last_name|string|null: false|
-|family_name|string|null: false|
+|first_name|string|null: false|
 |last_name_kana|string|null: false|
-|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |birthdate_year|integer|null: false|
 |birthdate_month|integer|null: false|
 |birthdate_day|integer|null: false|
