@@ -11,10 +11,10 @@ lady_grandchild_array = [['すべて','Tシャツ/カットソー(半袖/袖な�
 
 parent = Category.create(name: 'レディース')
 lady_child_array.each_with_index do |child, i|
- child = parent.children.create(name: child)
- lady_grandchild_array[i].each do |grandchild|
-   child.children.create(name: grandchild)
- end
+child = parent.children.create(name: child)
+lady_grandchild_array[i].each do |grandchild|
+    child.children.create(name: grandchild)
+  end
 end
 
 men = Category.create(:name=>"メンズ")
@@ -59,6 +59,9 @@ men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"
   )
 end
 
+  Brand.create!(brandname: 'ナイキ')
+  Brand.create!(brandname: 'グッチ')
+  Brand.create!(brandname: 'シャネル')
 
 [
   ['ユニクロジャケット', '0', '良品です！', '1', 'M', '1', '美品', '出品者負担', '北海道','2-3日', '1800', '1', '1',],
@@ -130,8 +133,11 @@ end
         }
   )
 end
+<<<<<<< Updated upstream
 
 
 
 
 #Brand.create!([{brandname: 'アーカー'},{brandname: 'アーキ'},{brandname: 'イーエム'},{brandname: 'イージースピリット'},{brandname: 'ヴァーガス'},{brandname: 'ヴァージニア'},{brandname: '179ダブリュジー'},{brandname: '1975トーキョー'},{brandname: '三愛水着学園'}])
+=======
+>>>>>>> Stashed changes
