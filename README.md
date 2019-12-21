@@ -146,4 +146,4 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-![mercari_DB](https://user-images.githubusercontent.com/54758561/71304166-33760e00-2406-11ea-94f6-6975d0019d30.jpeg)
+![mercari_DB (1)](https://user-images.githubusercontent.com/54758561/71304420-cc5a5880-2409-11ea-8def-ea19871f5fe0.jpeg)
