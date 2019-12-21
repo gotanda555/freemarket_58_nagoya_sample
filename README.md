@@ -143,3 +143,5 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+
+![mercari_DB](https://user-images.githubusercontent.com/54758561/71304166-33760e00-2406-11ea-94f6-6975d0019d30.jpeg)
