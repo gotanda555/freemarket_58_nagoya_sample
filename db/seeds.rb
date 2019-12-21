@@ -59,10 +59,6 @@ men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"
   )
 end
 
-  #Brand.create!(brandname: 'ナイキ')
-  #Brand.create!(brandname: 'グッチ')
-  #Brand.create!(brandname: 'シャネル')
-
 
   [
     'ナイキ','グッチ','シャネル',
