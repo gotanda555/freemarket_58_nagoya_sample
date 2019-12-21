@@ -59,9 +59,9 @@ men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"
   )
 end
 
-  Brand.create!(brandname: 'ナイキ')
-  Brand.create!(brandname: 'グッチ')
-  Brand.create!(brandname: 'シャネル')
+  Brand.create(brandname: 'ナイキ')
+  Brand.create(brandname: 'グッチ')
+  Brand.create(brandname: 'シャネル')
 
 [
   ['ユニクロジャケット', '0', '良品です！', '1', 'M', '3', '美品', '出品者負担', '北海道','2-3日', '1800', '1', '1',],
