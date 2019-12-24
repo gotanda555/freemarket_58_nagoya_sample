@@ -27,10 +27,10 @@ men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"
 
 
 [
-  ['daissh05', 'buy0@test.com', '山田', '太郎', 'ヤマダ', 'タロウ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1233','hoge1233','hoge1233','',],
-  ['daissh06', 'buy1@test.com', '山田', '花子', 'ヤマダ', 'ハナコ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1235','hoge1235','hoge1235','',],
-  ['daissh07', 'buy2@test.com', '伊藤', '花子', 'イトウ', 'ハナコ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1236','hoge1236','hoge1236','',],
-  ['daissh08', 'buy3@test.com', '加藤', '太郎', 'カトウ', 'タロウ', '2012', '1', '1','2222', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1237','hoge1237','hoge1237','',],
+  ['daissh05', 'buy0@test.com', '山田', '太郎', 'ヤマダ', 'タロウ', '2012', '1', '1','09012345678', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1233','hoge1233','hoge1233','',],
+  ['daissh06', 'buy1@test.com', '山田', '花子', 'ヤマダ', 'ハナコ', '2012', '1', '1','09012345678', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1235','hoge1235','hoge1235','',],
+  ['daissh07', 'buy2@test.com', '伊藤', '花子', 'イトウ', 'ハナコ', '2012', '1', '1','09012345678', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1236','hoge1236','hoge1236','',],
+  ['daissh08', 'buy3@test.com', '加藤', '太郎', 'カトウ', 'タロウ', '2012', '1', '1','09012345678', '123-4567', '北海道', '名古屋市', '2', '', '', '','hoge1237','hoge1237','hoge1237','',],
 ].each do |nickname, email, last_name, first_name, last_name_kana, first_name_kana, birthdate_year, birthdate_month, birthdate_day, phone_number, address_number, address_prefecture, address_name, address_block, address_building, address_phone_number, introduce, password, reset_password_token, reset_password_sent_at, remember_created_at|
   User.create!(
     { nickname: nickname,
