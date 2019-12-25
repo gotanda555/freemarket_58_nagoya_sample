@@ -26,5 +26,6 @@ class User < ApplicationRecord
     validates :address_number,          {presence: true ,format: {with: /\A[0-9]{3}-[0-9]{4}\z/}}
     validates :address_prefecture,      presence: true
     validates :address_name,            presence: true
+    validates :address_block,           presence: true
     validates :address_phone_number,    {allow_blank: true, format: { with: VALID_PHONE_REGEX }}
 end

@@ -38,6 +38,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.text_field :address_number,placeholder: "例）123-4567",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "address_number"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -92,6 +93,7 @@
                 %option{value:"宮崎"}宮崎
                 %option{value:"鹿児島"}鹿児島
                 %option{value:"沖縄"}沖縄
+            = render partial: 'error-messages', locals: {user: @user, column: "address_prefecture"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -99,6 +101,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.text_field :address_name,placeholder: "例）横浜市緑区",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "address_name"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -106,6 +109,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.text_field :address_block,placeholder: "例）青山1-1-1",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "address_block"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -120,6 +124,7 @@
               .first-main__box__main__form__top__group__title__box__nin 任意
             .first-main__box__main__form__top__group__input
               = f.phone_field :address_phone_number,placeholder: "例）09012345678",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "address_phone_number"}
           .first-main__box__main__form__top__button
             = f.submit "次へ進む",class:"submit-scss"
 
