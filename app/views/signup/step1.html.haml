@@ -38,6 +38,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.text_field :nickname,placeholder: "例）メルカリ太郎",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -45,6 +46,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "email"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -52,6 +54,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.password_field :password,placeholder: "7文字以上の半角英数字",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "password"}
             .first-main__box__main__form__top__group__info ※ 英字と数字の両方を含めて設定してください
           .first-main__box__main__form__top__group
           #margin
@@ -67,6 +70,8 @@
             .first-main__box__main__form__top__group__input
               = f.text_field :last_name,placeholder: "例）山田",class: "input-box__flex"
               = f.text_field :first_name, placeholder: '例) 彩', class: "input-box__flex",id:"minute"
+            = render partial: 'error-messages', locals: {user: @user, column: "last_name"}
+            = render partial: 'error-messages', locals: {user: @user, column: "first_name"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -75,6 +80,8 @@
             .first-main__box__main__form__top__group__input
               = f.text_field :last_name_kana,placeholder: "例）ヤマダ",class: "input-box__flex"
               = f.text_field :first_name_kana, placeholder: '例) アヤ',class: "input-box__flex",id:"minute"
+            = render partial: 'error-messages', locals: {user: @user, column: "last_name_kana"}
+            = render partial: 'error-messages', locals: {user: @user, column: "first_name_kana"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -163,6 +170,9 @@
                 %option{value:"30"}30
                 %option{value:"31"}31
               .first-main__box__main__form__top__group__input__year 日
+          = render partial: 'error-messages', locals: {user: @user, column: "birthdate_year"}
+          = render partial: 'error-messages', locals: {user: @user, column: "birthdate_month"}
+          = render partial: 'error-messages', locals: {user: @user, column: "birthdate_day"}
           .first-main__box__main__form__top__contents
             ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         
