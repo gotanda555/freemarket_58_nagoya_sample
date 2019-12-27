@@ -9,10 +9,19 @@ class ItemsController < ApplicationController
   def detail
     @items = Item.all
     @item = Item.find(params[:id])
-    #@category = Category.find(1)
+    @category = Category.find(1)
+  end
+
+  def create
+    
+  
   end
   
   def new
+      @category_parent = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent << parent.name
+      end
   end
   
   def check
