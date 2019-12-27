@@ -81,6 +81,13 @@ class SignupController < ApplicationController
       render '/signup/step1'
     end
 
+    if verify_recaptcha
+      super
+    else
+      self.resource = resource_class.new
+      respond_with_navigational(resource) { render :new }
+    end
+
     def done
       sign_in User.find(session[:id]) unless user_signed_in?
     end
