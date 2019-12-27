@@ -25,6 +25,10 @@ class SignupController < ApplicationController
     session[:birthdate_month] = user_params[:birthdate_month]
     session[:birthdate_day] = user_params[:birthdate_day]
     @user = User.new # 新規インスタンス作成
+    if verify_recaptcha
+    else
+      render '/signup/step1'
+    end
   end
 
   def step3
@@ -79,13 +83,6 @@ class SignupController < ApplicationController
       redirect_to done_signup_index_path
     else
       render '/signup/step1'
-    end
-
-    if verify_recaptcha
-      super
-    else
-      self.resource = resource_class.new
-      respond_with_navigational(resource) { render :new }
     end
 
     def done
