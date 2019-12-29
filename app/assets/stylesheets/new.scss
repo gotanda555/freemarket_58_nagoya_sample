@@ -116,20 +116,7 @@ $l_blue:#0099e8;
 .input-default{
   display: none;
 }
-.boxFileSelect{
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  right: 16px;
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.5;
-  transform: translate(0, -50%);
-  pointer-events: none;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  cursor: pointer;
-}}
+}
 
 &__contents__item__bottom__box__head__form__goods{
   padding: 40px;
@@ -243,12 +230,12 @@ $l_blue:#0099e8;
   font-size: 12px;
   vertical-align: top;
 }
-&__group__select__box,&__group__selects__box{
+&__group__add__select__box,&__group__add__selects__box{
   margin: 8px 0 0;
   position: relative;
   background: $white;
 }
-&__group__select__box__bottom,&__group__selects__box__bottom{
+&__group__add__select__box__bottom,&__group__add__selects__box__bottom{
   position: absolute;
   right: 16px;
   top: 50%;
@@ -535,4 +522,32 @@ a{
 .submit__button{
   background-color:#ea352e;
   color:white;
+}
+
+
+#size_category{
+  margin-top:8px;
+}
+
+.main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo__sub{
+  background-color: #ccc;
+  margin:0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color:#fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.boxFiletext_field{
+  margin-top: 8px;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  width:365px;
 }

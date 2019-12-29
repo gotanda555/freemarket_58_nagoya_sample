@@ -9,7 +9,7 @@
       .main__contents__item__bottom
         .main__contents__item__bottom__box
           .main__contents__item__bottom__box__head 商品の情報を入力
-          = form_with model: @item, url:"/items", method:"post", class:'sell-item' do |f|
+          = form_for (@item) do |f|
             .main__contents__item__bottom__box__head__form
               .main__contents__item__bottom__box__head__form__box
                 .main__contents__item__bottom__box__head__form__box__text
@@ -21,8 +21,8 @@
                     .main__contents__item__bottom__box__head__form__upload__box__item
                   .main__contents__item__bottom__box__head__form__upload__drop
                     .label-box__inner
-                      =f.file_field :images, class:'sell-item__image' do
-                        %input.input-default{type:"file"}
+                      = f.fields_for :images do |img|
+                        = img.file_field :image, class:'sell-item__image' do
                           .boxFileSelect 
                             ドラッグアンドドロップ
                             またはファイルをドラッグしてアップロード
@@ -43,17 +43,18 @@
                 .main__contents__item__bottom__box__head__form__goods__detail__group__category
                   .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover カテゴリー
                   .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover__logo 必須
-                .main__contents__item__bottom__box__head__form__goods__detail__group__select
-                  .main__contents__item__bottom__box__head__form__goods__detail__group__select__box
-                    .main__contents__item__bottom__box__head__form__goods__detail__group__select__box__bottom
-                    = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, { prompt: '---' }, id: 'parent_select'
+                .main__contents__item__bottom__box__head__form__goods__detail__group__add
+                  .main__contents__item__bottom__box__head__form__goods__detail__group__add__select
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box
+                      .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box__bottom
+                      = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, { prompt: '---' },{id: "parent_category"}
                 .main__contents__item__bottom__box__head__form__goods__detail__group__condition
                   .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover 商品の状態
                   .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo 必須
                 .main__contents__item__bottom__box__head__form__goods__detail__group__selects
                   .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box
                     .main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom
-                    = f.select :condition, nil,{ prompt: '---' }, {id: "parent_select"} do
+                    = f.select :condition, nil,{ prompt: '---' },id:"size_category" do
                       %option{value:"新品、未使用品"}新品、未使用品
                       %option{value:"未使用に近い"}未使用に近い
                       %option{value:"目立った傷や汚れなし"}目立った傷や汚れなし
@@ -71,7 +72,7 @@
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__select
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box
                     .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box__bottom
-                    = f.select :burden, nil,{ prompt: '---' }, {id: "parent_select"} do
+                    = f.select :burden, nil,{ prompt: '---' } do
                       %option{value:"送料込み(出品者負担)"}送料込み(出品者負担）
                       %option{value:"着払い(購入者負担)"}着払い(購入者負担）
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
@@ -80,7 +81,7 @@
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
                     .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
-                    = f.select :region, nil,{ prompt: '---' }, {id: "parent_select"} do
+                    = f.select :region, nil,{ prompt: '---' } do
                       %option{value:"北海道"}北海道
                       %option{value:"青森"}青森
                       %option{value:"岩手"}岩手
@@ -134,7 +135,7 @@
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
                     .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
-                    = f.select :region, nil,{ prompt: '---' }, {id: "parent_select"} do
+                    = f.select :sending_days, nil,{ prompt: '---' } do
                       %option{value:"1〜2日で発送"}1〜2日で発送
                       %option{value:"2〜3日で発送"}2〜3日で発送
                       %option{value:"4〜7日で発送"}4〜7日で発送
@@ -174,7 +175,8 @@
                   また、出品をもちまして
                   =link_to '加盟店規約',class:"main__contents__item__bottom__box__head__form__goods__precaution__box__line__text"
                   に同意したことになります。
-              %button.btn__default.btn--red{type: "submit"}
+              %button.btn__default.btn--red
+                = f.hidden_field :status, value:'0'
                 = f.submit "出品する", class: "submit__button"
               = link_to root_path, class: "btn--gray"do
                 もどる
