@@ -2,6 +2,127 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.first-main__header__bar__ul__box__ten1:before{
+  position: absolute;
+  top:31px;
+  right:41px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten2:before{
+  position: absolute;
+  top:31px;
+  right:45px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten3:before{
+  position: absolute;
+  top:31px;
+  right:35px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten4:before{
+  position: absolute;
+  top:31px;
+  right:18px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten:after{
+  position: absolute;
+  top:31px;
+  left:30px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten1:after{
+  position: absolute;
+  top:31px;
+  left:30px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten2:after{
+  position: absolute;
+  top:31px;
+  left:42px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten3:after{
+  position: absolute;
+  top:31px;
+  left:36px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.red{
+  color:#ea352d;
+}
+
+.first-main__header__bar__ul__box__name__red{
+  color:#ea352d;
+  font-weight:bold;
+}
+
+.first-main__header__bar__ul__box__ten,.first-main__header__bar__ul__box__ten1,.first-main__header__bar__ul__box__ten2,.first-main__header__bar__ul__box__ten3,.first-main__header__bar__ul__box__ten4,.first-main__header__bar__ul__box__ten0,.first-main__header__bar__ul__box__ten11,.first-main__header__bar__ul__box__ten22,.first-main__header__bar__ul__box__ten33,.first-main__header__bar__ul__box__ten44,.first-main__header__bar__ul__box__ten00,.first-main__header__bar__ul__box__ten111,.first-main__header__bar__ul__box__ten222,.first-main__header__bar__ul__box__ten333,.first-main__header__bar__ul__box__ten444,.first-main__header__bar__ul__box__ten000,.first-main__header__bar__ul__box__ten1111,.first-main__header__bar__ul__box__ten2222,.first-main__header__bar__ul__box__ten3333,.first-main__header__bar__ul__box__ten4444,.first-main__header__bar__ul__box__ten0000,.first-main__header__bar__ul__box__ten11111,.first-main__header__bar__ul__box__ten22222,.first-main__header__bar__ul__box__ten33333,.first-main__header__bar__ul__box__ten44444{
+  width:12px;
+  height:12px;
+  margin:8px auto 0;
+  border-radius: 50%;
+  background:#CCC;
+}
+
+.redback{
+  background:#ea352d;
+}
+
+
+
+
 //Step1
 .first-main{
   height:100%;
@@ -40,6 +161,7 @@
   margin-right:40px;
   font-size:12px;
   color:#888;
+  position: relative;
 }
 
 
@@ -269,6 +391,102 @@
   margin-top:32px;
 }
 
+.first-main__header__bar__ul__box__ten11:before{
+  position: absolute;
+  top:31px;
+  right:41px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten22:before{
+  position: absolute;
+  top:31px;
+  right:45px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten33:before{
+  position: absolute;
+  top:31px;
+  right:35px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten44:before{
+  position: absolute;
+  top:31px;
+  right:18px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten0:after{
+  position: absolute;
+  top:31px;
+  left:30px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten11:after{
+  position: absolute;
+  top:31px;
+  left:42px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten22:after{
+  position: absolute;
+  top:31px;
+  left:42px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten33:after{
+  position: absolute;
+  top:31px;
+  left:36px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
 //Step3
 .pre-box{
   padding: 0 10px;
@@ -287,6 +505,102 @@
   border-radius: 2px;
   color: #fff;
   font-size: 12px;
+}
+
+.first-main__header__bar__ul__box__ten111:before{
+  position: absolute;
+  top:31px;
+  right:41px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten222:before{
+  position: absolute;
+  top:31px;
+  right:45px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten333:before{
+  position: absolute;
+  top:31px;
+  right:35px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten444:before{
+  position: absolute;
+  top:31px;
+  right:18px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten00:after{
+  position: absolute;
+  top:31px;
+  left:30px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten111:after{
+  position: absolute;
+  top:31px;
+  left:42px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten222:after{
+  position: absolute;
+  top:31px;
+  left:54px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten333:after{
+  position: absolute;
+  top:31px;
+  left:36px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
 }
 
 //Step4
@@ -360,6 +674,102 @@
   border-radius: 4px;
 }
 
+.first-main__header__bar__ul__box__ten1111:before{
+  position: absolute;
+  top:31px;
+  right:41px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten2222:before{
+  position: absolute;
+  top:31px;
+  right:45px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten3333:before{
+  position: absolute;
+  top:31px;
+  right:35px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten4444:before{
+  position: absolute;
+  top:31px;
+  right:18px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
+.first-main__header__bar__ul__box__ten000:after{
+  position: absolute;
+  top:31px;
+  left:30px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten1111:after{
+  position: absolute;
+  top:31px;
+  left:42px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten2222:after{
+  position: absolute;
+  top:31px;
+  left:54px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten3333:after{
+  position: absolute;
+  top:31px;
+  left:36px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#CCC;
+}
+
 //done
 &__box__main__form__top__final{
   text-align: center;
@@ -417,21 +827,108 @@
   margin-left:20px;
 }
 
-.red{
-  color:#ea352d;
-}
-
-&__header__bar__ul__box__name__red{
-  color:#ea352d;
-  font-weight:bold;
-}
-
 .first-main__image__box__left__flex__apple__size:hover{
   opacity:0.7;
 }
 
 .first-main__image__box__left__flex__google__size:hover{
   opacity:0.7;
+}
+
+.first-main__header__bar__ul__box__ten11111:before{
+  position: absolute;
+  top:31px;
+  right:41px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten22222:before{
+  position: absolute;
+  top:31px;
+  right:45px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten33333:before{
+  position: absolute;
+  top:31px;
+  right:35px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten44444:before{
+  position: absolute;
+  top:31px;
+  right:18px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten0000:after{
+  position: absolute;
+  top:31px;
+  left:30px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten11111:after{
+  position: absolute;
+  top:31px;
+  left:42px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten22222:after{
+  position: absolute;
+  top:31px;
+  left:54px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
+}
+
+.first-main__header__bar__ul__box__ten33333:after{
+  position: absolute;
+  top:31px;
+  left:36px;
+  height:3px;
+  width:100%;
+  display: block;
+  content: "";
+  flex-grow: 1;
+  background:#ea352d;
 }
 
 //signupのtop
