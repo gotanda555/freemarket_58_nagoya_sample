@@ -6,9 +6,11 @@
           = image_tag  "fmarket_logo_red.svg",class:"headerBox__main__search__logo__link__box"
       .headerBox__main__search__input
         .headerBox__main__search__input__box
-          %label
-            %input{placeholder: "何かお探しですか？", type: "text", class: "search-box"} 
-            %i.fas.fa-search{class: "search-icon"}
+          = form_tag(searches_path,method: :get) do
+            %label
+              = text_field_tag :search, "",placeholder:"何かお探しですか？",class: "search-box"
+              %i.fas.fa-search{class: "search-icon"}
+              = submit_tag 'search', :name => nil
     .headerBox__main__bottom
       .headerBox__main__bottom__select
         .headerBox__main__bottom__select__category
