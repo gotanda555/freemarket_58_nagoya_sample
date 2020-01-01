@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.text "body"
     t.bigint "category_id"
     t.string "size"
-    t.bigint "brand_id"
+    t.string "brandname"
     t.string "condition", null: false
     t.string "burden", null: false
     t.string "region", null: false
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["saler_id"], name: "index_items_on_saler_id"
@@ -114,7 +113,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
   add_foreign_key "comments", "users"
   add_foreign_key "evaluations", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "saler_id"

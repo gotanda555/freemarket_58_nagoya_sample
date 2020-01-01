@@ -6,7 +6,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.text        :body
       t.references  :category, foreign_key: true
       t.string      :size
-      t.references  :brand, foreign_key: true
+      t.string      :brandname
       t.string      :condition, null: false
       t.string      :burden, null: false
       t.string      :region, null: false

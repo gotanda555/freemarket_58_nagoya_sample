@@ -21,18 +21,19 @@
             もっとみる ＞
       %ul.main__item__box__list__women__item
         - @items.each do |item|
-          - if item.category_id == 1
-            %li.main__item__box__list__women__item__box
-              .main__item__box__list__women__item__box__in
-                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
-                  .main__item__box__list__women__item__box__image
-                    = image_tag item.images[0].image_url,size: "184x198"
-                    .main__item__box__list__women__item__box__image__place            
-                      .main__item__box__list__women__item__box__image__place__language
-                        ¥#{item.price.to_s(:delimited)}
-                  .main__item__box__list__women__item__box__text
-                    .main__item__box__list__women__item__box__text__language
-                      = item.name
+          -@ladies_grandchild.each do |lady|
+            - if item.category_id == lady.id
+              %li.main__item__box__list__women__item__box
+                .main__item__box__list__women__item__box__in
+                  =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                    .main__item__box__list__women__item__box__image
+                      = image_tag item.images[0].image_url,size: "184x198"
+                      .main__item__box__list__women__item__box__image__place            
+                        .main__item__box__list__women__item__box__image__place__language
+                          ¥#{item.price.to_s(:delimited)}
+                    .main__item__box__list__women__item__box__text
+                      .main__item__box__list__women__item__box__text__language
+                        = item.name
 
     .main__item__box__list__women
       .main__item__box__list__women__header
@@ -44,18 +45,19 @@
             もっとみる ＞
       %ul.main__item__box__list__women__item
         - @items.each do |item|
-          - if item.category_id == 219
-            %li.main__item__box__list__women__item__box
-              .main__item__box__list__women__item__box__in
-                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
-                  .main__item__box__list__women__item__box__image
-                    = image_tag item.images[0].image_url,size: "184x198"
-                    .main__item__box__list__women__item__box__image__place            
-                      .main__item__box__list__women__item__box__image__place__language
-                        ¥#{item.price.to_s(:delimited)}
-                  .main__item__box__list__women__item__box__text
-                    .main__item__box__list__women__item__box__text__language
-                      = item.name
+          -@men_grandchild.each do |men|
+            - if item.category_id == men.id
+              %li.main__item__box__list__women__item__box
+                .main__item__box__list__women__item__box__in
+                  =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
+                    .main__item__box__list__women__item__box__image
+                      = image_tag item.images[0].image_url,size: "184x198"
+                      .main__item__box__list__women__item__box__image__place            
+                        .main__item__box__list__women__item__box__image__place__language
+                          ¥#{item.price.to_s(:delimited)}
+                    .main__item__box__list__women__item__box__text
+                      .main__item__box__list__women__item__box__text__language
+                        = item.name
 
 
 .main__item__header
@@ -81,7 +83,7 @@
             もっとみる ＞
       %ul.main__item__box__list__women__item
         - @items.each do |item|
-          - if item.brand_id == 2
+          - if item.brandname == "シャネル"
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
@@ -104,7 +106,7 @@
             もっとみる ＞
       %ul.main__item__box__list__women__item
         - @items.each do |item|
-          - if item.brand_id == 1
+          - if item.brandname == "ナイキ"
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do

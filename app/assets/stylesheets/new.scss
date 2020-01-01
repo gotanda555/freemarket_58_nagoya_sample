@@ -60,8 +60,8 @@ $l_blue:#0099e8;
         border-top: 1px solid $l_gray;
         &__box{
           width: 620px;
-          padding: 40px;
-           &__text{
+          padding: 30px 40px 3px 40px;
+            &__text{
             font-size: 16px;
             font-weight: 600;
             display: flex;
@@ -84,23 +84,13 @@ $l_blue:#0099e8;
       &__upload{
         display: block;
         width: 620px;
-        margin: 16px auto 0;
+        margin: 10px auto 0;
         &__box{
           display: inline;
+          
           &__item{
-            float: left;
             display: block;
           }
-        }
-        &__drop{
-          width: 100%;
-          margin-left: 0;
-          position: relative;
-          min-height: 162px;
-          background: $white;
-          border: 1px dashed $gray;
-          font-size: 0;
-          text-align: center;
         }
       }
       }
@@ -125,6 +115,7 @@ $l_blue:#0099e8;
     margin: 0;
     display: flex;
     font-weight: 600;
+    clear:both;
     &__label{
       font-size: 14px;
       display: inline-block;
@@ -550,4 +541,128 @@ a{
   font-size: 16px;
   line-height: 1.5;
   width:365px;
+}
+
+.item-num-0{
+  width: 100%;
+}
+.item-num-1{
+  width: 491px;
+}
+.item-num-2{
+  width: 363px;
+}
+.item-num-3{
+  width: 234px;
+}
+.item-num-4{
+  width: 106px;
+}
+//下段のfile_field
+.item-num-5{
+  width: 100%;
+}
+.item-num-6{
+  width: 491px;
+}
+.item-num-7{
+  width: 363px;
+}
+.item-num-8{
+  width: 234px;
+}
+.item-num-9{
+  width: 106px;
+}
+
+#image-box-1{
+  width:620px;
+  clear:both;
+  margin-bottom:20px;
+}
+
+.item-image__content{
+  text-align:center;
+  height:116px;
+  width:auto;
+  overflow:hidden;
+  background:#f5f5f5;
+}
+
+.item-image__operetion{
+  font-size:14px;
+  display:flex;
+}
+
+.item-image__operetion--edit{
+    display: inline-block;
+    width: 50%;
+    background: #f5f5f5;
+    line-height: 44px;
+    text-align: center;
+    color: #0099e8;
+    text-decoration: none;
+    
+
+}
+
+.item-image__operetion--delete{
+  display: inline-block;
+  width: 50%;
+  background: #f5f5f5;
+  line-height: 44px;
+  text-align: center;
+  color: #0099e8;
+  text-decoration: none;
+}
+
+#image-box__container{
+
+  margin-left:5px;
+  margin-left: 0;
+  position: relative;
+  min-height: 162px;
+  background: $white;
+  border: 1px dashed $gray;
+  float:right;
+  height:160px;
+  margin-top:10px;
+}
+
+.item-image{
+  margin-top:10px;
+  margin-right:10px;
+  float:left;
+}
+
+
+#img-file{
+    display:none;
+
+}
+
+.input-area2{
+  position:relative;
+}
+
+
+.input-area__text{
+  position:absolute;
+  vertical-align: middle;
+  max-height:160px;
+  color:gray;
+  text-align:center;
+  width:100%;
+  padding:60px 0;
+  cursor: pointer;
+  font-size:13px;
+  font-family: monospace, monospace;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }

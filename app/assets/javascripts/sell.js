@@ -54,8 +54,7 @@ $(function(){
 <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects'>
 <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects__box'>
   <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom'></div>
-  <input type ="text" class="boxFiletext_field" name= "item[brand_attributes]" value="" placeholder="例）シャネル">
-  <input value="1" type="hidden" name = 'item[brand_id]' id = "item_brand_id">
+  <input type ="text" class="boxFiletext_field" name= "item[brandname]" value="" placeholder="例）シャネル">
 </div>
 </div>`
 $('.main__contents__item__bottom__box__head__form__goods__detail__group__add__select').append(BrandboxHtml);

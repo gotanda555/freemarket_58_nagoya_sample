@@ -1,10 +1,15 @@
 class ItemsController < ApplicationController
 
-  before_action :move_to_login, only: :check
+  #before_action :move_to_login, only: [:new, :check]
 
   def index
     @item = Item.new
     @items = Item.all
+    @ladies = Category.find(1)
+    @ladies_grandchild = @ladies.indirects
+    @men = Category.find(219)
+    @men_grandchild = @men.indirects
+
   end
 
   def get_category_children
@@ -41,14 +46,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    binding.pry
     redirect_to root_path
   end
   
   def new
       @item = Item.new
       @item.images.build
-      #@item.brand.build
       @category_parent = ["---"]
       Category.where(ancestry: nil).each do |parent|
       @category_parent << parent.name
@@ -61,7 +64,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :status, :body,:category_id, :size, :brand_id, :condition,:burden,:region,:sending_days,:price, brand_attributes: [:brandname],images_attributes: [:image]).merge(saler_id: current_user.id, buyer_id: current_user.id)
+    params.require(:item).permit(:name, :status, :body,:category_id, :size, :brandname, :condition,:burden,:region,:sending_days,:price, images_attributes: [:image]).merge(saler_id: current_user.id, buyer_id: current_user.id)
   end
   
   def move_to_login

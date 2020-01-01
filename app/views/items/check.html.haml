@@ -9,7 +9,7 @@
       .check__main__flame__buy-item
         .check__main__flame__buy-item__inner
           %h3.check__main__flame__buy-item__inner__image
-            = image_tag @item.images[0].image, class:'check__main__flame__buy-item__inner__image__img'
+            = image_tag @item.images[0].image_url, class:'check__main__flame__buy-item__inner__image__img'
           %p.check__main__flame__buy-item__inner__name
             = @item.name
           .check__main__flame__buy-item__inner__form

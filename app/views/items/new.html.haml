@@ -16,16 +16,19 @@
                   .main__contents__item__bottom__box__head__form__box__text__cover 商品画像
                   .main__contents__item__bottom__box__head__form__box__text__logo 必須
                 .main__contents__item__4rbottom__box__head__form__box__text__texts 最大10枚までアップロードできます
-                .main__contents__item__bottom__box__head__form__upload
-                  .main__contents__item__bottom__box__head__form__upload__box
-                    .main__contents__item__bottom__box__head__form__upload__box__item
-                  .main__contents__item__bottom__box__head__form__upload__drop
-                    .label-box__inner
-                      = f.fields_for :images do |img|
-                        = img.file_field :image, class:'sell-item__image' do
-                          .boxFileSelect 
-                            ドラッグアンドドロップ
-                            またはファイルをドラッグしてアップロード
+              .main__contents__item__bottom__box__head__form__upload
+                .main__contents__item__bottom__box__head__form__upload__box
+                  .main__contents__item__bottom__box__head__form__upload__box__item
+                    %ul#image-box-1.clearfix
+                      %li.item-num-0#image-box__container
+                        = f.fields_for :images do |i|
+                          = i.label :image, for: "img-file" do
+                            .input-area
+                              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", id:"img-file" 
+                              .input-area__text
+                                ドラッグアンドドロップ
+                                %br
+                                またはクリックしてファイルをアップロード
             .main__contents__item__bottom__box__head__form__goods
               .main__contents__item__bottom__box__head__form__goods__name
                 .main__contents__item__bottom__box__head__form__goods__name__label 商品名
