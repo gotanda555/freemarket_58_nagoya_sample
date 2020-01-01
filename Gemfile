@@ -86,5 +86,6 @@ gem 'dotenv-rails'
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'ancestry'
 gem 'rails-i18n'
+gem 'recaptcha', require: "recaptcha/rails"
 gem 'carrierwave'
 gem 'mini_magick'
