@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ItemsController do
-
   describe 'GET #check' do
     it "renders the :check template" do
       category = FactoryBot.create(:category)
