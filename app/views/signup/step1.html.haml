@@ -7,24 +7,19 @@
       %ul.first-main__header__bar__ul
         %li.first-main__header__bar__ul__box
           .first-main__header__bar__ul__box__name__red 会員情報
-          .first-main__header__bar__ul__box__ten
-            = icon('fas', 'circle',  class: "red")
+          .first-main__header__bar__ul__box__ten.redback
         %li.first-main__header__bar__ul__box
           .first-main__header__bar__ul__box__name 電話番号認証
-          .first-main__header__bar__ul__box__ten
-            = icon('fas', 'circle',  class: "")
+          .first-main__header__bar__ul__box__ten1
         %li.first-main__header__bar__ul__box
           .first-main__header__bar__ul__box__name お届け先住所入力
-          .first-main__header__bar__ul__box__ten
-            = icon('fas', 'circle',  class: "")
+          .first-main__header__bar__ul__box__ten2
         %li.first-main__header__bar__ul__box
           .first-main__header__bar__ul__box__name 支払い方法
-          .first-main__header__bar__ul__box__ten
-            = icon('fas', 'circle',  class: "")
+          .first-main__header__bar__ul__box__ten3
         %li.first-main__header__bar__ul__box
           .first-main__header__bar__ul__box__name 完了
-          .first-main__header__bar__ul__box__ten
-            = icon('fas', 'circle',  class: "")
+          .first-main__header__bar__ul__box__ten4
 
   .first-main__box
     .first-main__box__main
@@ -38,6 +33,7 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.text_field :nickname,placeholder: "例）メルカリ太郎",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -45,14 +41,24 @@
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
               = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "email"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
               .first-main__box__main__form__top__group__title__name パスワード
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              = f.password_field :password,placeholder: "7文字以上の半角英数字",class: "input-box"
+              = f.password_field :password,placeholder: "6文字以上の半角英数字",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "password"}
             .first-main__box__main__form__top__group__info ※ 英字と数字の両方を含めて設定してください
+          .first-main__box__main__form__top__group
+          #margin
+            .first-main__box__main__form__top__group__title
+              .first-main__box__main__form__top__group__title__name パスワード（確認）
+              .first-main__box__main__form__top__group__title__box 必須
+            .first-main__box__main__form__top__group__input
+              = f.password_field :password_confirmation,placeholder: "6文字以上の半角英数字",class: "input-box"
+            = render partial: 'error-messages', locals: {user: @user, column: "password_confirmation"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__hedding
@@ -67,6 +73,8 @@
             .first-main__box__main__form__top__group__input
               = f.text_field :last_name,placeholder: "例）山田",class: "input-box__flex"
               = f.text_field :first_name, placeholder: '例) 彩', class: "input-box__flex",id:"minute"
+            = render partial: 'error-messages', locals: {user: @user, column: "last_name"}
+            = render partial: 'error-messages', locals: {user: @user, column: "first_name"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -75,6 +83,8 @@
             .first-main__box__main__form__top__group__input
               = f.text_field :last_name_kana,placeholder: "例）ヤマダ",class: "input-box__flex"
               = f.text_field :first_name_kana, placeholder: '例) アヤ',class: "input-box__flex",id:"minute"
+            = render partial: 'error-messages', locals: {user: @user, column: "last_name_kana"}
+            = render partial: 'error-messages', locals: {user: @user, column: "first_name_kana"}
           .first-main__box__main__form__top__group
           #margin
             .first-main__box__main__form__top__group__title
@@ -163,11 +173,15 @@
                 %option{value:"30"}30
                 %option{value:"31"}31
               .first-main__box__main__form__top__group__input__year 日
+          = render partial: 'error-messages', locals: {user: @user, column: "birthdate_year"}
+          = render partial: 'error-messages', locals: {user: @user, column: "birthdate_month"}
+          = render partial: 'error-messages', locals: {user: @user, column: "birthdate_day"}
           .first-main__box__main__form__top__contents
             ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         
         .first-main__box__main__form__under
           .first-main__box__main__form__under__contents
+            = recaptcha_tags
           .first-main__box__main__form__under__info
             「次へ進む」のボタンを押すことにより、
             = link_to "#",class:"info" do

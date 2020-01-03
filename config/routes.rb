@@ -36,5 +36,7 @@ end
       post 'delete', to: 'card#delete'
     end
   end
+
+  resources :searches,only:[:index]
   
 end

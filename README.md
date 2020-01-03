@@ -70,6 +70,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belongs_to :item
 
 
 ## categoriesテーブル
@@ -116,6 +117,7 @@ Things you may want to cover:
 - has_one :category
 - has_one :brand
 - belongs_to :user
+- has_many :items
 - has_many :images
 - has_many :images, dependent: :destroy
 - accepts_nested_attributes_for :images, allow_destroy: true
@@ -143,3 +145,5 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+
+![mercari_DB (1)](https://user-images.githubusercontent.com/54758561/71304420-cc5a5880-2409-11ea-8def-ea19871f5fe0.jpeg)

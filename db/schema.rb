@@ -93,13 +93,13 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.integer "birthdate_year", null: false
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
-    t.integer "phone_number", null: false
+    t.bigint "phone_number", null: false
     t.string "address_number", null: false
-    t.integer "address_prefecture", default: 0, null: false
+    t.string "address_prefecture", null: false
     t.string "address_name", null: false
     t.string "address_block", null: false
     t.string "address_building"
-    t.integer "address_phone_number"
+    t.bigint "address_phone_number"
     t.text "introduce"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -81,7 +81,7 @@
             もっとみる ＞
       %ul.main__item__box__list__women__item
         - @items.each do |item|
-          - if item.category_id == 3
+          - if item.brand_id == 2
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
@@ -104,7 +104,7 @@
             もっとみる ＞
       %ul.main__item__box__list__women__item
         - @items.each do |item|
-          - if item.category_id == 4
+          - if item.brand_id == 1
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
