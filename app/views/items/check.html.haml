@@ -23,7 +23,7 @@
               .check__main__flame__buy-item__inner__pay__box__amount 支払い金額
               .check__main__flame__buy-item__inner__pay__box__price
                 ¥#{@item.price.to_s(:delimited)}
-          = link_to '#' do
+          = form_tag(action: :pay, method: :post) do
             %button.check__main__flame__buy-item__inner__button 購入する
           .check__main__flame__buy-item__inner__buy-user-info__pay
             .check__main__flame__buy-item__inner__buy-user-info__pay__inner
