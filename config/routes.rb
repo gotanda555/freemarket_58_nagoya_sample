@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get   'items/new'   =>  'items#new'
   get 'items/:id'=> 'items#detail'
   get 'items/:id/check'=> 'items#check'
+  get 'items/:id/confirm' => 'items#confirm'
   resource :items do
 end
   
@@ -36,7 +37,5 @@ end
       post 'delete', to: 'card#delete'
     end
   end
-
-  resources :searches,only:[:index]
   
 end

@@ -19,6 +19,11 @@ class ItemsController < ApplicationController
     @items = Item.all
     @item = Item.find(params[:id])
   end
+
+  def confirm
+    @items = Item.all
+    @item = Item.find(params[:id])
+  end
   
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
