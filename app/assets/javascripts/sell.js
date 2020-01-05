@@ -117,11 +117,6 @@ $(function(){
       dataType: 'json',
     })
     .done(function(){
-      // console.log(grandchild)
-      // insertHTML = '';
-      // grandchild.forEach(function(grandchild){
-      //   insertHTML += appendOption(grandchild);
-      // });
       appendOptionBox();
     })
 })

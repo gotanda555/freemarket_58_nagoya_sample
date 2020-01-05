@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  #before_action :move_to_login, only: [:new, :check]
+  before_action :move_to_login, only: [:new, :check]
 
   def index
     @item = Item.new
@@ -30,8 +30,6 @@ class ItemsController < ApplicationController
   end
 
   def get_brand
-    # @brand = Brand.new
-    # @brands = Brand.all
     respond_to do |format|
       format.html
       format.json
@@ -46,17 +44,22 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    redirect_to root_path
+    if @item.save
+      redirect_to root_path
+    else
+      render '/items/new'
+    end
   end
+
   
   def new
       @item = Item.new
       @item.images.build
       @category_parent = ["---"]
-      Category.where(ancestry: nil).each do |parent|
-      @category_parent << parent.name
-      end
+      @category_parent = Category.where(ancestry: nil).pluck(:name)
+      @category_parent.unshift("---")
   end
+
 
   def check
     @items = Item.all
