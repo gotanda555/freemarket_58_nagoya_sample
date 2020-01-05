@@ -61,24 +61,36 @@
                     %input{type: "checkbox", class: "box-size"}
                     すべて
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    未使用に近い
+                    = f.check_box :condition_eq_any, { multiple: true }, "2", nil
+                    = "未使用に近い"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 未使用に近い
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    やや傷や汚れあり
+                    = f.check_box :condition_eq_any, { multiple: true }, "4", nil
+                    = "未使用に近い"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# やや傷や汚れあり
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    全体的に状態が悪い
+                    = f.check_box :condition_eq_any, { multiple: true }, "6", nil
+                    = "未使用に近い"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 全体的に状態が悪い
                 .search__body__right
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    新品、未使用
+                    = f.check_box :condition_eq_any, { multiple: true }, "1", nil
+                    = "新品、未使用"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 新品、未使用
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    目立った傷や汚れなし
+                    = f.check_box :condition_eq_any, { multiple: true }, "3", nil
+                    = "未使用に近い"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 目立った傷や汚れなし
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    傷や汚れあり
+                    = f.check_box :condition_eq_any, { multiple: true }, "5", nil
+                    = "未使用に近い"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 傷や汚れあり
   
             .search__main__color__left__box__form
               .search__main__color__left__box__form__text
@@ -90,16 +102,16 @@
                     %input{type: "checkbox", class: "box-size"}
                     すべて
                   .search__main__color__left__box__form__check
-                    -# = f.check_box :burden_in
-                    -# = '出品者負担'
-                    %input{type: "checkbox", class: "box-size"}
-                    送料込み（出品者負担）
+                    = f.check_box :burden_eq_any, { multiple: true }, "1", nil
+                    = "送料込み（出品者負担）"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 送料込み（出品者負担）
                 .search__body__right
                   .search__main__color__left__box__form__check
-                    -# = f.check_box :burden_in
-                    -# = '購入者負担'
-                    %input{type: "checkbox", class: "box-size"}
-                    着払い（購入者負担）
+                    = f.check_box :burden_eq_any, { multiple: true }, "2", nil
+                    = "送料込み（出品者負担）"
+                    -# %input{type: "checkbox", class: "box-size"}
+                    -# 着払い（購入者負担）
   
             .search__main__color__left__box__form
               .search__main__color__left__box__form__text
@@ -148,7 +160,7 @@
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
                   .main__item__box__list__women__item__box__image
-                    = image_tag item.images[0].image,size: "184x198"
+                    = image_tag item.images[0].image_url,size: "184x198"
                     .main__item__box__list__women__item__box__image__place            
                       .main__item__box__list__women__item__box__image__place__language
                         ¥#{item.price.to_s(:delimited)}
