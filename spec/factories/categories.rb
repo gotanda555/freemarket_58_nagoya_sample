@@ -1,6 +1,8 @@
 FactoryBot.define do
     factory :category do
+      association :item
       path              {""}
-      name              {"レディース"}
+      name              {"おもちゃ"}
+      ancestry          {""}
     end    
   end
