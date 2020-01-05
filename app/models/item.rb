@@ -5,4 +5,10 @@ class Item < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images
   validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where(['name LIKE ?', "%#{search}%"])
+  end
+
 end
