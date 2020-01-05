@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "items#index"
   get   'users/:id'   =>  'users#show'
-  get   'items/new'   =>  'items#new'
-  get 'items/:id'=> 'items#detail'
+  get   'items/new'   =>  'items#new' 
   get 'items/:id/check'=> 'items#check'
 
   resource :items do
+    collection do
+      get 'get_category_children'
+      get 'get_category_grandchildren'
+      get 'get_brand'
+    end
 end
+get 'items/:id'=> 'items#detail'
   
   resources :users, only: [:edit, :update]
 
