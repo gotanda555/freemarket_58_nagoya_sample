@@ -129,9 +129,9 @@
 
 
       .search__main__color__right
-        -if @search.present?
+        -if @search_item.present?
           %h2.search__main__color__right__head
-            =@search
+            =@search_item.name_cont
             %span.search__main__color__right__head__text
               の検索結果
 
