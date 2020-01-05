@@ -22,8 +22,8 @@ $(function(){
                       </div>
                     </div>
                     <div class='item-image__operetion'>
-                      <div class='item-image__operetion--edit'>編集</div>
-                      <div class='item-image__operetion--delete'>削除</div>
+                      <div class='item-image__operetion__edit'>編集</div>
+                      <div class='item-image__operetion__delete'>削除</div>
                     </div>
                   </li>`
         $('#image-box__container').before(html);

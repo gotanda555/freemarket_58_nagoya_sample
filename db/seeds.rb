@@ -59,7 +59,6 @@ men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"
   )
 end
 
-
   [
     'ナイキ','グッチ','シャネル',
 

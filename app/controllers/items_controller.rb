@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
     @ladies_grandchild = @ladies.indirects
     @men = Category.find(219)
     @men_grandchild = @men.indirects
-
   end
 
   def get_category_children
