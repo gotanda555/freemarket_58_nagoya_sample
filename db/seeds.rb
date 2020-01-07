@@ -132,8 +132,6 @@ end
 #   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62VmUWfmWeGQqyU9q_fXDmwUH8FBaVwKyfmTnsgqiKjau03lDvA&s', '16'],
 #   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6trj-H7Vf-QKbNvn2OBy_vYbg-WnmPD_q7ieaqpc8v7frhTkj&s', '17'],
 #   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpYp6nu44qB-ufp0diZUeAoTwUMEnrqDWUrhiGpi7aUA7REfEK&s', '18'],
-
-  
 # ].each do |image, item_id|
 #   Image.create!(
 #     { image: image,
