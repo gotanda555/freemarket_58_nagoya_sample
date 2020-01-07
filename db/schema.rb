@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.bigint "category_id"
     t.string "size"
     t.string "brandname"
-    t.string "condition", null: false
-    t.string "burden", null: false
+    t.integer "condition", null: false
+    t.integer "burden", null: false
     t.string "region", null: false
     t.string "sending_days", null: false
     t.integer "price", null: false

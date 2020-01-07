@@ -59,83 +59,60 @@ men_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"
   )
 end
 
-  # [
-  #   'ナイキ','グッチ','シャネル',
 
-  # ].each do |brandname|
-  #   Brand.create!(
-  #     { brandname: brandname 
-  #         }
-  #   )
-  # end
+[
+  ['ユニクロジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '新品、未使用', '送料込み（出品者負担）', '北海道','2-3日', '1800', '1', '1',],
+  ['レディースジャケット', '0', '良品です！', '64', 'M', '', '未使用に近い', '着払い（購入者負担）', '横浜','5日', '3200', '1', '1',],
+  ['おすすめレディースジャケット', '0', '良品です！', '1', 'M', 'シャネル', '目立った傷や汚れなし', '送料込み（出品者負担）', '北海道','2-3日', '5600', '1', '1',],
+  ['GUコーデ', '0', '良品です！', '223', 'M', '', 'やや傷や汚れあり', '着払い（購入者負担）', '青森','2-3日', '2600', '1', '1',],
+  ['冬アウター', '0', '良品です！', '1', 'M', 'ナイキ', '傷や汚れあり', '送料込み（出品者負担）', '岩手','3年', '1300', '1', '1',],
+  ['お気に入りジャケット', '0', '良品です！', '1', 'M', 'シャネル', '全体的に状態が悪い', '着払い（購入者負担）', '秋田','1.5年', '4200', '1', '1',],
+  ['ユニクロ あったかジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '新品、未使用', '送料込み（出品者負担）', '栃木','1日', '1400', '1', '1',],
+  ['Century21 ジャケット', '0', '良品です！', '1', 'M', 'シャネル', '未使用に近い', '着払い（購入者負担）', '東京','5日', '2100', '1', '1',],
+  ['カシミア ジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '目立った傷や汚れなし', '送料込み（出品者負担）', '東京','5日', '6800', '1', '1',],
+  ['Forever21 アウター', '0', '良品です！', '1', 'M', 'シャネル', 'やや傷や汚れあり', '着払い（購入者負担）', '東京','5日', '2100', '1', '1',],
+  ['ZARA アウター', '0', '良品です！', '223', 'M', '', '傷や汚れあり', '送料込み（出品者負担）', '東京','5日', '7000', '1', '1',],
+  ['冬アウター', '0', '良品です！', '64', 'M', '', '全体的に状態が悪い', '着払い（購入者負担）', '岩手','3年', '1300', '1', '1',],
+  ['お気に入りジャケット', '0', '良品です！', '223', 'M', '', '新品、未使用', '送料込み（出品者負担）', '秋田','1.5年', '4200', '1', '1',],
+  ['ユニクロ あったかジャケット', '0', '良品です！', '64', 'M', '', '未使用に近い', '着払い（購入者負担）', '栃木','1日', '1400', '1', '1',],
+  ['Century21 ジャケット', '0', '良品です！', '223', 'M', '', '目立った傷や汚れなし', '送料込み（出品者負担）', '東京','5日', '2100', '1', '1',],
+  ['カシミア ジャケット', '0', '良品です！', '64', 'M', '', 'やや傷や汚れあり', '着払い（購入者負担）', '東京','5日', '6800', '1', '1',],
+  ['Forever21 アウター', '0', '良品です！', '223', 'M', '', '傷や汚れあり', '送料込み（出品者負担）', '東京','5日', '2100', '1', '1',],
+  ['おすすめレディースジャケット', '0', '良品です！', '64', 'M', '', '全体的に状態が悪い', '着払い（購入者負担）', '北海道','2-3日', '5600', '1', '1',],
+].each do |name, status, body, category_id, size, brandname, condition, burden, region, sending_days, price, saler_id, buyer_id|
+  Item.create!(
+    { name: name,
+      status: status,
+      body: body,
+      category_id: category_id,
+      size: size,
+      brandname: brandname,
+      condition: condition,
+      burden: burden,
+      region: region,
+      sending_days: sending_days,
+      price: price,
+      saler_id: saler_id,
+      buyer_id: buyer_id,
+        }
+  )
+end
 
-
-
-# [
-#   ['ユニクロジャケット', '0', '良品です！', '1', 'M', '3', '美品', '出品者負担', '北海道','2-3日', '1800', '1', '1',],
-#   ['レディースジャケット', '0', '良品です！', '1', 'M', '2', '美品', '出品者負担', '横浜','5日', '3200', '1', '1',],
-#   ['おすすめレディースジャケット', '0', '良品です！', '1', 'M', '3', '美品', '出品者負担', '北海道','2-3日', '5600', '1', '1',],
-#   ['GUコーデ', '0', '良品です！', '1', 'M', '3', '美品', '出品者負担', '青森','2-3日', '2600', '1', '1',],
-#   ['冬アウター', '0', '良品です！', '1', 'M', '3', '美品', '出品者負担', '岩手','3年', '1300', '1', '1',],
-#   ['お気に入りジャケット', '0', '良品です！', '1', 'M', '2', '美品', '購入者負担', '秋田','1.5年', '4200', '1', '1',],
-#   ['ユニクロ あったかジャケット', '0', '良品です！', '1', 'M', '3', '美品', '購入者負担', '栃木','1日', '1400', '1', '1',],
-#   ['Century21 ジャケット', '0', '良品です！', '1', 'M', '3', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-#   ['カシミア ジャケット', '0', '良品です！', '1', 'M', '3', '美品', '購入者負担', '東京','5日', '6800', '1', '1',],
-#   ['Forever21 アウター', '0', '良品です！', '1', 'M', '3', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-#   ['ZARA アウター', '0', '良品です！', '219', 'M', '3', '美品', '購入者負担', '東京','5日', '7000', '1', '1',],
-#   ['冬アウター', '0', '良品です！', '219', 'M', '2', '美品', '出品者負担', '岩手','3年', '1300', '1', '1',],
-#   ['お気に入りジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '秋田','1.5年', '4200', '1', '1',],
-#   ['ユニクロ あったかジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '栃木','1日', '1400', '1', '1',],
-#   ['Century21 ジャケット', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-#   ['カシミア ジャケット', '0', '良品です！', '219', 'M', '3', '美品', '購入者負担', '東京','5日', '6800', '1', '1',],
-#   ['Forever21 アウター', '0', '良品です！', '219', 'M', '1', '美品', '購入者負担', '東京','5日', '2100', '1', '1',],
-#   ['おすすめレディースジャケット', '0', '良品です！', '219', 'M', '3', '美品', '出品者負担', '北海道','2-3日', '5600', '1', '1',],
-# ].each do |name, status, body, category_id, size, brand_id, condition, burden, region, sending_days, price, saler_id, buyer_id|
-#   Item.create!(
-#     { name: name,
-#       status: status,
-#       body: body,
-#       category_id: category_id,
-#       size: size,
-#       brand_id: brand_id,
-#       condition: condition,
-#       burden: burden,
-#       region: region,
-#       sending_days: sending_days,
-#       price: price,
-#       saler_id: saler_id,
-#       buyer_id: buyer_id,
-#         }
-#   )
-# end
-
-# [
-#   ['https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQdp_WF__T4GtC2A-pa9-FhSYQtRpk7QtDU9QigpiChhswjTrtid1-ZyShmtze4emV9CGBcsPD2Gf3APvpqvKbXC_gYCJRxghdMebw_PYz_&usqp=CAc', '1'],
-#   ['https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcREeB_1KQcUmI53sLSP7A6lWQFYIjH0cyi1SXqCyRcEowEoVl8WQw44i03LPtt4yMJVK08_36IlkV_2w2zGVeYdyQo81zogb7cSrFKh8VIwsbolJAJFbX1G&usqp=CAc', '1'],
-#   ['https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQszI3hYwjEflsK0sIdLXX9zshkdTp7OJOxJoLJ-IC9IsF4cDWfg65EDZIJO4AQMEaah3yCbvCToQiExfHy30Lzy7iNKbHWTmBRXrV5IxxlQt8hRfadTJr6&usqp=CAc', '1'],
-#   ['https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT3AW7usaZBpFkuSO4E8Qjfk1soYYGDBnbSrZHnC6zc1RAZM4DMazi9tx4LCD9QdwN9RZlgUg5U3KUyiZrW3QwmjFdpg_ep9VYRPi6Htg8&usqp=CAc', '1'],
-#   ['https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTkqxkqQYTHTxmbzW58Y7VS5Ch9Ul2tksqyRQgaMDZ9t3yyHHSI3MAwPGIUg_T23PE7FjEYDVM4XxDbxsv5KdHe2TYGO--hGgdezOHq6c9lOI_gSZs7ttwSmw&usqp=CAc', '2'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpxC0lU75UJmfTttp6mpATJD5_ywzB9hwJPDYw2FmMDOxMAwN1ug&s', '2'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQingvKhLfizU19SWceunurEGz8YQeZsq0B8HAaCKBUzS933tkgJQ&s', '3'],
-#   ['https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRVSBh5IBgUjbDwK9jJWpS_uG4vX81n63JsGcntnW6_dT-X4SgJCmufpevyZOPBQUfGiHOMaaT0ItdSlCnSXUeS8gkYVsP3ghgsd1JOuW1-SbIjca-klHhZ&usqp=CAc', '4'],
-#   ['https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcToeydj75R_xSyERt7YmE4Z-TuGNaaGHuDUcF8JPtBrs3t81fCEd6_2bKX_d2tzN8tK2Gsgtx8-4aMFpDyV4sNHy3KDGSwxoSRIbp10i0k1FfCYNLBTKlgf&usqp=CAc', '5'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_kTkLP9jvIMmcwU97gxjhFuhBVWbK2cmPlf1DpVt-2_Z3WZAl&s', '6'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4G1lkBeJAugRKRYGiloTsinbLCsEzuyVjI8y_2sI07QxZuf7Amg&s', '7'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZQpD9_kJSHpFpGqVpsyoQ5k5FQS-2Eivt2-47dnX3hsM24t6r5Q&s', '8'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8HBD67pbUX_rmM_8L6HfUYLFfj2rtBESVK0YcJObS1bM4DXP&s', '9'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIs6XbatXLysbguFKw6UXPnHJLHDyDJhHmynHx2saCyJM2MtcY&s', '10'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBC6g3H6YwwFdc6U9UgvMrUrLYWOV1JQ9_ehlYEL2qUG3T9f8e&s', '11'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtJ_xEVfaDp0PcKi_1mNAOJlUzjMaiLIpKQVmk6lldP2fpncXvDw&s', '12'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8Sn1-ASnRAx0tHuM0-S0HJRey-tSqFNg77PTqIourQCv4i2q9RQ&s', '13'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwXoHUuQKctFVa_2rkVuBO_Qy7e-YDc6P_BBoxTTsutJVWYG1J&s', '14'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY-Ij0NZZlia7B1NaZs8m71bI-MPzEclXF231eF36LAmA5xJD-_w&s', '15'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR62VmUWfmWeGQqyU9q_fXDmwUH8FBaVwKyfmTnsgqiKjau03lDvA&s', '16'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6trj-H7Vf-QKbNvn2OBy_vYbg-WnmPD_q7ieaqpc8v7frhTkj&s', '17'],
-#   ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpYp6nu44qB-ufp0diZUeAoTwUMEnrqDWUrhiGpi7aUA7REfEK&s', '18'],
-# ].each do |image, item_id|
-#   Image.create!(
-#     { image: image,
-#       item_id: item_id,
-#         }
-#   )
-# end
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "1")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "2")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "3")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "4")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "5")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "6")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "7")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "8")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "9")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "10")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "11")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "12")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "13")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "14")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "15")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "16")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "17")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "18")
