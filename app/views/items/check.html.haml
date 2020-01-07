@@ -24,7 +24,9 @@
               .check__main__flame__buy-item__inner__pay__box__price
                 ¥#{@item.price.to_s(:delimited)}
           = form_tag(action: :pay, method: :post) do
-            %button.check__main__flame__buy-item__inner__button 購入する
+            -# = submit_tag "追加する", id: "token_submit"
+            %button.check__main__flame__buy-item__inner__button#token_submit
+              購入する
           .check__main__flame__buy-item__inner__buy-user-info__pay
             .check__main__flame__buy-item__inner__buy-user-info__pay__inner
               .check__main__flame__buy-item__inner__buy-user-info__pay__inner__text 支払い方法

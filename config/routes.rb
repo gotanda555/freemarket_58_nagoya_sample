@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       get  'done'=>      'items#done', as: 'done'
     end
   end
-end
   
   resources :users, only: [:edit, :update]
 
@@ -45,3 +44,4 @@ end
 
   resources :searches,only:[:index]
   
+end
