@@ -141,7 +141,7 @@
           - @items.each do |item|
             .main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
-                =link_to items_path(@items) ,class:"main__item__box__list__women__item__box__tag" do
+                =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
                   .main__item__box__list__women__item__box__image
                     = image_tag item.images[0].image_url,size: "184x198"
                     .main__item__box__list__women__item__box__image__place            
