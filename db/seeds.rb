@@ -61,21 +61,21 @@ end
 
 
 [
-  ['ユニクロジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '新品、未使用', '送料込み（出品者負担）', '北海道','2-3日', '1800', '1', '1',],
+  ['長袖トップス', '0', '良品です！', '1', 'M', 'ナイキ', '新品、未使用', '送料込み（出品者負担）', '北海道','2-3日', '1800', '1', '1',],
   ['レディースジャケット', '0', '良品です！', '64', 'M', '', '未使用に近い', '着払い（購入者負担）', '横浜','5日', '3200', '1', '1',],
   ['おすすめレディースジャケット', '0', '良品です！', '1', 'M', 'シャネル', '目立った傷や汚れなし', '送料込み（出品者負担）', '北海道','2-3日', '5600', '1', '1',],
   ['GUコーデ', '0', '良品です！', '223', 'M', '', 'やや傷や汚れあり', '着払い（購入者負担）', '青森','2-3日', '2600', '1', '1',],
   ['冬アウター', '0', '良品です！', '1', 'M', 'ナイキ', '傷や汚れあり', '送料込み（出品者負担）', '岩手','3年', '1300', '1', '1',],
   ['お気に入りジャケット', '0', '良品です！', '1', 'M', 'シャネル', '全体的に状態が悪い', '着払い（購入者負担）', '秋田','1.5年', '4200', '1', '1',],
-  ['ユニクロ あったかジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '新品、未使用', '送料込み（出品者負担）', '栃木','1日', '1400', '1', '1',],
-  ['Century21 ジャケット', '0', '良品です！', '1', 'M', 'シャネル', '未使用に近い', '着払い（購入者負担）', '東京','5日', '2100', '1', '1',],
-  ['カシミア ジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '目立った傷や汚れなし', '送料込み（出品者負担）', '東京','5日', '6800', '1', '1',],
-  ['Forever21 アウター', '0', '良品です！', '1', 'M', 'シャネル', 'やや傷や汚れあり', '着払い（購入者負担）', '東京','5日', '2100', '1', '1',],
+  ['あったかジャケット', '0', '良品です！', '1', 'M', 'ナイキ', '新品、未使用', '送料込み（出品者負担）', '栃木','1日', '1400', '1', '1',],
+  ['ジャケット', '0', '良品です！', '1', 'M', 'シャネル', '未使用に近い', '着払い（購入者負担）', '東京','5日', '2100', '1', '1',],
+  ['セーター', '0', '良品です！', '1', 'M', 'ナイキ', '目立った傷や汚れなし', '送料込み（出品者負担）', '東京','5日', '6800', '1', '1',],
+  ['アウター', '0', '良品です！', '1', 'M', 'シャネル', 'やや傷や汚れあり', '着払い（購入者負担）', '東京','5日', '2100', '1', '1',],
   ['ZARA アウター', '0', '良品です！', '223', 'M', '', '傷や汚れあり', '送料込み（出品者負担）', '東京','5日', '7000', '1', '1',],
   ['冬アウター', '0', '良品です！', '64', 'M', '', '全体的に状態が悪い', '着払い（購入者負担）', '岩手','3年', '1300', '1', '1',],
   ['お気に入りジャケット', '0', '良品です！', '223', 'M', '', '新品、未使用', '送料込み（出品者負担）', '秋田','1.5年', '4200', '1', '1',],
   ['ユニクロ あったかジャケット', '0', '良品です！', '64', 'M', '', '未使用に近い', '着払い（購入者負担）', '栃木','1日', '1400', '1', '1',],
-  ['Century21 ジャケット', '0', '良品です！', '223', 'M', '', '目立った傷や汚れなし', '送料込み（出品者負担）', '東京','5日', '2100', '1', '1',],
+  ['テーラードジャケット', '0', '良品です！', '223', 'M', '', '目立った傷や汚れなし', '送料込み（出品者負担）', '東京','5日', '2100', '1', '1',],
   ['カシミア ジャケット', '0', '良品です！', '64', 'M', '', 'やや傷や汚れあり', '着払い（購入者負担）', '東京','5日', '6800', '1', '1',],
   ['Forever21 アウター', '0', '良品です！', '223', 'M', '', '傷や汚れあり', '送料込み（出品者負担）', '東京','5日', '2100', '1', '1',],
   ['おすすめレディースジャケット', '0', '良品です！', '64', 'M', '', '全体的に状態が悪い', '着払い（購入者負担）', '北海道','2-3日', '5600', '1', '1',],
@@ -98,21 +98,21 @@ end
   )
 end
 
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "1")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "2")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "3")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "4")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "5")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "6")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "7")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "8")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "9")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "10")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "11")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "12")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "13")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "14")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "15")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "16")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "17")
-Image.create!(image: open("#{Rails.root}/db/fixtures/S__17391630のコピー.jpg"), item_id: "18")
+Image.create!(image: open("#{Rails.root}/db/fixtures/710858447.g_400-w_g.jpg"), item_id: "1")
+Image.create!(image: open("#{Rails.root}/db/fixtures/161117-3-1a.jpg"), item_id: "2")
+Image.create!(image: open("#{Rails.root}/db/fixtures/428.jpg"), item_id: "3")
+Image.create!(image: open("#{Rails.root}/db/fixtures/2b86dc6fd20d178.jpg.pagespeed.ce.jOQydkKVI2.jpg"), item_id: "4")
+Image.create!(image: open("#{Rails.root}/db/fixtures/imgrc0080352437.jpg"), item_id: "5")
+Image.create!(image: open("#{Rails.root}/db/fixtures/S2104101683037_01.jpg"), item_id: "6")
+Image.create!(image: open("#{Rails.root}/db/fixtures/61X7p8NKmuL._UX385_.jpg"), item_id: "7")
+Image.create!(image: open("#{Rails.root}/db/fixtures/m17510377472_1.jpg"), item_id: "8")
+Image.create!(image: open("#{Rails.root}/db/fixtures/271063388.jpg"), item_id: "9")
+Image.create!(image: open("#{Rails.root}/db/fixtures/242982776.jpg"), item_id: "10")
+Image.create!(image: open("#{Rails.root}/db/fixtures/m59740265111_1.jpg"), item_id: "11")
+Image.create!(image: open("#{Rails.root}/db/fixtures/132464_r1.jpg"), item_id: "12")
+Image.create!(image: open("#{Rails.root}/db/fixtures/tailoredjacket_sam-1.jpg"), item_id: "13")
+Image.create!(image: open("#{Rails.root}/db/fixtures/61I1soBGxyL._SX342_.jpg"), item_id: "14")
+Image.create!(image: open("#{Rails.root}/db/fixtures/spu12860_3_sty4のコピー-940x1024.jpg"), item_id: "15")
+Image.create!(image: open("#{Rails.root}/db/fixtures/61hzLuHxusL._UX679_.jpg"), item_id: "16")
+Image.create!(image: open("#{Rails.root}/db/fixtures/287188644.jpg"), item_id: "17")
+Image.create!(image: open("#{Rails.root}/db/fixtures/71JsWQC3o9L._UX679_.jpg"), item_id: "18")
