@@ -101,7 +101,7 @@ end
 Image.create!(image: open("#{Rails.root}/db/fixtures/710858447.g_400-w_g.jpg"), item_id: "1")
 Image.create!(image: open("#{Rails.root}/db/fixtures/161117-3-1a.jpg"), item_id: "2")
 Image.create!(image: open("#{Rails.root}/db/fixtures/428.jpg"), item_id: "3")
-Image.create!(image: open("#{Rails.root}/db/fixtures/2b86dc6fd20d178.jpg.pagespeed.ce.jOQydkKVI2.jpg"), item_id: "4")
+Image.create!(image: open("#{Rails.root}/db/fixtures/20170715121414.jpg"), item_id: "4")
 Image.create!(image: open("#{Rails.root}/db/fixtures/imgrc0080352437.jpg"), item_id: "5")
 Image.create!(image: open("#{Rails.root}/db/fixtures/S2104101683037_01.jpg"), item_id: "6")
 Image.create!(image: open("#{Rails.root}/db/fixtures/61X7p8NKmuL._UX385_.jpg"), item_id: "7")
