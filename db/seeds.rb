@@ -112,7 +112,7 @@ Image.create!(image: open("#{Rails.root}/db/fixtures/m59740265111_1.jpg"), item_
 Image.create!(image: open("#{Rails.root}/db/fixtures/132464_r1.jpg"), item_id: "12")
 Image.create!(image: open("#{Rails.root}/db/fixtures/tailoredjacket_sam-1.jpg"), item_id: "13")
 Image.create!(image: open("#{Rails.root}/db/fixtures/61I1soBGxyL._SX342_.jpg"), item_id: "14")
-Image.create!(image: open("#{Rails.root}/db/fixtures/spu12860_3_sty4のコピー-940x1024.jpg"), item_id: "15")
+Image.create!(image: open("#{Rails.root}/db/fixtures/9884_3b2.jpg"), item_id: "15")
 Image.create!(image: open("#{Rails.root}/db/fixtures/61hzLuHxusL._UX679_.jpg"), item_id: "16")
 Image.create!(image: open("#{Rails.root}/db/fixtures/287188644.jpg"), item_id: "17")
 Image.create!(image: open("#{Rails.root}/db/fixtures/71JsWQC3o9L._UX679_.jpg"), item_id: "18")
