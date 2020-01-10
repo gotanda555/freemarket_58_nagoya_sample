@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_012302) do
     t.integer "birthdate_day", null: false
     t.bigint "phone_number", null: false
     t.string "address_number", null: false
-    t.string "address_prefecture", null: false
+    t.integer "address_prefecture", null: false
     t.string "address_name", null: false
     t.string "address_block", null: false
     t.string "address_building"
