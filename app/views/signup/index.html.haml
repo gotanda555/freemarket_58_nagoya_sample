@@ -20,13 +20,13 @@
                   メールアドレスで登録する
 
           .first-main__box__main__form__top__facebook
-            %button{class:"facebook-box"}
+            = link_to user_facebook_omniauth_authorize_path ,method: :post, class:"facebook-box" do
               = icon('fab', 'facebook-square', class:"facebook-icon")
               .first-main__box__main__form__top__facebook__text
                 Facebookで登録する
 
           .first-main__box__main__form__top__google
-            %button{class:"google-box"}
+            = link_to user_google_oauth2_omniauth_authorize_path ,method: :post, class:"google-box" do
               = icon('fab', 'google', class:"google-icon")
               .first-main__box__main__form__top__google__text
                 Googleで登録する
