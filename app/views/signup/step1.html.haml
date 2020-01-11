@@ -32,7 +32,7 @@
               .first-main__box__main__form__top__group__title__name ニックネーム
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              = f.text_field :nickname,placeholder: "例）メルカリ太郎",class: "input-box"
+              = f.text_field :nickname,placeholder: "例）メルカリ太郎",class: "input-box",value: "#{session[:nickname]}"
             = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
           .first-main__box__main__form__top__group
           #margin
@@ -40,7 +40,7 @@
               .first-main__box__main__form__top__group__title__name メールアドレス
               .first-main__box__main__form__top__group__title__box 必須
             .first-main__box__main__form__top__group__input
-              = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-box"
+              = f.email_field :email,placeholder: "PC・携帯どちらでも可",class: "input-box",value: "#{session[:email]}"
             = render partial: 'error-messages', locals: {user: @user, column: "email"}
           .first-main__box__main__form__top__group
           #margin
