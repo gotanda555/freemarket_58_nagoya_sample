@@ -5,10 +5,10 @@ class Item < ApplicationRecord
   has_many :images
   accepts_nested_attributes_for :images
   validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 26 }
   validates :status, presence: true
-  validates :body, presence: true
-  validates :cateogry_id, presence: true
+  validates :body, presence: true, length: { maximum: 200 }
+  validates :category_id, presence: true
   validates :condition, presence: true
   validates :burden, presence: true
   validates :region, presence: true
