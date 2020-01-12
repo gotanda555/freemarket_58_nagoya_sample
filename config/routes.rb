@@ -1,18 +1,23 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {
+    :omniauth_callbacks =>  "users/omniauth_callbacks"
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "items#index"
   get   'users/:id'   =>  'users#show'
-  get   'items/new'   =>  'items#new'
-  get 'items/:id'=> 'items#detail'
+  get   'items/new'   =>  'items#new' 
   get 'items/:id/check'=> 'items#check'
   resource :items do
     collection do
       get  'purchase/:id'=>  'items#purchase', as: 'purchase'
       post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
       get  'done'=>      'items#done', as: 'done'
+      get 'get_category_children'
+      get 'get_category_grandchildren'
+      get 'get_brand'
     end
-  end
+end
+get 'items/:id'=> 'items#detail'  
   
   resources :users, only: [:edit, :update]
 
@@ -42,6 +47,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :searches,only:[:index]
+  resources :searches,only:[:index] do
+    collection do
+      get 'detail_search'
+    end
+  end
   
 end

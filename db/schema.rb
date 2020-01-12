@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_061736) do
+ActiveRecord::Schema.define(version: 2020_01_09_012302) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "brandname"
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.text "body"
     t.bigint "category_id"
     t.string "size"
-    t.bigint "brand_id"
-    t.string "condition", null: false
-    t.string "burden", null: false
+    t.string "brandname"
+    t.integer "condition", null: false
+    t.integer "burden", null: false
     t.string "region", null: false
     t.string "sending_days", null: false
     t.integer "price", null: false
@@ -77,10 +77,18 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.bigint "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["saler_id"], name: "index_items_on_saler_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,7 +103,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
     t.integer "birthdate_day", null: false
     t.bigint "phone_number", null: false
     t.string "address_number", null: false
-    t.string "address_prefecture", null: false
+    t.integer "address_prefecture", null: false
     t.string "address_name", null: false
     t.string "address_block", null: false
     t.string "address_building"
@@ -114,8 +122,8 @@ ActiveRecord::Schema.define(version: 2019_12_15_061736) do
   add_foreign_key "comments", "users"
   add_foreign_key "evaluations", "users"
   add_foreign_key "images", "items"
-  add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "saler_id"
+  add_foreign_key "sns_credentials", "users"
 end
