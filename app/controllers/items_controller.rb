@@ -29,6 +29,11 @@ class ItemsController < ApplicationController
   end
 
   def get_brand
+    @fashion1 = Category.where(id: 1..71)
+    @fashion2 = Category.where(id:184..202)
+    @fashion3 = Category.where(id:205..211)
+    @fashion4 = Category.where(id:219..269)
+    @fashion5 = Category.where(id:378..457)
     respond_to do |format|
       format.html
       format.json

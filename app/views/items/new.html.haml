@@ -34,7 +34,7 @@
                 .main__contents__item__bottom__box__head__form__goods__name__label 商品名
                 .main__contents__item__bottom__box__head__form__goods__name__label__logo 必須
               .main__contents__item__bottom__box__head__form__goods__name__box
-                = f.text_field :name, placeholder: "商品名（必須40文字まで）", type: "text", max_length: 40, class: "name-box"
+                = f.text_field :name, placeholder: "商品名（必須40文字まで）", type: "text", max_length: 40, class: "name-box", id: "new_item"
               .main__contents__item__bottom__box__head__form__goods__explain
                 .main__contents__item__bottom__box__head__form__goods__explain__label 商品の説明
                 .main__contents__item__bottom__box__head__form__goods__explain__label__logo 必須
@@ -69,7 +69,7 @@
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__select
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box
                     .main__contents__item__bottom__box__head__form__goods__delivery__group__select__box__bottom
-                      = f.select :burden, options_for_select(Item.burdens.keys, "---"), {}
+                      = f.select :burden, Item.burdens.keys, { include_blank: "---" }
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover 発送元の地域
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover__logo 必須

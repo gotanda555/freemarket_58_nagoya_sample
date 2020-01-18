@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :category
-  belongs_to :saler, class_name: "User"
-  belongs_to :buyer, class_name: "User", optional: true
+  belongs_to :saler, class_name: "User", foreign_key: :saler_id, optional: true
+  belongs_to :buyer, class_name: "User", foreign_key: :buyer_id, optional: true
   has_many :images
   accepts_nested_attributes_for :images
   validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
@@ -30,7 +30,6 @@ class Item < ApplicationRecord
   }
 
   enum burden:{
-    "---":0,
     送料込み（出品者負担）:1,
     着払い（購入者負担）:2
   }
