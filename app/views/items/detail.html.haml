@@ -29,7 +29,8 @@
                   %tr
                     %th 出品者
                     %td
-                      = link_to 'daissh04♡初心者', '#'
+                      = link_to '#' do
+                        =@item.saler.nickname
                       .item-user-rating
                         .item-user-rating__1
                           %i.fas.fa-laugh.laugh
@@ -133,7 +134,7 @@
       .detail__main__user-profile
         .detail__main__user-profile__box
           = link_to "#" , class:'detail__main__user-profile__box__link' do
-            %p.detail__main__user-profile__box__link__title daissh04さんのその他の出品
+            %p.detail__main__user-profile__box__link__title #{@item.saler.nickname}さんのその他の出品
             %ul.detail__main__user-profile__box__itembox
               - @items.each do |item|
                 - if item.saler_id === @item.saler_id

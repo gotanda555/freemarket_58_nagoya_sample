@@ -1,10 +1,19 @@
 class Item < ApplicationRecord
   belongs_to :category
-  belongs_to :saler, class_name: "User"
-  belongs_to :buyer, class_name: "User", optional: true
+  belongs_to :saler, class_name: "User", foreign_key: :saler_id, optional: true
+  belongs_to :buyer, class_name: "User", foreign_key: :buyer_id, optional: true
   has_many :images
   accepts_nested_attributes_for :images
   validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
+  validates :name, presence: true, length: { maximum: 26 }
+  validates :status, presence: true
+  validates :body, presence: true, length: { maximum: 200 }
+  validates :category_id, presence: true
+  validates :condition, presence: true
+  validates :burden, presence: true
+  validates :region, presence: true
+  validates :sending_days, presence: true
+
 
   def self.search(search)
     return Item.all unless search
@@ -21,7 +30,6 @@ class Item < ApplicationRecord
   }
 
   enum burden:{
-    "---":0,
     送料込み（出品者負担）:1,
     着払い（購入者負担）:2
   }

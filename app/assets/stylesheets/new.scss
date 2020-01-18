@@ -294,14 +294,14 @@ $l_blue:#0099e8;
   background: $white;
 }
 &__group__select__box__bottom,&__group__selects__box__bottom{
-  position: absolute;
+  //position: absolute;
   right: 16px;
   top: 50%;
   z-index: 2;
   color: $gray;
   font-size: 8px;
-  -webkit-transform: translate(0, -50%);
-  transform: tran
+  //-webkit-transform: translate(0, -50%);
+  //transform: translate(0, -50%);
 }
 }
 &__contents__item__bottom__box__head__form__goods__price{
@@ -377,8 +377,13 @@ $l_blue:#0099e8;
   }
   &__group__category__box__en{
     line-height: 48px;
+    &__left{
+      float:left;
+    }
   }
   &__group__category__box__en__input{
+    margin-bottom:10px;
+    margin-right:20px;
     display: inline-block;
     width: 80%;
     margin: 0 0 0 5%;
@@ -682,4 +687,17 @@ a{
   content: "";
   display: block;
   clear: both;
+}
+
+.has_error_text_item{
+  color:red;
+  font-family:sans-serif;
+  margin:8px 0 0;
+  font-size:14px;
+  padding-left:5px;
+}
+
+.invalid{
+  margin-top:5px;
+  color:red;
 }
