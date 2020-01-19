@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_login, only: [:new, :check]
+  before_action :set_item, only: [:destroy]
 
   def index
     @item = Item.new
@@ -68,9 +69,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
-    binding.pry
+    @item.destroy
     redirect_to root_path
 
   end
@@ -87,5 +86,10 @@ class ItemsController < ApplicationController
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   
   end
