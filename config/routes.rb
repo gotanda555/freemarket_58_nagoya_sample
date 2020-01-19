@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get   'users/:id'   =>  'users#show'
   get   'items/new'   =>  'items#new' 
   get 'items/:id/check'=> 'items#check'
+  delete 'items/:id'=> 'items#destroy'
 
   resource :items do
     collection do

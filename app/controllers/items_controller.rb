@@ -67,6 +67,13 @@ class ItemsController < ApplicationController
       @category_parent.unshift("---")
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    binding.pry
+    redirect_to root_path
+
+  end
 
   def check
     @items = Item.all
