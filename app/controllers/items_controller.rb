@@ -43,7 +43,10 @@ class ItemsController < ApplicationController
   def detail
     @items = Item.all
     @item = Item.find(params[:id])
-    @category = Category.find(1)
+    @category = Category.find(@item.category_id)
+    @categoryparent = @category.parent
+    @categorygrandparent = @categoryparent.parent
+
   end
 
   def create
