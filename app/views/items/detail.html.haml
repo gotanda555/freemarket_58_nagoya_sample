@@ -45,11 +45,13 @@
                     %th カテゴリー
                     %td
                       = link_to '#' do
-                        = @item.category.name
+                        = @categorygrandparent.name
                       %br
-                      = link_to '＞ パンツ', '#'
+                      = link_to '#' do
+                        ＞ #{@categoryparent.name}
                       %br
-                      = link_to '＞ デニム/ジーンズ', '#'
+                      = link_to  '#' do
+                        ＞ #{@item.category.name}
                   %tr
                     %th ブランド
                     %td 
