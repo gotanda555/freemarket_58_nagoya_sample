@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root to: "items#index"
   get   'users/:id'   =>  'users#show'
   get   'items/new'   =>  'items#new' 
-  get 'items/:id/check'=> 'items#check'
-  delete 'items/:id'=> 'items#destroy'
+  get 'items/:id/check', to: 'items#check', as: :logout 
+  delete 'items/:id', to: 'items#destroy', as: :destroy
 
   resource :items do
     collection do

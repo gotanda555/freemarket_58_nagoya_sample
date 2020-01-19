@@ -85,7 +85,7 @@
               %span.detail__main__box__flame__content__itemprice__tax (税込)
               %span.detail__main__box__flame__content__itemprice__shipfree 送料込み
             -unless current_user.id == @item.saler_id
-              = link_to "/items/#{@item.id}/check", class:'detail__main__box__flame__content__item-buy-btn' do
+              = link_to logout_path, method: :get,class:'detail__main__box__flame__content__item-buy-btn' do
                 購入画面に進む
               .detail__main__box__flame__content__itemdescription
                 %p.detail__main__box__flame__content__itemdescription__inner 商品の説明はありません
@@ -108,10 +108,10 @@
               .detail__main__box__flame__content__mainitemdescription
                 %p.detail__main__box__flame__content__mainitemdescription__inner 
                 =@item.body
-              = link_to "/items/#{@item.id}/check", class:'detail__main__box__flame__content__item-edit-btn' do
+              = link_to logout_path, method: :get, class:'detail__main__box__flame__content__item-edit-btn' do
                 商品の編集
               %p.detail__main__box__flame__content__itemdescription__text-center or
-              = link_to "/items/#{@item.id}", method: :delete, class:'detail__main__box__flame__content__item-delete-btn' do
+              = link_to destroy_path, method: :delete, class:'detail__main__box__flame__content__item-delete-btn' do
                 この商品を削除する
               .detail__main__box__flame__content__item-btn-container
       .detail__main__message
