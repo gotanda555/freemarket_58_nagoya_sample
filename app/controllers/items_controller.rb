@@ -59,7 +59,18 @@ class ItemsController < ApplicationController
     end
   end
 
-  
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+      if item.saler_id == current_user.id
+        item.update(item_params)
+      end
+    render '/items/new'
+  end
+
   def new
       @item = Item.new
       @item.images.build
