@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :saler, class_name: "User", foreign_key: :saler_id, optional: true
   belongs_to :buyer, class_name: "User", foreign_key: :buyer_id, optional: true
-  has_many :images
+  has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
   validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999}
   validates :name, presence: true, length: { maximum: 26 }

@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_login, only: [:new, :check]
+  before_action :set_item, only: [:destroy]
 
   def index
     @item = Item.new
@@ -67,6 +68,15 @@ class ItemsController < ApplicationController
       @category_parent.unshift("---")
   end
 
+  def destroy
+    if @item.saler_id == current_user.id
+      if @item.destroy
+        redirect_to root_path
+      else
+        render '/items/#{params[:id]}'
+      end
+    end
+  end
 
   def check
     @items = Item.all
@@ -80,5 +90,10 @@ class ItemsController < ApplicationController
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   
   end

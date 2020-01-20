@@ -84,25 +84,36 @@
               %span.detail__main__box__flame__content__itemprice__price ¥#{@item.price.to_s(:delimited)}
               %span.detail__main__box__flame__content__itemprice__tax (税込)
               %span.detail__main__box__flame__content__itemprice__shipfree 送料込み
-            = link_to "/items/#{@item.id}/check", class:'detail__main__box__flame__content__item-buy-btn' do
-              購入画面に進む
-            .detail__main__box__flame__content__itemdescription
-              %p.detail__main__box__flame__content__itemdescription__inner 商品の説明はありません
-            .detail__main__box__flame__content__mainitemdescription
-              %p.detail__main__box__flame__content__mainitemdescription__inner 
-              =@item.body
-            .detail__main__box__flame__content__item-btn-container
-              .detail__main__box__flame__content__item-btn-container__item-btn-left 
-                %button.detail__main__box__flame__content__item-btn-container__item-btn-left__good
-                  %i.fa.fa-heart.heart
-                  %span いいね！
-                  %span.like-num 2
-                = link_to '#', class:'detail__main__box__flame__content__item-btn-container__item-btn-left__nogood' do
-                  %span 不適切な商品の報告
-              .detail__main__box__flame__content__item-btn-container__item-btn-right
-                = link_to '#', class:'detail__main__box__flame__content__item-btn-container__item-btn-right__safety' do
-                  %i.fa.fa-lock
-                  %span あんしん・あんぜんへの取り組み
+            -unless current_user.id == @item.saler_id
+              = link_to logout_path, method: :get,class:'detail__main__box__flame__content__item-buy-btn' do
+                購入画面に進む
+              .detail__main__box__flame__content__itemdescription
+                %p.detail__main__box__flame__content__itemdescription__inner 商品の説明はありません
+              .detail__main__box__flame__content__mainitemdescription
+                %p.detail__main__box__flame__content__mainitemdescription__inner 
+                =@item.body
+              .detail__main__box__flame__content__item-btn-container
+                .detail__main__box__flame__content__item-btn-container__item-btn-left 
+                  %button.detail__main__box__flame__content__item-btn-container__item-btn-left__good
+                    %i.fa.fa-heart.heart
+                    %span いいね！
+                    %span.like-num 2
+                  = link_to '#', class:'detail__main__box__flame__content__item-btn-container__item-btn-left__nogood' do
+                    %span 不適切な商品の報告
+                .detail__main__box__flame__content__item-btn-container__item-btn-right
+                  = link_to '#', class:'detail__main__box__flame__content__item-btn-container__item-btn-right__safety' do
+                    %i.fa.fa-lock
+                    %span あんしん・あんぜんへの取り組み
+            - else
+              .detail__main__box__flame__content__mainitemdescription
+                %p.detail__main__box__flame__content__mainitemdescription__inner 
+                =@item.body
+              = link_to logout_path, method: :get, class:'detail__main__box__flame__content__item-edit-btn' do
+                商品の編集
+              %p.detail__main__box__flame__content__itemdescription__text-center or
+              = link_to destroy_path, method: :delete, class:'detail__main__box__flame__content__item-delete-btn' do
+                この商品を削除する
+              .detail__main__box__flame__content__item-btn-container
       .detail__main__message
         .detail__main__message__box
           %p.detail__main__message__box__caution 相手のことを考え丁寧なコメントを心がけましょう。不快にな言葉遣いなどは利用制限や退会処分となることがあります。
