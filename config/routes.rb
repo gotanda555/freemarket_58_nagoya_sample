@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'items/:id/check', to: 'items#check', as: :logout 
   delete 'items/:id', to: 'items#destroy', as: :destroy
   get   'items/:id/edit', to:'items#edit', as: :edit
+  patch   'items/:id/', to:'items#update', as: :update
 
   resource :items do
     collection do

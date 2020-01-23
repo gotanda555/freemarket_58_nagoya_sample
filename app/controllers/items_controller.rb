@@ -47,7 +47,6 @@ class ItemsController < ApplicationController
     @category = Category.find(@item.category_id)
     @categoryparent = @category.parent
     @categorygrandparent = @categoryparent.parent
-
   end
 
   def create
@@ -61,6 +60,11 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @category = Category.find(@item.category_id)
+    @categoryparent = @category.parent
+    @cateogryparent_group = @categoryparent.siblings
+    @categorygrandparent = @categoryparent.parent
+    @categorygrandparent_group = @category.siblings
   end
 
   def update
