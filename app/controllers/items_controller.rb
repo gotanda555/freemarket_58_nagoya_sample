@@ -72,7 +72,6 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
       if item.saler_id == current_user.id
         item.update(item_update_params)
-        binding.pry
       end
       redirect_to root_path
   end
