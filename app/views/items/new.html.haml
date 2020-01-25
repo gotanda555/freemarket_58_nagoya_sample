@@ -9,26 +9,25 @@
       .main__contents__item__bottom
         .main__contents__item__bottom__box
           .main__contents__item__bottom__box__head 商品の情報を入力
-          = form_for (@item) do |f|
+          = form_with model:@item, local:true do |f|
             .main__contents__item__bottom__box__head__form
               .main__contents__item__bottom__box__head__form__box
                 .main__contents__item__bottom__box__head__form__box__text
                   .main__contents__item__bottom__box__head__form__box__text__cover 商品画像
                   .main__contents__item__bottom__box__head__form__box__text__logo 必須
                 .main__contents__item__4rbottom__box__head__form__box__text__texts 最大10枚までアップロードできます
-              .main__contents__item__bottom__box__head__form__upload
-                .main__contents__item__bottom__box__head__form__upload__box
-                  .main__contents__item__bottom__box__head__form__upload__box__item
-                    %ul#image-box-1.clearfix
-                      %li.item-num-0#image-box__container
-                        = f.fields_for :images do |i|
-                          = i.label :image, for: "img-file" do
-                            .input-area
-                              = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", id:"img-file" 
-                              .input-area__text
-                                ドラッグアンドドロップ
-                                %br
-                                またはクリックしてファイルをアップロード
+                .post__drop__box__container
+                  .prev-content
+                  .label-content
+                    %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                  .hidden-content
+                    = f.fields_for :images do |i|
+                      = i.file_field :image, class: "hidden-field"
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
+                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
             .main__contents__item__bottom__box__head__form__goods
               .main__contents__item__bottom__box__head__form__goods__name
                 .main__contents__item__bottom__box__head__form__goods__name__label 商品名
@@ -176,3 +175,15 @@
               = link_to root_path, class: "btn--gray"do
                 もどる
   = render "signup/footer"
+
+-# .main__contents__item__bottom__box__head__form__upload__box__item
+-# %ul#image-box-1.clearfix
+-#   %li.item-num-0#image-box__container
+-#     = f.fields_for :images do |i|
+-#       = i.label :image, for: "img-file" do
+-#         .input-area
+-#           = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", value:"", id:"img-file" 
+-#           .input-area__text
+-#             ドラッグアンドドロップ
+-#             %br
+-#             またはクリックしてファイルをアップロード

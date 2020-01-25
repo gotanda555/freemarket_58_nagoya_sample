@@ -67,12 +67,14 @@ class ItemsController < ApplicationController
     @categorygrandparent_group = @category.siblings
   end
 
+  
   def update
     item = Item.find(params[:id])
       if item.saler_id == current_user.id
-        item.update(item_params)
+        item.update(item_update_params)
+        binding.pry
       end
-    render '/items/new'
+      redirect_to root_path
   end
 
   def new
@@ -101,6 +103,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :status, :body,:category_id, :size, :brandname, :condition,:burden,:region,:sending_days,:price, images_attributes: [:image]).merge(saler_id: current_user.id, buyer_id: current_user.id)
   end
+
+  def item_update_params
+    params.require(:item).permit(:name, :status, :body,:category_id, :size, :brandname, :condition,:burden,:region,:sending_days,:price, images_attributes: [:image, :_destroy, :id]).merge(saler_id: current_user.id, buyer_id: current_user.id)
+    
+  end
   
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
@@ -109,6 +116,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
-  
   end
