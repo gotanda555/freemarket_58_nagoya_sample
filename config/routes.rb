@@ -8,17 +8,14 @@ Rails.application.routes.draw do
   get   'items/new'   =>  'items#new' 
   get 'items/:id/check', to: 'items#check', as: :logout 
   delete 'items/:id', to: 'items#destroy', as: :destroy
-  get   'items/:id/edit', to:'items#edit', as: :edit
-  patch   'items/:id/', to:'items#update', as: :update
 
-  resource :items do
+  resources :items do
     collection do
       get 'get_category_children'
       get 'get_category_grandchildren'
       get 'get_brand'
     end
 end
-get 'items/:id'=> 'items#detail'
   
   resources :users, only: [:edit, :update]
 
