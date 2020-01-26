@@ -74,7 +74,7 @@ class ItemsController < ApplicationController
         if @item.save
           redirect_to root_path
         else
-          render '/items/#{@item.id}/edit' 
+          redirect_to edit_path
         end
       end
   end
