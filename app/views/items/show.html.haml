@@ -11,9 +11,7 @@
             .detail__main__box__flame__content__sub
               .detail__main__box__flame__content__sub__itemphoto
                 .detail__main__box__flame__content__sub__itemphoto__mainphoto
-                  = image_tag @item.images[0].image_url, class:'detail__main__box__flame__content__sub__itemphoto__mainphoto__size'
-                  //= image_tag @item.images[0].image,size: "180x300"
-                  //= link_to image_tag('jeans.jpg',width:'180', height:'300')     
+                  = image_tag @item.images[0].image_url, class:'detail__main__box__flame__content__sub__itemphoto__mainphoto__size'   
                 .detail__main__box__flame__content__sub__itemphoto__subphoto
                   - if @item.images[0].present?
                     .detail__main__box__flame__content__sub__itemphoto__subphoto__box
@@ -108,7 +106,7 @@
               .detail__main__box__flame__content__mainitemdescription
                 %p.detail__main__box__flame__content__mainitemdescription__inner 
                 =@item.body
-              = link_to logout_path, method: :get, class:'detail__main__box__flame__content__item-edit-btn' do
+              = link_to edit_item_path, method: :get, class:'detail__main__box__flame__content__item-edit-btn' do
                 商品の編集
               %p.detail__main__box__flame__content__itemdescription__text-center or
               = link_to destroy_path, method: :delete, class:'detail__main__box__flame__content__item-delete-btn' do

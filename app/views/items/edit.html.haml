@@ -9,7 +9,7 @@
       .main__contents__item__bottom
         .main__contents__item__bottom__box
           .main__contents__item__bottom__box__head 商品の情報を入力
-          = form_with model:@item, local:true do |f|
+          = form_for @item, url: item_path do |f|
             .main__contents__item__bottom__box__head__form
               .main__contents__item__bottom__box__head__form__box
                 .main__contents__item__bottom__box__head__form__box__text
@@ -18,17 +18,25 @@
                 .main__contents__item__4rbottom__box__head__form__box__text__texts 最大10枚までアップロードできます
                 .post__drop__box__container
                   .prev-content
+                    - @item.images.each do |image|
+                      .preview-box
+                        .upper-box
+                          = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                        .lower-box
+                          .update-box
+                            %label.edit-btn 編集
+                          .delete-box
+                            .delete-btn
+                              %span 削除
                   .label-content
-                    %label{for: "item_images_attributes_0_image", class: "label-box", id: "label-box--0"}
+                    = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
                       %pre.label-box__text-visible クリックしてファイルをアップロード
                   .hidden-content
                     = f.fields_for :images do |i|
                       = i.file_field :image, class: "hidden-field"
-                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-                      %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-                      = render partial: 'error-messages', locals: {item: @item, column: "image"}
+                      = i.check_box:_destroy, class: "hidden-checkbox"
+                    - @item.images.length.upto(4) do |i|
+                      %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
             .main__contents__item__bottom__box__head__form__goods
               .main__contents__item__bottom__box__head__form__goods__name
                 .main__contents__item__bottom__box__head__form__goods__name__label 商品名
@@ -48,9 +56,15 @@
                   .main__contents__item__bottom__box__head__form__goods__detail__group__category__cover__logo 必須
                 .main__contents__item__bottom__box__head__form__goods__detail__group__add
                   .main__contents__item__bottom__box__head__form__goods__detail__group__add__select
-                    .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box{id: "parent_categorybox"}
                       .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box__bottom
-                      = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, { prompt: '---' },{id: "parent_category"}
+                      = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {selected: @categorygrandparent.id}, {id: "parent_category"}
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box{id: "child_categorybox"}
+                      .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box__bottom
+                      = f.collection_select :category_id, @cateogryparent_group, :id, :name, {selected: @categoryparent.id}, {id: "child_category"}
+                    .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box{id: "grandchild_categorybox"}
+                      .main__contents__item__bottom__box__head__form__goods__detail__group__add__select__box__bottom
+                      = f.collection_select :category_id, @categorygrandparent_group, :id, :name,{selected: @category.id}, {id: "grandchild_category"}
                 .main__contents__item__bottom__box__head__form__goods__detail__group__condition
                   .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover 商品の状態
                   .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo 必須
@@ -125,7 +139,7 @@
                   に同意したことになります。
               %button.btn__default.btn--red
                 = f.hidden_field :status, value:'0'
-                = f.submit "出品する", class: "submit__button"
+                = f.submit "変更する", class: "submit__button"
               = link_to root_path, class: "btn--gray"do
                 もどる
   = render "signup/footer"

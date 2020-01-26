@@ -1,5 +1,5 @@
 $(function(){
-  $("#new_item").validate({
+  $('form').validate({
 		rules : {
       'item[images_attributes][][image]': {
         required: true
