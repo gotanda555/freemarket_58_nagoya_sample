@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_login, only: [:new, :check, :detail]
-  before_action :set_item, only: [:destroy]
+  before_action :set_item, only: [:destroy, :update]
 
   def index
     @item = Item.new
@@ -69,11 +69,14 @@ class ItemsController < ApplicationController
 
   
   def update
-    item = Item.find(params[:id])
-      if item.saler_id == current_user.id
-        item.update(item_update_params)
+      if @item.saler_id == current_user.id
+        @item.update(item_update_params)
+        if @item.save
+          redirect_to root_path
+        else
+          render '/items/#{@item.id}/edit' 
+        end
       end
-      redirect_to root_path
   end
 
   def new
