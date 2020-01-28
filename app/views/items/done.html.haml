@@ -4,7 +4,22 @@
       .main__contents__header__logo
         =link_to ".." do
           = image_tag  "fmarket_logo_red.svg",class:"logo"
-    .main__contents__wait
-      .main__contents__wait__red 発送をお待ちください
-      .main__contents__wait__black 出品者からの発送通知をお待ちください
+    .main__contents__box
+      .main__contents__box__wait
+        .main__contents__box__wait__red 発送をお待ちください
+        .main__contents__box__wait__black 出品者からの発送通知をお待ちください
+      .main__contents__box__confirm 購入が完了しました
+      .main__contents__box__item
+        .main__contents__box__item__image
+          = image_tag @item.images[0].image_url, class:'main__contents__box__item__image__img'
+        .main__contents__box__item__name
+          = @item.name
+        .main__contents__box__item__price
+          ¥#{@item.price.to_s(:delimited)} 送料込み
+    .main__foot
+    .main__bottom
+      = render "bottom"
+    .main__footer
+      = render "footer"
+
 

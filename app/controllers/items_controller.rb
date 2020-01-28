@@ -94,6 +94,7 @@ class ItemsController < ApplicationController
   end
 
   def done
+    @items = Item.all
     @item = Item.find(params[:id])
   end
 
