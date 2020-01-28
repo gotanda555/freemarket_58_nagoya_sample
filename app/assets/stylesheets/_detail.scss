@@ -50,10 +50,36 @@
       text-decoration:none;
       margin-top:16px;
     }
+    &__flame__content__item-edit-btn{
+      font-size:14px;
+      line-height:60px;
+      display:block;
+      font-weight:600;
+      color:white;
+      background-color:#ea352d;
+      text-decoration:none;
+      margin-top:16px;
+    }
+    &__flame__content__item-delete-btn{
+      font-size:14px;
+      line-height:60px;
+      display:block;
+      font-weight:600;
+      color:white;
+      background-color:#aaa;
+      text-decoration:none;
+      margin-top:16px;
+    }
     &__flame__content__itemdescription{
       margin-top:16px;
       line-height:1.5;
       font-size:14px;
+      &__text-center{
+        text-align:center;
+        height:16px;
+        width:100%;
+        margin:15px 0 15px 0;
+      }
     }
     &__flame__content__mainitemdescription{
       padding-top:32px;
@@ -61,6 +87,7 @@
       font-size:18px;
       text-align:left;
       white-space:pre-wrap;
+
       &__inner{
       display: block;
       }

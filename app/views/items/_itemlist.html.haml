@@ -20,14 +20,14 @@
           =link_to "#", class:"main__item__box__list__women__header__details__tag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @items.each do |item|
+        - @items.order('created_at DESC').each do |item|
           -@ladies_grandchild.each do |lady|
             - if item.category_id == lady.id
               %li.main__item__box__list__women__item__box
                 .main__item__box__list__women__item__box__in
                   =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
                     .main__item__box__list__women__item__box__image
-                      = image_tag item.images[0].image_url,size: "184x198"
+                      = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
                       .main__item__box__list__women__item__box__image__place            
                         .main__item__box__list__women__item__box__image__place__language
                           ¥#{item.price.to_s(:delimited)}
@@ -44,14 +44,14 @@
           =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @items.each do |item|
+        - @items.order('created_at DESC').each do |item|
           -@men_grandchild.each do |men|
             - if item.category_id == men.id
               %li.main__item__box__list__women__item__box
                 .main__item__box__list__women__item__box__in
                   =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
                     .main__item__box__list__women__item__box__image
-                      = image_tag item.images[0].image_url,size: "184x198"
+                      = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
                       .main__item__box__list__women__item__box__image__place            
                         .main__item__box__list__women__item__box__image__place__language
                           ¥#{item.price.to_s(:delimited)}
@@ -82,13 +82,13 @@
           =link_to "#" , class:"main__item__box__list__women__header__details__tag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @items.each do |item|
+        - @items.order('created_at DESC').each do |item|
           - if item.brandname == "シャネル"
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
                   .main__item__box__list__women__item__box__image
-                    = image_tag item.images[0].image_url,size: "184x198"
+                    = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
                     .main__item__box__list__women__item__box__image__place            
                       .main__item__box__list__women__item__box__image__place__language
                         ¥#{item.price.to_s(:delimited)}
@@ -105,13 +105,13 @@
           =link_to "#" , class:"main__item__box__list__women__header__details__tagtag" do
             もっとみる ＞
       %ul.main__item__box__list__women__item
-        - @items.each do |item|
+        - @items.order('created_at DESC').each do |item|
           - if item.brandname == "ナイキ"
             %li.main__item__box__list__women__item__box
               .main__item__box__list__women__item__box__in
                 =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
                   .main__item__box__list__women__item__box__image
-                    = image_tag item.images[0].image_url,size: "184x198"
+                    = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
                     .main__item__box__list__women__item__box__image__place            
                       .main__item__box__list__women__item__box__image__place__language
                         ¥#{item.price.to_s(:delimited)}
