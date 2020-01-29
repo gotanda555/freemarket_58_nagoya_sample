@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
     @ladies_grandchild = @ladies.indirects
     @men = Category.find(219)
     @men_grandchild = @men.indirects
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def get_category_children
@@ -47,6 +48,7 @@ class ItemsController < ApplicationController
     @category = Category.find(@item.category_id)
     @categoryparent = @category.parent
     @categorygrandparent = @categoryparent.parent
+    @category_parent = Category.where(ancestry: nil)
   end
 
   def create
