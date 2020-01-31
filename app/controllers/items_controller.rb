@@ -133,6 +133,7 @@ class ItemsController < ApplicationController
   def done
     @items = Item.all
     @item = Item.find(params[:id])
+    @item.update(status: 1)
   end
 
   def item_params
@@ -161,5 +162,4 @@ end
 
   def set_item
     @item = Item.find(params[:id])
-  end
   end

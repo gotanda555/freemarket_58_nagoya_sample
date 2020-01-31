@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   root to: "items#index"
   get   'users/:id'   =>  'users#show'
   get   'items/new'   =>  'items#new' 
-  get 'items/:id/check'=> 'items#check'
-  resource :items do
   get 'items/:id/check', to: 'items#check', as: :logout 
   delete 'items/:id', to: 'items#destroy', as: :destroy
 
@@ -21,7 +19,6 @@ Rails.application.routes.draw do
       get 'get_brand'
     end
 end
-get 'items/:id'=> 'items#detail'  
   
   resources :users, only: [:edit, :update]
 
