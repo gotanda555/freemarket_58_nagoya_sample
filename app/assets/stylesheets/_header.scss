@@ -159,7 +159,6 @@ top:100px;
 z-index:1000;
 background-color:#fff;
 box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
-
   &__parentitem{
     width:223.5px;
     &__name{
@@ -175,14 +174,16 @@ box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
     }
   }
 }
+
 .noShow{
   display:none;
 }
 
-.cateogrySearch__parentitem__childSearch{
+.categorySearch__parentitem__childSearch{
+
   width:224px;
   position:absolute;
-  left:224px;
+  left:300px;
   top:0px;
   background-color:#fff;
   box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);

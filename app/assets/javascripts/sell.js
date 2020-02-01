@@ -1,5 +1,6 @@
 $(function(){
   function appendOption(child){
+    
     var html = `<option value="${child.id}">${child.name}</option>`;
     return html;
   }
@@ -26,7 +27,7 @@ $(function(){
       ${insertHTML}
   </div>`
   $('.main__contents__item__bottom__box__head__form__goods__detail__group__add__select').append(grandchildSelectHtml);
-  }
+  }0
 
   function appendOptionBox(){
     var Size = `<option value="Sサイズ">Sサイズ</option><option value="Mサイズ">Mサイズ</option><option value="Lサイズ">Lサイズ</option>`;

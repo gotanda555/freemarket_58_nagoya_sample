@@ -11,10 +11,23 @@ class ItemsController < ApplicationController
     @men = Category.find(219)
     @men_grandchild = @men.indirects
     @category_parent = Category.where(ancestry: nil)
+    @category_children = Category.find_by("#{params[:id]}").children
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def linklist
+    @category_children = Category.find_by("#{params[:id]}").children
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def get_category_children
-    @category_children = Category.find_by(id: "#{params[:id]}", ancestry: nil).children
+    @category_children = Category.find_by("#{params[:id]}", ancestry: nil).children
     respond_to do |format|
       format.html
       format.json
@@ -49,6 +62,7 @@ class ItemsController < ApplicationController
     @categoryparent = @category.parent
     @categorygrandparent = @categoryparent.parent
     @category_parent = Category.where(ancestry: nil)
+
   end
 
   def create

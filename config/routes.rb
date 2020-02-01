@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get   'items/new'   =>  'items#new' 
   get 'items/:id/check', to: 'items#check', as: :logout 
   delete 'items/:id', to: 'items#destroy', as: :destroy
+  get   'items/linklist'   =>  'items#linklist' 
 
   resources :items do
     collection do

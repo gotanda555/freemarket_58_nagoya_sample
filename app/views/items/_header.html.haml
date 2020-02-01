@@ -18,22 +18,7 @@
             = image_tag('category.png',width:'30',height:'25')
           .headerBox__main__bottom__select__category__categorySearch__list__a カテゴリーから探す
           %ul.categorySearch.noShow
-            - @category_parent.each do |parent|
-              %li.categorySearch__parentitem
-                %h2.categorySearch__parentitem__name
-                  = link_to '#', class:"category_link" do
-                    = parent.name
-              %ul.cateogrySearch__parentitem__childSearch
-                %li.cateogrySearch__parentlist__childSearch__childitem
-                  %h2.categorySearch__parentitem__name
-                    = link_to '#', class:"category_link"do
-                      子名前
-                %ul.cateogrySearch__parentitem__childSearch__grandchildSearch
-                  %li.cateogrySearch__parentitem__childSearch__grandchildSearch__grandchilditem
-                    %h2.categorySearch__parentitem__name
-                      = link_to '#', class:"category_link" do
-                        孫名前
-                  
+          %ul.cateogrySearch__parentitem__childSearch
         .headerBox__main__bottom__select__brand 
           .headerBox__main__bottom__select__brand__brandSearch
             = image_tag('brand.png',width:'30',height:'25')
@@ -67,4 +52,19 @@
             =link_to new_user_session_path ,class:"headerBox__main__bottom__member__login__moji" do
               ログイン
 
-
+-# %ul.categorySearch.noShow
+-#   - @category_parent.each do |parent|
+-#     %li.categorySearch__parentitem
+-#       %h2.categorySearch__parentitem__name
+-#         = link_to '#', class:"category_link" do
+-#           = parent.name
+-#     %ul.cateogrySearch__parentitem__childSearch
+-#       %li.cateogrySearch__parentlist__childSearch__childitem
+-#         %h2.categorySearch__parentitem__name
+-#           = link_to '#', class:"category_link"do
+-#             子名前
+-#       %ul.cateogrySearch__parentitem__childSearch__grandchildSearch
+-#         %li.cateogrySearch__parentitem__childSearch__grandchildSearch__grandchilditem
+-#           %h2.categorySearch__parentitem__name
+-#             = link_to '#', class:"category_link" do
+-#               孫名前
