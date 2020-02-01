@@ -76,7 +76,7 @@
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__selects
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box
                     .main__contents__item__bottom__box__head__form__goods__delivery__group__selects__box__bottom
-                      = f.select :region, Item.address_prefectures.keys.to_a
+                      = f.select :region, Item.address_prefectures.keys.to_a,{ prompt: '---' }
                 .main__contents__item__bottom__box__head__form__goods__delivery__group__condition
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover 発送までの日数
                   .main__contents__item__bottom__box__head__form__goods__delivery__group__condition__cover__logo 必須
