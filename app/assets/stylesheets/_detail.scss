@@ -335,6 +335,9 @@
             border-style: solid;
           }
         }
+      &__size{      
+        width:100%;
+        height:100%;
       }
     
     &__subphoto{    
@@ -451,4 +454,9 @@ background:#fafafa;
   background-color:#aaa;
   text-decoration:none;
   margin-top:16px;
+.detail__main__box__flame__content__sub__itemphoto__subphoto__box__size{
+  width:100%;
+  height:100%;
+}
+}
 }
