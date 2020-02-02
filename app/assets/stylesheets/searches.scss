@@ -41,7 +41,7 @@
               display:flex;
             }
 
-            .box-size,#q_condition_eq_any_1,#q_condition_eq_any_2,#q_condition_eq_any_3,#q_condition_eq_any_4,#q_condition_eq_any_5,#q_condition_eq_any_6,#q_burden_eq_any_1,#q_burden_eq_any_2{
+            .box-size,#q_condition_eq_any_1,#q_condition_eq_any_2,#q_condition_eq_any_3,#q_condition_eq_any_4,#q_condition_eq_any_5,#q_condition_eq_any_6,#q_burden_eq_any_1,#q_burden_eq_any_2,#q_status_eq_any_0,#q_status_eq_any_1{
               transform: scale(1.7);
               margin:6px 5px 0 0;
             }
@@ -80,6 +80,7 @@
               border: 1px solid transparent;
               cursor: pointer;
               border-radius: 0px;
+              margin-left:35px;
             }
           }
         }
