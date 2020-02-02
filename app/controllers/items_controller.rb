@@ -104,9 +104,9 @@ class ItemsController < ApplicationController
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
-      # redirect_to controller: "card", action: "new"
+      redirect_to card_mypages_path
     else
-      Payjp.api_key = 'sk_test_e310678fdacba84064864c64'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]      
       #保管した顧客IDでpayjpから情報取得
       customer = Payjp::Customer.retrieve(card.customer_id)
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
@@ -120,7 +120,7 @@ class ItemsController < ApplicationController
   def pay
     @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
-    Payjp.api_key = 'sk_test_e310678fdacba84064864c64'
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     charge = Payjp::Charge.create(
     amount: @item.price,
     customer: card.customer_id,
