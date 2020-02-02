@@ -276,17 +276,18 @@
 }
 
 .detail__main__bread-crumbs{
-  margin:0 auto;
-  width:1020px;
-  padding:5px;
-  font-size:14px;
-  &__list{
-
-  }
+  margin: 20px 0 0;
 }
 
-.detail__main__bread-crumbs li{
-  display:inline-block;
+.detail__main__bread-crumbs:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.detail__main__bread-crumbs.cc-nav-current{
+  text-decoration: none;
+  color:#666;
+background: none;
 }
 
 .detail__main__box__flame__content{
