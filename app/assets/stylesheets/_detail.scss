@@ -280,9 +280,6 @@
   width:1020px;
   padding:5px;
   font-size:14px;
-  &__list{
-
-  }
 }
 
 .detail__main__bread-crumbs li{
@@ -313,10 +310,33 @@
       height:300px;
       margin:0 auto;
       overflow:hidden;
-      &__size{      
-        width:100%;
+      position: relative;
+        &__sold-out{
+          top: 24px;
+          font-size: 28px;
+          position: absolute;
+          left: 0;
+          z-index: 2;
+          color:red;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          letter-spacing: 2px;
+          font-weight: 600;
+          ::after{
+            border-color: #ea352d transparent transparent transparent;
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 0;
+            height: 0;
+            border-style: solid;
+          }
+        }
       }
-    }
+    
     &__subphoto{    
       display:flex;
       //display: table;
@@ -376,10 +396,6 @@ background:#fafafa;
   }
 }
 
-.heart2{
-
-}
-
 .laugh{
   margin-right:3px;
   color:red;
@@ -424,4 +440,15 @@ background:#fafafa;
   color:#cc0000;
   font-size:43px;
   
+}
+
+.detail__main__box__flame__content__item-btn-container__sold{
+  font-size:14px;
+  line-height:60px;
+  display:block;
+  font-weight:600;
+  color:white;
+  background-color:#aaa;
+  text-decoration:none;
+  margin-top:16px;
 }
