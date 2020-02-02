@@ -314,28 +314,38 @@ background: none;
       height:300px;
       margin:0 auto;
       overflow:hidden;
+      position: relative;
+        &__sold-out{
+          top: 24px;
+          font-size: 28px;
+          position: absolute;
+          left: 0;
+          z-index: 2;
+          color:red;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          letter-spacing: 2px;
+          font-weight: 600;
+          background-color: white;
+        }
       &__size{      
         width:100%;
         height:100%;
-      }
-    }
+      }}
+    
     &__subphoto{    
       display:flex;
-      //display: table;
-      
+
       &__box{
         background-color:#efefef;
         width:60px;
         height:60px;
         overflow:hidden; 
-        //display: table-cell;
         vertical-align: middle;
         text-align:center;
         
         &__size{
           max-width: 100%;
-          //display:inline-block;
-
         }
       }
     }
@@ -427,7 +437,26 @@ background:#fafafa;
   font-size:43px;
   
 }
+
+.detail__main__box__flame__content__item-btn-container__sold{
+  font-size:14px;
+  line-height:60px;
+  display:block;
+  font-weight:600;
+  color:white;
+  background-color:#aaa;
+  text-decoration:none;
+  margin-top:16px;
 .detail__main__box__flame__content__sub__itemphoto__subphoto__box__size{
   width:100%;
   height:100%;
+}
+}
+.detail__main__box__flame__content__sub__itemphoto__subphoto__box{
+  background-color:#efefef;
+  width:60px;
+  height:60px;
+  overflow:hidden; 
+  vertical-align: middle;
+  text-align:center;
 }
