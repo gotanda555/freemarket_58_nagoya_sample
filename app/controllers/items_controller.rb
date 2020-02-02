@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_login, only: [:new, :check, :show]
-  before_action :set_item, only: [:destroy, :update]
-
+  before_action :set_item, only: [:destroy, :update, :pay]
+  before_action :set_card, only: [:check, :pay]
   def index
     @item = Item.new
     @items = Item.all
@@ -100,6 +100,37 @@ class ItemsController < ApplicationController
   def check
     @items = Item.all
     @item = Item.find(params[:id])
+
+    #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
+    if card.blank?
+      #登録された情報がない場合にカード登録画面に移動
+      redirect_to card_mypages_path
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]      
+      #保管した顧客IDでpayjpから情報取得
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
+      @default_card_information = customer.cards.retrieve(card.card_id)
+    end
+  end
+
+  def purchase
+  end
+
+  def pay
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    charge = Payjp::Charge.create(
+    amount: @item.price,
+    customer: card.customer_id,
+    currency: 'jpy'
+    )
+   redirect_to action: :done
+  end
+
+  def done
+    @items = Item.all
+    @item = Item.find(params[:id])
+    @item.update(status: 1)
   end
 
   def item_params
@@ -114,8 +145,22 @@ class ItemsController < ApplicationController
   def move_to_login
     redirect_to new_user_session_path unless user_signed_in?
   end
+  
+  private
+
+  def item_params
+    params.require(:item).permit(
+      :name,
+      :body,
+      :price,
+    ).merge(user_id: current_user.id)
+  end
 
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def set_card
+    card = Card.where(user_id: current_user.id).first
   end
+end

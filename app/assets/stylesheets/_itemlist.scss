@@ -132,6 +132,29 @@
   position: relative;
 }
 
+&__box__list__women__item__box__image__sold-out{
+  top: 18px;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  color:red;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: 600;
+::after{
+  border-color: #ea352d transparent transparent transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}}
 &__box__list__women__item__box__image__place{
   width:100%;
   position:absolute;
