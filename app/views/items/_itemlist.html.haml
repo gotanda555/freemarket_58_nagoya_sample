@@ -26,8 +26,8 @@
               %li.main__item__box__list__women__item__box
                 .main__item__box__list__women__item__box__in
                   =link_to "/items/#{item.id}" ,class:"main__item__box__list__women__item__box__tag" do
-                    %figure.main__item__box__list__women__item__box__image
-                      - if item.status == 1
+                    - if item.status == 1
+                      %figure.main__item__box__list__women__item__box__image
                         = image_tag item.images[0].image_url,{width:'100%' , height:'100%'} 
                         .main__item__box__list__women__item__box__image__place            
                           .main__item__box__list__women__item__box__image__place__language
@@ -35,14 +35,15 @@
                         %figcaption 
                           .main__item__box__list__women__item__box__image__sold-out SOLD
                           .main__item__box__list__women__item__box__image__sold-out::after
-                      - else item.status == 0
+                    - else item.status == 0
+                      .main__item__box__list__women__item__box__image
                         = image_tag item.images[0].image_url,{width:'100%' , height:'100%'}
                         .main__item__box__list__women__item__box__image__place            
                           .main__item__box__list__women__item__box__image__place__language
                             ¥#{item.price.to_s(:delimited)}
-                      .main__item__box__list__women__item__box__text
-                        .main__item__box__list__women__item__box__text__language
-                          = item.name
+                    .main__item__box__list__women__item__box__text
+                      .main__item__box__list__women__item__box__text__language
+                        = item.name
 
     .main__item__box__list__women
       .main__item__box__list__women__header
