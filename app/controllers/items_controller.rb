@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :check, :show]
   before_action :set_item, only: [:destroy, :update, :pay, :check]
   before_action :set_card, only: [:check, :pay]
+  
   def index
     @item = Item.new
     @items = Item.all
@@ -50,7 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.new(item_paramss)
     if @item.save
       redirect_to root_path
     else
@@ -131,7 +132,7 @@ class ItemsController < ApplicationController
     @item.update(status: 1)
   end
 
-  def item_params
+  def item_paramss
     params.require(:item).permit(:name, :status, :body,:category_id, :size, :brandname, :condition,:burden,:region,:sending_days,:price, images_attributes: [:image]).merge(saler_id: current_user.id, buyer_id: current_user.id)
   end
 
