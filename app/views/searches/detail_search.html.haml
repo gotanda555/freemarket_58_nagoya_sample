@@ -20,26 +20,10 @@
   
             .search__main__color__left__box__form
               .search__main__color__left__box__form__text
-                = icon('fas', 'list-ul', class: "")
-                カテゴリーを選択する
-              .ca-margin
-                %select{name:"default",class:"default"}
-                  %option{value:"すべて"}すべて
-  
-            .search__main__color__left__box__form
-              .search__main__color__left__box__form__text
                 = icon('fas', 'tags', class: "")
                 ブランド名から探す
               = f.search_field :brandname_eq, placeholder: "例）シャネル", class: "search-input"
-  
-            .search__main__color__left__box__form
-              .search__main__color__left__box__form__text
-                = icon('far', 'square', class: "")
-                サイズを指定する
-              .ca-margin
-                %select{name:"default",class:"default"}
-                  %option{value:"すべて"}すべて
-  
+
             .search__main__color__left__box__form
               .search__main__color__left__box__form__text
                 = icon('fas', 'coins', class: "")
@@ -56,9 +40,6 @@
                 商品の状態
               .search__body
                 .search__body__left
-                  .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    すべて
                   .search__main__color__left__box__form__check
                     = f.check_box :condition_eq_any, { multiple: true }, "2", nil
                     = "未使用に近い"
@@ -86,9 +67,6 @@
               .search__body
                 .search__body__left
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    すべて
-                  .search__main__color__left__box__form__check
                     = f.check_box :burden_eq_any, { multiple: true }, "1", nil
                     = "送料込み（出品者負担）"
                 .search__body__right
@@ -103,19 +81,14 @@
               .search__body
                 .search__body__left
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    すべて
-                  .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    売り切れ
+                    = f.check_box :status_eq_any, { multiple: true }, "1", nil
+                    = "売り切れ"
                 .search__body__right
                   .search__main__color__left__box__form__check
-                    %input{type: "checkbox", class: "box-size"}
-                    販売中
+                    = f.check_box :status_eq_any, { multiple: true }, "0", nil
+                    = "販売中"
   
             .search__main__color__left__box__btn
-              .search__main__color__left__box__btn__clear
-                クリア
               .search__main__color__left__box__btn__submit
                 = f.submit "完了",class:"btn-red"
             
