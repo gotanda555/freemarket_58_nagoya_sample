@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   resources :items do
     collection do
+      get  'purchase/:id'=>  'items#purchase', as: 'purchase'
+      post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
+      get  'done/:id'=>      'items#done'
       get 'get_category_children'
       get 'get_category_grandchildren'
       get 'get_brand'
