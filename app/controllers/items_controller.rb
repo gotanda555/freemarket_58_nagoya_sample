@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_login, only: [:new, :check, :show]
-  before_action :set_item, only: [:destroy, :update]
-
+  before_action :set_item, only: [:destroy, :update, :pay]
+  before_action :set_card, only: [:check, :pay]
   def index
     @item = Item.new
     @items = Item.all
@@ -100,7 +100,7 @@ class ItemsController < ApplicationController
   def check
     @items = Item.all
     @item = Item.find(params[:id])
-    card = Card.where(user_id: current_user.id).first
+
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -118,8 +118,6 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
-    card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     charge = Payjp::Charge.create(
     amount: @item.price,
@@ -157,8 +155,12 @@ class ItemsController < ApplicationController
       :price,
     ).merge(user_id: current_user.id)
   end
-end
 
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def set_card
+    card = Card.where(user_id: current_user.id).first
+  end
+end
