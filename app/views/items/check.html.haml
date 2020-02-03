@@ -46,7 +46,7 @@
               =link_to '#' do
                 %span.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__link 変更する
               %p.check__main__flame__buy-item__inner__buy-user-info__pay__inner__text__card
-                〒#{current_user.address_number[0, 3]} - #{current_user.address_number[3, 7]}
+                〒#{current_user.address_number[0, 3]} - #{current_user.address_number[4, 7]}
                 %br
                 = current_user.address_name
                 = current_user.address_block
