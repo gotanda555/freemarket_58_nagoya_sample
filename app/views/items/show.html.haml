@@ -16,7 +16,7 @@
                     .detail__main__box__flame__content__sub__itemphoto__mainphoto__sold-out SOLD
                     .detail__main__box__flame__content__sub__itemphoto__mainphoto__sold-out::after
                   - else @item.status == 0
-                    = image_tag @item.images[0].image_url,class:'detail__main__box__flame__content__sub__itemphoto__mainphoto__size'   
+                    = image_tag @item.images[0].image_url, class:'detail__main__box__flame__content__sub__itemphoto__mainphoto__size'   
                 .detail__main__box__flame__content__sub__itemphoto__subphoto
                   - if @item.images[0].present?
                     .detail__main__box__flame__content__sub__itemphoto__subphoto__box

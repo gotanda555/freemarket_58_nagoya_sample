@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   get 'items/:id/check', to: 'items#check', as: :logout 
   delete 'items/:id', to: 'items#destroy', as: :destroy
   get   'items/linklist'   =>  'items#linklist' 
+  get   'items/linklist_grandchild'   =>  'items#linklist_grandchild' 
+
 
   resources :items do
     collection do
+      get  'search/:id' =>  'items#search'
       get  'purchase/:id'=>  'items#purchase', as: 'purchase'
       post 'pay/:id'=>   'items#pay', as: 'pay'#httpメソッドはpostなので注意
       get  'done/:id'=>      'items#done'

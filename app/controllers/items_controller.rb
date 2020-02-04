@@ -20,7 +20,15 @@ class ItemsController < ApplicationController
   end
 
   def linklist
-    @category_children = Category.find_by("#{params[:id]}").children
+    @category_children = Category.find("#{params[:id]}").children
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def linklist_grandchild
+    @category_grandchildren = Category.find("#{params[:id]}").children
     respond_to do |format|
       format.html
       format.json
@@ -96,6 +104,11 @@ class ItemsController < ApplicationController
       end
   end
 
+  def search
+    @items = Item.where(category_id:"#{params[:id]}")
+    @category = Category.find("#{params[:id]}")
+  end
+
   def new
       @item = Item.new
       @item.images.build
@@ -139,7 +152,7 @@ class ItemsController < ApplicationController
     customer: set_card.customer_id,
     currency: 'jpy'
     )
-   redirect_to action: :done
+    redirect_to action: :done
   end
 
   def done
