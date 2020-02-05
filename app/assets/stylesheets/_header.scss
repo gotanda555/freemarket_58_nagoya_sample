@@ -159,6 +159,16 @@ background-color:#fff;
 box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
   &__parentitem{
     width:223.5px;
+    &__childSearch{
+      width:224px;
+      position:absolute;
+      left:433px;
+      top:90px;
+      background-color:#fff;
+      color:#333;
+      text-decoration: none;
+      z-index:1;
+    }
   }
 }
 
@@ -166,16 +176,6 @@ box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
   display:none;
 }
 
-.categorySearch__parentitem__childSearch{
-  width:224px;
-  position:absolute;
-  left:433px;
-  top:90px;
-  background-color:#fff;
-  color:#333;
-  text-decoration: none;
-  z-index:1;
-}
 
 
 
@@ -218,7 +218,3 @@ box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
   background-color:silver;
   color:white;
 }
-// .categorySearch__parentitem:hover{
-//   color:white;
-//   background-color:red;
-// }

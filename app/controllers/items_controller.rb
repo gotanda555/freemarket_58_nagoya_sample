@@ -105,7 +105,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.where(category_id:"#{params[:id]}")
+    @items = Item.where(category_id:"#{params[:id]}").order('created_at DESC')
     @category = Category.find("#{params[:id]}")
   end
 
