@@ -133,9 +133,3 @@ $(function(){
     })
   })
 })
-    // //     else if(grandchildCategory !== fa.id)
-    // //     {appendBrandBox()};
-    // // })
-    //   })
-    //   })
-    //   })
