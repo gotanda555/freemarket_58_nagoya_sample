@@ -162,12 +162,13 @@ box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
     &__childSearch{
       width:224px;
       position:absolute;
-      left:433px;
-      top:90px;
+      left:434px;
+      top:95px;
       background-color:#fff;
       color:#333;
       text-decoration: none;
       z-index:1;
+      box-shadow:0 1px 1px 0 rgba(0,0,0,0.24);
     }
   }
 }

@@ -70,6 +70,7 @@ $(function(){
       e.preventDefault()
       var parentCategory = document.getElementById('parent_category').value;
       var url = '/items/get_category_children'
+
       $.ajax({
         type: "GET",
         url: url,
@@ -80,6 +81,8 @@ $(function(){
       .done(function(child){
         $('#child_categorybox').remove();
         $('#grandchild_categorybox').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__condition').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__selects').remove();
         insertHTML = '';
         child.forEach(function(child){
           insertHTML += appendOption(child);
@@ -102,6 +105,8 @@ $(function(){
       })
       .done(function(grandchild){
         $('#grandchild_category').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__condition').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__selects').remove();
         insertHTML = '';
         grandchild.forEach(function(grandchild){
           insertHTML += appendOption(grandchild);
@@ -122,13 +127,13 @@ $(function(){
         dataType: 'json',
       })
       .done(function(fashion){
-        console.log(fashion)
         fashion.forEach(function(id){
           if (grandchildCategory == id.id){
             appendOptionBox()
           }
         })
         appendBrandBox()
+
       })
     })
   })

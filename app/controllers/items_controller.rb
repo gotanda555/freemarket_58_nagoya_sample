@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
     @men = Category.find(219)
     @men_grandchild = @men.indirects
     @category_parent = Category.where(ancestry: nil)
-    @category_children = Category.find_by(params[:id]).children
+    @category_children = Category.find_by("#{params[:id]}").children
     respond_to do |format|
       format.html
       format.json
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(params[:id], ancestry: nil).children
+    @category_children = Category.find(params[:id]).children
     respond_to do |format|
       format.html
       format.json
@@ -105,8 +105,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.where(category_id: params[:id]).order('created_at DESC')
-    @category = Category.find(params[:id])
+      @items = Item.where(category_id:params[:id])
+      @category = Category.find(params[:id])
   end
 
   def new
