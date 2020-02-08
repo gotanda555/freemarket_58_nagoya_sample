@@ -4,11 +4,32 @@ end
 
 crumb :mypage do
   link "マイページ", mypages_path
+  parent :root
 end
 
+crumb :item do |item|
+  show_title = Item.find_by(id: params[:id])
+  link show_title.name, item
+end
 
-crumb :item do
-  link "商品詳細", item_path
+crumb :logout do
+  link "ログアウト" ,root_path
+  parent :mypage
+end
+
+crumb :identification do
+  link "本人情報の登録" ,identification_mypages_path
+  parent :mypage
+end
+
+crumb :card do
+  link "支払い方法" ,card_mypages_path
+  parent :mypage
+end
+
+crumb :edit do
+  link "プロフィール" ,edit_user_path
+  parent :mypage
 end
 # crumb :projects do
 #   link "Projects", projects_path
