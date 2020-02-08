@@ -138,23 +138,12 @@
   position: absolute;
   left: 0;
   z-index: 2;
-  color:red;
+  color:white;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   letter-spacing: 2px;
   font-weight: 600;
-::after{
-  border-color: #ea352d transparent transparent transparent;
-  display: block;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}}
+}
 &__box__list__women__item__box__image__place{
   width:100%;
   position:absolute;
@@ -179,6 +168,22 @@
 
 &__box__list__women__item__box__text__language{
   padding:15px 10px 10px;
+}
+
+.main__item__box__list__women__item__box__image__sold-out:after{
+  border-width: 85px 85px 0 0;
+  border-color: #ea352d transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform:rotate(45deg);
+  margin:-15px 0 0 -9px;
 }
 
 }

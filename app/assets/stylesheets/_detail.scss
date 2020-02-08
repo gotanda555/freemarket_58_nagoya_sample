@@ -261,6 +261,7 @@
         &__imagebox{
           width:220px;
           height:220px;
+          position:relative;
           &__image{
             width:100%;
             height:100%;
@@ -321,12 +322,11 @@ background: none;
           position: absolute;
           left: 0;
           z-index: 2;
-          color:red;
+          color:white;
           -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
           letter-spacing: 2px;
           font-weight: 600;
-          background-color: white;
         }
       &__size{      
         width:100%;
@@ -459,4 +459,49 @@ background:#fafafa;
   overflow:hidden; 
   vertical-align: middle;
   text-align:center;
+}
+
+.detail__main__box__flame__content__sub__itemphoto__mainphoto__sold-out:after{
+  border-width: 100px 100px 0 0;
+  border-color: #ea352d transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform:rotate(45deg);
+  margin:-21px 0 0 -9px;
+}
+
+.main__item__box__list__women__item__box__image__sold-out__text:after{
+  border-width: 85px 85px 0 0;
+  border-color: #ea352d transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform:rotate(45deg);
+  margin:-14px 0 0 -12px;
+}
+
+.main__item__box__list__women__item__box__image__sold-out__text{
+  top: 18px;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  color:white;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: 600;
 }

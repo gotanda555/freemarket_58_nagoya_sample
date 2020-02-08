@@ -157,4 +157,21 @@
 .text-line{
   padding:20px 6px 0 6px;
 }
+
+.main__item__box__list__women__item__box__image__sold-out:after{
+  border-width: 85px 85px 0 0;
+  border-color: #ea352d transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform:rotate(45deg);
+  margin:-15px 0 0 -9px;
+}
+
 }
