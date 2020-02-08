@@ -196,6 +196,25 @@ $l_blue:#0099e8;
   float: right;
   width: 400px;
   margin: 0;
+  &__condition2{
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    margin: 40px 0 0;
+    &__cover{
+      display: inline-block;
+      font-weight: 600;
+      &__logo{
+        background-color: $red;
+        margin:0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color:$white;
+        font-size: 12px;
+        vertical-align: top;
+      }
+    }
+  }
 }
 &__group__category{
   margin: 0;
@@ -207,6 +226,7 @@ $l_blue:#0099e8;
   font-size: 14px;
   display: flex;
   margin: 40px 0 0;
+  
 }
 &__group__category__cover,&__group__condition__cover{
   display: inline-block;
@@ -275,6 +295,7 @@ $l_blue:#0099e8;
   display: flex;
   margin: 40px 0 0;
 }
+
 &__group__category__cover,&__group__condition__cover{
   display: inline-block;
   font-weight: 600;
@@ -526,6 +547,15 @@ a{
 }
 
 .main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo__sub{
+  background-color: #ccc;
+  margin:0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color:#fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+.main__contents__item__bottom__box__head__form__goods__detail__group__condition2__cover__logo__sub{
   background-color: #ccc;
   margin:0 0 0 8px;
   padding: 2px 4px;

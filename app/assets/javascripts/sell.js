@@ -1,5 +1,6 @@
 $(function(){
   function appendOption(child){
+    
     var html = `<option value="${child.id}">${child.name}</option>`;
     return html;
   }
@@ -26,17 +27,17 @@ $(function(){
       ${insertHTML}
   </div>`
   $('.main__contents__item__bottom__box__head__form__goods__detail__group__add__select').append(grandchildSelectHtml);
-  }
+  }0
 
   function appendOptionBox(){
     var Size = `<option value="Sサイズ">Sサイズ</option><option value="Mサイズ">Mサイズ</option><option value="Lサイズ">Lサイズ</option>`;
     var OptionboxHtml = '';
     OptionboxHtml = `
-    <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition'>
-  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover'>サイズ</div>
-  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo'>必須</div>
+    <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition2'>
+  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition2__cover'>サイズ</div>
+  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition2__cover__logo'>必須</div>
 </div>
-<div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects'>
+<div id = 'optionBox2' class='main__contents__item__bottom__box__head__form__goods__detail__group__selects2'>
   <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects__box'>
     <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom'></div>
     <select id="size_category" name="item[size]"><option value="">---</option>
@@ -49,11 +50,11 @@ $(function(){
   function appendBrandBox(){
   var BrandboxHtml = '';
   BrandboxHtml =  `
-  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition'>
-  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover'>ブランド</div>
-  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition__cover__logo__sub'>任意</div>
+  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition2'>
+  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition2__cover'>ブランド</div>
+  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__condition2__cover__logo__sub'>任意</div>
   </div>
-  <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects'>
+  <div id = 'optionBox2' class='main__contents__item__bottom__box__head__form__goods__detail__group__selects2'>
   <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects__box'>
   <div class='main__contents__item__bottom__box__head__form__goods__detail__group__selects__box__bottom'></div>
   <input type ="text" class="boxFiletext_field" name= "item[brandname]" value="" placeholder="例）シャネル">
@@ -69,6 +70,7 @@ $(function(){
       e.preventDefault()
       var parentCategory = document.getElementById('parent_category').value;
       var url = '/items/get_category_children'
+
       $.ajax({
         type: "GET",
         url: url,
@@ -79,6 +81,8 @@ $(function(){
       .done(function(child){
         $('#child_categorybox').remove();
         $('#grandchild_categorybox').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__condition2').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__selects2').remove();
         insertHTML = '';
         child.forEach(function(child){
           insertHTML += appendOption(child);
@@ -101,6 +105,8 @@ $(function(){
       })
       .done(function(grandchild){
         $('#grandchild_category').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__condition2').remove();
+        $('.main__contents__item__bottom__box__head__form__goods__detail__group__selects2').remove();
         insertHTML = '';
         grandchild.forEach(function(grandchild){
           insertHTML += appendOption(grandchild);
@@ -121,20 +127,14 @@ $(function(){
         dataType: 'json',
       })
       .done(function(fashion){
-        console.log(fashion)
         fashion.forEach(function(id){
           if (grandchildCategory == id.id){
             appendOptionBox()
           }
         })
         appendBrandBox()
+
       })
     })
   })
 })
-    // //     else if(grandchildCategory !== fa.id)
-    // //     {appendBrandBox()};
-    // // })
-    //   })
-    //   })
-    //   })

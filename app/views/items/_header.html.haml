@@ -17,6 +17,10 @@
           .headerBox__main__bottom__select__category__categorySearch
             = image_tag('category.png',width:'30',height:'25')
           .headerBox__main__bottom__select__category__categorySearch__list__a カテゴリーから探す
+          .category_menu
+            %ul.categorySearch
+            %ul.categorySearch__parentitem__childSearch
+            %ul.categorySearch__parentitem__grandchildSearch
         .headerBox__main__bottom__select__brand 
           .headerBox__main__bottom__select__brand__brandSearch
             = image_tag('brand.png',width:'30',height:'25')
@@ -49,5 +53,3 @@
           .headerBox__main__bottom__member__login
             =link_to new_user_session_path ,class:"headerBox__main__bottom__member__login__moji" do
               ログイン
-
-

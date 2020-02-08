@@ -11,10 +11,32 @@ class ItemsController < ApplicationController
     @ladies_grandchild = @ladies.indirects
     @men = Category.find(219)
     @men_grandchild = @men.indirects
+    @category_parent = Category.where(ancestry: nil)
+    @category_children = Category.find_by("#{params[:id]}").children
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def linklist
+    @category_children = Category.find(params[:id]).children
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def linklist_grandchild
+    @category_grandchildren = Category.find(params[:id]).children
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def get_category_children
-    @category_children = Category.find_by(id: "#{params[:id]}", ancestry: nil).children
+    @category_children = Category.find(params[:id]).children
     respond_to do |format|
       format.html
       format.json
@@ -22,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:id]}").children
+    @category_grandchildren = Category.find(params[:id]).children
     @items = Item.all
     respond_to do |format|
       format.html
@@ -48,6 +70,8 @@ class ItemsController < ApplicationController
     @category = Category.find(@item.category_id)
     @categoryparent = @category.parent
     @categorygrandparent = @categoryparent.parent
+    @category_parent = Category.where(ancestry: nil)
+
   end
 
   def create
@@ -78,6 +102,11 @@ class ItemsController < ApplicationController
           redirect_to edit_path
         end
       end
+  end
+
+  def search
+      @items = Item.where(category_id:params[:id])
+      @category = Category.find(params[:id])
   end
 
   def new
@@ -123,7 +152,7 @@ class ItemsController < ApplicationController
     customer: set_card.customer_id,
     currency: 'jpy'
     )
-   redirect_to action: :done
+    redirect_to action: :done
   end
 
   def done

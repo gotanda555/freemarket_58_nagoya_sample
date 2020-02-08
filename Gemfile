@@ -91,7 +91,6 @@ gem 'ransack'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
-
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
