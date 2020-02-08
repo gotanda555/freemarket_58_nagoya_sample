@@ -527,3 +527,24 @@
   opacity:0.7;
 }
 }
+.breadcrumbs{
+  height: 48px;
+  border-top: 1px solid #ccc;
+  line-height: 48px;
+  padding-left: 210px;
+  a{
+    color: #333;
+  }
+}
+
+.breadcrumb:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.current {
+  text-decoration: none;
+  color:#333;
+  background: none;
+  font-weight: bold;
+}

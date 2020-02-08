@@ -1,8 +1,9 @@
+- breadcrumb :identification
 .mypage
   .header
     = render "/items/header"
 
-  .mypage_panbox
+  = breadcrumbs separator: " &rsaquo; "
 
   .mypage__main
     .mypage__main__margin
